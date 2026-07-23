@@ -1,0 +1,19 @@
+# Cadence Genus(TM) Synthesis Solution, Version 21.19-s055_1, built May 29 2024 16:33:07
+
+# Date: Mon Dec 15 15:14:22 2025
+# Host: VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB)
+# OS:   Rocky Linux release 8.10 (Green Obsidian)
+
+source genus_dft_script.tcl
+set_db init_lib_search_path ../lib/
+set_db init_hdl_search_path ../rtl/
+read_libs slow_vdd1v0_basicCells.lib
+read_hdl -sv opdiv_correct.sv
+elaborate
+read_sdc ../constraints/constraints_top.sdc
+set_db dft_scan_style muxed_scan
+set_db dft_prefix dft_
+define_shift_enable -name SE -active high -create_port SE
+check_dft_rules
+set_db syn_generic_effort medium
+syn_generic

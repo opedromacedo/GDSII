@@ -1,0 +1,76 @@
+#e1(02Dec2025:12:05:06): source ./xcelium.d/env.d/env.history.02Dec2025_12_05_06
+s1(02Dec2025:12:05:06):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e2(02Dec2025:12:08:02): source ./xcelium.d/env.d/env.history.02Dec2025_12_08_02
+s2(02Dec2025:12:08:02):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e3(02Dec2025:12:08:04): source ./xcelium.d/env.d/env.history.02Dec2025_12_08_04
+s3(02Dec2025:12:08:04):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e4(02Dec2025:12:10:45): source ./xcelium.d/env.d/env.history.02Dec2025_12_10_45
+s4(02Dec2025:12:10:45):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e5(02Dec2025:12:11:30): source ./xcelium.d/env.d/env.history.02Dec2025_12_11_30
+s5(02Dec2025:12:11:30):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e6(02Dec2025:12:11:45): source ./xcelium.d/env.d/env.history.02Dec2025_12_11_45
+s6(02Dec2025:12:11:45):  xrun opdiv.sv op_test_div.sv -access +rwc -gui 
+#e7(02Dec2025:12:12:01): source ./xcelium.d/env.d/env.history.02Dec2025_12_12_01
+s7(02Dec2025:12:12:01):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e8(02Dec2025:12:13:17): source ./xcelium.d/env.d/env.history.02Dec2025_12_13_17
+s8(02Dec2025:12:13:17):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e9(02Dec2025:12:13:36): source ./xcelium.d/env.d/env.history.02Dec2025_12_13_36
+s9(02Dec2025:12:13:36):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e10(02Dec2025:12:13:44): source ./xcelium.d/env.d/env.history.02Dec2025_12_13_44
+s10(02Dec2025:12:13:44):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e11(02Dec2025:12:14:06): source ./xcelium.d/env.d/env.history.02Dec2025_12_14_06
+s11(02Dec2025:12:14:06):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e12(02Dec2025:12:14:36): source ./xcelium.d/env.d/env.history.02Dec2025_12_14_36
+s12(02Dec2025:12:14:36):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e13(02Dec2025:12:14:44): source ./xcelium.d/env.d/env.history.02Dec2025_12_14_44
+s13(02Dec2025:12:14:44):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui] 
+#e14(02Dec2025:12:14:45): source ./xcelium.d/env.d/env.history.02Dec2025_12_14_45
+s14(02Dec2025:12:14:45):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui] 
+#e15(02Dec2025:12:14:50): source ./xcelium.d/env.d/env.history.02Dec2025_12_14_50
+s15(02Dec2025:12:14:50):  xrun opdiv.sv op_test_div.sv counter_bit.sv -access +rwc -gui 
+#e16(02Dec2025:12:25:18): source ./xcelium.d/env.d/env.history.02Dec2025_12_25_18
+s16(02Dec2025:12:25:18):  xrun op_test_div.sv -access +rwc -gui 
+#e17(02Dec2025:15:02:52): source ./xcelium.d/env.d/env.history.02Dec2025_15_02_52
+s17(02Dec2025:15:02:52):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e18(02Dec2025:15:10:48): source ./xcelium.d/env.d/env.history.02Dec2025_15_10_48
+s18(02Dec2025:15:10:48):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e19(02Dec2025:15:14:23): source ./xcelium.d/env.d/env.history.02Dec2025_15_14_23
+s19(02Dec2025:15:14:23):  xrun op_test_div2.sv opdiv.sv -access +rwc -gui 
+#e20(02Dec2025:15:20:00): source ./xcelium.d/env.d/env.history.02Dec2025_15_20_00
+s20(02Dec2025:15:20:00):  xrun op_test_div2.sv opdiv.sv -access +rwc -gui 
+#e21(02Dec2025:15:20:18): source ./xcelium.d/env.d/env.history.02Dec2025_15_20_18
+s21(02Dec2025:15:20:18):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e22(02Dec2025:15:21:43): source ./xcelium.d/env.d/env.history.02Dec2025_15_21_43
+s22(02Dec2025:15:21:43):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e23(02Dec2025:15:22:19): source ./xcelium.d/env.d/env.history.02Dec2025_15_22_19
+s23(02Dec2025:15:22:19):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e24(02Dec2025:15:22:38): source ./xcelium.d/env.d/env.history.02Dec2025_15_22_38
+s24(02Dec2025:15:22:38):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e25(02Dec2025:15:22:40): source ./xcelium.d/env.d/env.history.02Dec2025_15_22_40
+s25(02Dec2025:15:22:40):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e26(02Dec2025:15:25:33): source ./xcelium.d/env.d/env.history.02Dec2025_15_25_33
+s26(02Dec2025:15:25:33):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e27(02Dec2025:15:25:58): source ./xcelium.d/env.d/env.history.02Dec2025_15_25_58
+s27(02Dec2025:15:25:58):  xrun op_test_div.sv opdiv.sv -access +rwc -gui 
+#e28(02Dec2025:15:28:25): source ./xcelium.d/env.d/env.history.02Dec2025_15_28_25
+s28(02Dec2025:15:28:25):  xrun op_test_div.sv opdiv.sv -access +rwc -coverage all -gui 
+#e29(02Dec2025:15:30:28): source ./xcelium.d/env.d/env.history.02Dec2025_15_30_28
+s29(02Dec2025:15:30:28):  xrun op_test_div.sv opdiv.sv -access +rwc -coverage all -gui 
+#e30(04Dec2025:10:18:54): source ./xcelium.d/env.d/env.history.04Dec2025_10_18_54
+s30(04Dec2025:10:18:54):  xrun opdiv.sv -gui -acess -rwc 
+#e31(04Dec2025:10:19:09): source ./xcelium.d/env.d/env.history.04Dec2025_10_19_09
+s31(04Dec2025:10:19:09):  xrun opdiv.sv -gui -acess -rwc 
+#e32(04Dec2025:10:19:18): source ./xcelium.d/env.d/env.history.04Dec2025_10_19_18
+s32(04Dec2025:10:19:18):  xrun opdiv.sv 
+#e33(04Dec2025:10:19:29): source ./xcelium.d/env.d/env.history.04Dec2025_10_19_29
+s33(04Dec2025:10:19:29):  xrun opdiv.sv -gui -access -rwc 
+#e34(04Dec2025:18:46:55): source ./xcelium.d/env.d/env.history.04Dec2025_18_46_55
+s34(04Dec2025:18:46:55):  xrun opdiv.sv 
+#e35(04Dec2025:18:51:23): source ./xcelium.d/env.d/env.history.04Dec2025_18_51_23
+s35(04Dec2025:18:51:23):  xrun opdiv_corrig.sv 
+#e36(13Dec2025:18:28:21): source ./xcelium.d/env.d/env.history.13Dec2025_18_28_21
+s36(13Dec2025:18:28:21):  xrun opdiv.sv 
+#e37(13Dec2025:18:31:42): source ./xcelium.d/env.d/env.history.13Dec2025_18_31_42
+s37(13Dec2025:18:31:42):  xrun opdiv.svllasdx 
+#e38(13Dec2025:18:32:33): source ./xcelium.d/env.d/env.history.13Dec2025_18_32_33
+s38(13Dec2025:18:32:33):  xrun opdiv_correct.sv 

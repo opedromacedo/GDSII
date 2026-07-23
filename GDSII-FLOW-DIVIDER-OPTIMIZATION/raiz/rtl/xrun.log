@@ -1,0 +1,36 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Dec 13, 2025 at 18:32:33 -03
+xrun
+	opdiv_correct.sv
+file: opdiv_correct.sv
+	module worklib.opdiv:sv
+		errors: 0, warnings: 0
+	module worklib.counter_bit:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		opdiv
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.counter_bit:sv <0x38312643>
+			streams:   0, words:     0
+		worklib.opdiv:sv <0x5bb6a14c>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:          25      25
+		Scalar wires:        1       -
+		Vectored wires:      3       -
+		Always blocks:       7       7
+		Cont. assignments:   0       1
+	Writing initial simulation snapshot: worklib.opdiv:sv
+Loading snapshot worklib.opdiv:sv .................... Done
+xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	24.03-s005: Exiting on Dec 13, 2025 at 18:32:43 -03  (total: 00:00:10)

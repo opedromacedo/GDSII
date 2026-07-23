@@ -1,0 +1,126 @@
+Starting Command: build_faultmodel 
+
+INFO (TDA-005): Command Line Invocation: 
+            build_faultmodel -cellinternal yes -workdir mydir -fullfault yes  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_faultmodel_121525153549-488632000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Monday Dec 15 15:35:49 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 1132714.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+
+            -cellinternal yes
+            -LOGFILE mydir/testresults/logs/log_build_faultmodel_121525153549-488632000
+[end TDA_009]
+INFO (TFM-099): Build Fault Model started.  [end TFM_099] 
+INFO (TFM-102): Creating faultModel file mydir/tbdata/faultModel.  [end TFM_102] 
+
+Global Ignored Static Fault Count              1144
+Global Ignored Dynamic Fault Count             2564
+
+
+                            Global Statistics
+
+                    ATCov  ----------------------- Global Faults --------------------------
+                   Global        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00        13192            0            0            0        13192
+Collapsed Static     0.00         7950            0            0            0         7950
+PI Static            0.00          138            0            0            0          138
+PO Static            0.00          132            0            0            0          132
+
+Total Dynamic        0.00        15800            0            0            0        15800
+Collapsed Dynamic    0.00        10984            0            0            0        10984
+PI Dynamic           0.00          138            0            0            0          138
+PO Dynamic           0.00          132            0            0            0          132
+
+Parametric        
+
+IDDq                 0.00        13192            0                                  13192
+
+
+
+INFO (TFM-103): Creating faultStatus file mydir/tbdata/faultStatus.  [end TFM_103] 
+
+                           Testmode Statistics: FULLSCAN
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00        13192            0            0            0        13192        13192            0            0            0        13192
+Collapsed Static     0.00   0.00         7950            0            0            0         7950         7950            0            0            0         7950
+PI Static            0.00   0.00          138            0            0            0          138          138            0            0            0          138
+PO Static            0.00   0.00          132            0            0            0          132          132            0            0            0          132
+
+Total Dynamic        0.00   0.00        15230            0            0            0        15230        15800            0            0            0        15800
+Collapsed Dynamic    0.00   0.00        10698            0            0            0        10698        10984            0            0            0        10984
+PI Dynamic           0.00   0.00          136            0            0            0          136          138            0            0            0          138
+PO Dynamic           0.00   0.00          132            0            0            0          132          132            0            0            0          132
+
+Parametric        
+
+IDDq                 0.00   0.00        13192            0                                  13192        13192            0                                  13192
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active      #Faults      #Active    #Inactive
+Total Static       100.00        13192        13192            0
+Collapsed Static   100.00         7950         7950            0
+PI Static          100.00          138          138            0
+PO Static          100.00          132          132            0
+
+Total Dynamic       96.39        15800        15230          570
+Collapsed Dynamic   97.40        10984        10698          286
+PI Dynamic          98.55          138          136            2
+PO Dynamic         100.00          132          132            0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.  [end TFM_109] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           11,657,008  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.03                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:35:59 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-099): Build Fault Model started.   
+      1 INFO (TFM-102): Creating faultModel file mydir/tbdata/faultModel.   
+      1 INFO (TFM-103): Creating faultStatus file mydir/tbdata/faultStatus.   
+      1 INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.   
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

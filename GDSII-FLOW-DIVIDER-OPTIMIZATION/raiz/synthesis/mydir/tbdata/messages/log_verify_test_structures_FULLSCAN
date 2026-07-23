@@ -1,0 +1,28 @@
+
+INFO (TDA-005): Command Line Invocation: 
+            verify_test_structures -testmode FULLSCAN -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121325003231-578316000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Saturday Dec 13 00:32:31 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 922135.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -LOGFILE mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121325003231-578316000
+[end TDA_009]
+ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+[end TFW_968]
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+

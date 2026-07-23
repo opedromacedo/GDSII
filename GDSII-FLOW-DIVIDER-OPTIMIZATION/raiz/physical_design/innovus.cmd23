@@ -1,0 +1,72 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Sun Feb  1 17:12:51 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+#@(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+#@(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+#@(#)CDS: CPE v21.19-s026
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+#@ source innovus_script_old.tcl
+#@ Begin verbose source (pre): source innovus_script_old.tcl
+set LEF_PATH $env(HOME)/PDK/gsclib045/lef
+set LEF_PATH_IO_PAD $env(HOME)/PDK/giolib045/lef
+set_db init_lef_files {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef}
+set QRC_PATH $env(HOME)/PDK/gsclib045/qrc/qx
+set_db init_power_nets VDD
+set_db init_ground_nets VSS
+read_mmmc opdiv_correct.view
+#@ Begin verbose source opdiv_correct.view (pre)
+create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_correct_sdc.sdc 
+create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+set_analysis_view -setup wc -hold bc
+#@ End verbose source opdiv_correct.view
+read_physical -lefs $LEF_PATH/gsclib045_tech.lef  $LEF_PATH/gsclib045_macro.lef
+read_netlist \
+  ../synthesis/outputs/opdiv_correct_netlist.v
+init_design
+#@ source ../physical_design/power.tcl
+#@ Begin verbose source ../physical_design/power.tcl (pre)
+connect_global_net VDD -type pg_pin -pin VDD -inst *
+connect_global_net VSS -type pg_pin -pin VSS -inst *
+connect_global_net VDD -type tie_hi 
+connect_global_net VSS -type tie_lo 
+connect_global_net VDD -type tie_hi -pin VDD -inst *
+connect_global_net VSS -type tie_lo -pin VSS -inst *
+#@ End verbose source ../physical_design/power.tcl
+set_io_flow_flag 0
+create_floorplan -site CoreSite -core_density_size 1 -die_size {0 0 400 400} -core_size {20 20 380 380}
+#@ End verbose source innovus_script_old.tcl

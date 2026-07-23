@@ -1,0 +1,19 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 552 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library ../lib/slow_vdd1v0_basicCells.lib -liberty
+// Parsing file ../lib/slow_vdd1v0_basicCells.lib ...
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+// Command: write library slow_vdd1v0_basicCells.v -verilog -replace
+// Note: Wrote VERILOG library successfully
+// Command: exit

@@ -1,0 +1,126 @@
+Starting Command: write_vectors 
+
+INFO (TDA-005): Command Line Invocation: 
+            write_vectors -language verilog -inexperiment logic -testmode FULLSCAN -scanformat serial -outputfilename test_results -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121525153951-908641000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Monday Dec 15 15:39:51 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 1133877.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -INEXPERIMENT logic
+            -LOGFILE mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121525153951-908641000
+            -outputfilename test_results
+          + -language verilog
+          + -scanformat serial
+[end TDA_009]
+INFO (TVE-001): Verilog write vectors started.   [end TVE_001] 
+INFO (TVE-103): There was no specified TEST offset for this clock 'pin clock'.  A default clock offset of 8.000000 ns will be used.   [end TVE_103] 
+INFO (TVE-103): There was no specified TEST offset for this clock 'pin nreset'.  A default clock offset of 8.000000 ns will be used.   [end TVE_103] 
+INFO (TVE-967): Temporary output files are created in /tmp directory. [end TVE_967] 
+INFO (TVE-004): Reading test section 1.1. Test section type equals logic.   [end TVE_004] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.cyclemap.   [end TVE_003] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.1.verilog.   [end TVE_003] 
+INFO (TVE-005): Created 381 total cycles, of which 381 are test cycles, 0 are scan cycles, 0 are dynamic timed cycles and 0 are dynamic cycles that are not timed.   [end TVE_005] 
+INFO (TVE-008): Created 2970 total measures, of which 2970 are PO measures and 0 are SO (Scan Out) measures.  [end TVE_008] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.mainsim.v.   [end TVE_003] 
+
+INFO (TVE-050):         TEST SEQUENCE COVERAGE ESTIMATE REPORT  
+    Test       | Global    | Global    | Global    | Global    | Global    | Global    | Sequence   | Overlapped | Total      | 
+    Sequence   | Static    | Static    | Static    | Dynamic   | Dynamic   | Dynamic   | Cycle      | Cycle      | Cycle      | 
+               | Total     | Delta     | Adjusted  | Total     | Delta     | Adjusted  | Count      | Count      | Count      | 
+               | Coverage  | Coverage  | Total     | Coverage  | Coverage  | Total     |            |            |            | 
+               |           |           | Coverage  |           |           | Coverage  |            |            |            | 
+     1.1.1.1.1 |  0.00     |  0.00     |  0.00     |  0.00     |  0.00     |  0.00     |          1 |          0 |          1 |
+     1.1.1.2.1 |  5.26     |  5.26     |  5.26     |  0.00     |  0.00     |  0.00     |          3 |          0 |          4 |
+     1.1.1.3.1 |  5.35     |  0.09     |  5.35     |  0.00     |  0.00     |  0.00     |          4 |          0 |          8 |
+     1.1.1.3.2 |  5.48     |  0.13     |  5.48     |  0.00     |  0.00     |  0.00     |          4 |          0 |         12 |
+     1.1.1.3.3 |  5.72     |  0.23     |  5.72     |  0.00     |  0.00     |  0.00     |          4 |          0 |         16 |
+     1.1.1.3.4 |  11.67    |  5.96     |  11.67    |  0.00     |  0.00     |  0.00     |          4 |          0 |         20 |
+     1.1.1.4.1 |  12.28    |  0.61     |  12.28    |  0.00     |  0.00     |  0.00     |          8 |          0 |         28 |
+     1.1.1.4.2 |  12.51    |  0.23     |  12.51    |  0.00     |  0.00     |  0.00     |          8 |          0 |         36 |
+     1.1.1.4.3 |  13.80    |  1.30     |  13.80    |  0.00     |  0.00     |  0.00     |          8 |          0 |         44 |
+     1.1.1.4.4 |  15.61    |  1.80     |  15.61    |  0.00     |  0.00     |  0.00     |          8 |          0 |         52 |
+     1.1.1.4.5 |  19.43    |  3.82     |  19.43    |  0.00     |  0.00     |  0.00     |          8 |          0 |         60 |
+     1.1.1.4.6 |  19.63    |  0.20     |  19.63    |  0.00     |  0.00     |  0.00     |          8 |          0 |         68 |
+     1.1.1.4.7 |  20.19    |  0.56     |  20.19    |  0.00     |  0.00     |  0.00     |          8 |          0 |         76 |
+     1.1.1.4.8 |  28.27    |  8.08     |  28.27    |  0.00     |  0.00     |  0.00     |          8 |          0 |         84 |
+     1.1.1.4.9 |  28.37    |  0.11     |  28.37    |  0.00     |  0.00     |  0.00     |          8 |          0 |         92 |
+    1.1.1.4.10 |  28.40    |  0.03     |  28.40    |  0.00     |  0.00     |  0.00     |          8 |          0 |        100 |
+     1.1.1.5.1 |  28.58    |  0.17     |  28.58    |  0.00     |  0.00     |  0.00     |         10 |          0 |        110 |
+     1.1.1.5.2 |  28.62    |  0.04     |  28.62    |  0.00     |  0.00     |  0.00     |         10 |          0 |        120 |
+     1.1.1.5.3 |  30.89    |  2.27     |  30.89    |  0.00     |  0.00     |  0.00     |         10 |          0 |        130 |
+     1.1.1.5.4 |  44.74    |  13.85    |  44.74    |  0.00     |  0.00     |  0.00     |         10 |          0 |        140 |
+     1.1.1.5.5 |  44.94    |  0.20     |  44.94    |  0.00     |  0.00     |  0.00     |         10 |          0 |        150 |
+     1.1.1.5.6 |  45.46    |  0.52     |  45.46    |  0.00     |  0.00     |  0.00     |         10 |          0 |        160 |
+     1.1.1.5.7 |  47.05    |  1.59     |  47.05    |  0.00     |  0.00     |  0.00     |         10 |          0 |        170 |
+     1.1.1.5.8 |  47.12    |  0.07     |  47.12    |  0.00     |  0.00     |  0.00     |         10 |          0 |        180 |
+     1.1.1.5.9 |  47.31    |  0.19     |  47.31    |  0.00     |  0.00     |  0.00     |         10 |          0 |        190 |
+     1.1.1.6.1 |  47.32    |  0.01     |  47.32    |  0.00     |  0.00     |  0.00     |          7 |          0 |        197 |
+     1.1.1.6.2 |  47.35    |  0.04     |  47.35    |  0.00     |  0.00     |  0.00     |          7 |          0 |        204 |
+     1.1.1.7.1 |  47.36    |  0.01     |  47.36    |  0.00     |  0.00     |  0.00     |          5 |          0 |        209 |
+     1.1.1.8.1 |  47.81    |  0.45     |  47.81    |  0.00     |  0.00     |  0.00     |          6 |          0 |        215 |
+     1.1.1.9.1 |  47.87    |  0.06     |  47.87    |  0.00     |  0.00     |  0.00     |         10 |          0 |        225 |
+     1.1.1.9.2 |  47.95    |  0.08     |  47.95    |  0.00     |  0.00     |  0.00     |         10 |          0 |        235 |
+     1.1.1.9.3 |  48.18    |  0.23     |  48.18    |  0.00     |  0.00     |  0.00     |         10 |          0 |        245 |
+     1.1.1.9.4 |  48.22    |  0.04     |  48.22    |  0.00     |  0.00     |  0.00     |         10 |          0 |        255 |
+     1.1.1.9.5 |  48.26    |  0.04     |  48.26    |  0.00     |  0.00     |  0.00     |         10 |          0 |        265 |
+     1.1.1.9.6 |  48.29    |  0.04     |  48.29    |  0.00     |  0.00     |  0.00     |         10 |          0 |        275 |
+    1.1.1.10.1 |  48.88    |  0.58     |  48.88    |  0.00     |  0.00     |  0.00     |          9 |          0 |        284 |
+    1.1.1.10.2 |  48.92    |  0.04     |  48.92    |  0.00     |  0.00     |  0.00     |          9 |          0 |        293 |
+    1.1.1.11.1 |  48.95    |  0.04     |  48.95    |  0.00     |  0.00     |  0.00     |          7 |          0 |        300 |
+    1.1.1.12.1 |  48.98    |  0.03     |  48.98    |  0.00     |  0.00     |  0.00     |         12 |          0 |        312 |
+    1.1.1.13.1 |  49.00    |  0.02     |  49.00    |  0.00     |  0.00     |  0.00     |         12 |          0 |        324 |
+    1.1.1.14.1 |  49.01    |  0.02     |  49.01    |  0.00     |  0.00     |  0.00     |          8 |          0 |        332 |
+    1.1.1.15.1 |  49.04    |  0.02     |  49.04    |  0.00     |  0.00     |  0.00     |         10 |          0 |        342 |
+    1.1.1.16.1 |  53.44    |  4.40     |  53.44    |  0.00     |  0.00     |  0.00     |          8 |          0 |        350 |
+    1.1.1.17.1 |  53.58    |  0.14     |  53.58    |  0.00     |  0.00     |  0.00     |         10 |          0 |        360 |
+    1.1.1.18.1 |  53.59    |  0.01     |  53.59    |  0.00     |  0.00     |  0.00     |         10 |          0 |        370 |
+    1.1.1.19.1 |  53.61    |  0.02     |  53.61    |  0.00     |  0.00     |  0.00     |         11 |          0 |        381 |
+  [end TVE_050] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,280,496  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.03                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:40:01 2025  -03
+
+INFO (TVE-002): Verilog write vectors has completed.   [end TVE_002] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TVE-001): Verilog write vectors started.    
+      1 INFO (TVE-002): Verilog write vectors has completed.    
+      3 INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.cyclemap.    
+      1 INFO (TVE-004): Reading test section 1.1. Test section type equals logic.    
+      1 INFO (TVE-005): Created 381 total cycles, of which 381 are test cycles, 0 are scan cycles, 0 are dynamic timed cycles and 0 are dynamic cycles that are not timed.    
+      1 INFO (TVE-008): Created 2970 total measures, of which 2970 are PO measures and 0 are SO (Scan Out) measures.   
+      1 INFO (TVE-050):         TEST SEQUENCE COVERAGE ESTIMATE REPORT  
+      2 INFO (TVE-103): There was no specified TEST offset for this clock 'pin clock'.  A default clock offset of 8.000000 ns will be used.    
+      1 INFO (TVE-967): Temporary output files are created in /tmp directory.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,23 @@
+
+Begin Preparing Data for Parasitic Extraction
+.
+Ended Preparing Data for Parasitic Extraction: (cpu=0:00:00, real=0:00:01, mem(process/total/peak)=242.38MB/5272.78MB/2896.52MB)
+
+Begin Parasitic Extraction
+
+Nets to Extract:
+VDD
+
+   0% at 22:39:31 12/03/2025 
+
+ 100% at 22:39:31 12/03/2025 
+
+Ended Parasitic Extraction: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=246.39MB/5272.78MB/2896.52MB)
+
+Hostname VT0138
+
+Wall clock 5.181251
+
+CPU time 0.275212
+
+Peak memory (process): 359661568

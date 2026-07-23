@@ -1,0 +1,48 @@
+Starting Command: write_vectors 
+
+INFO (TDA-005): Command Line Invocation: 
+            write_vectors -language verilog -inexperiment logic -testmode FULLSCAN -scanformat serial -outputfilename test_results -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121325173707-470588000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Saturday Dec 13 17:37:07 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 982324.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -INEXPERIMENT logic
+            -LOGFILE mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121325173707-470588000
+            -outputfilename test_results
+          + -language verilog
+          + -scanformat serial
+[end TDA_009]
+ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+[end TFW_968]
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+      1 ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

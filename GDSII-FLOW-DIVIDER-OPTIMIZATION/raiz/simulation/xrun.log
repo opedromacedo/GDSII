@@ -1,0 +1,37 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Dec 02, 2025 at 15:30:28 -03
+xrun
+	op_test_div.sv
+	opdiv.sv
+	-access +rwc
+	-coverage all
+	-gui
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> ^C
+xcelium> coverage -analyze
+xmsim: *E,CVGIMC: The IMC window cannot be opened before simulation starts.
+xcelium> run
+xmsim: *E,C58EXE: Coverage database file already exists in the test output directory './cov_work/scope/test', and will not be overwritten. Specify a different name for the test output directory or use the '-covoverwrite' option to overwrite the existing test output directory, and rerun the simulation.
+-2147483648/       9565 =      -224514,      -7238,     -224514       -7238-
+Simulation complete via $finish(1) at time 394 NS + 0
+./op_test_div.sv:69                 $finish;
+xcelium> coverage -analyze
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  tb(tb)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_51efa91d_00000000.ucm (reused)
+  data               :  ./cov_work/scope/test/icc_51efa91d_00000000.ucd
+
+Launching IMC...
+
+xcelium> 

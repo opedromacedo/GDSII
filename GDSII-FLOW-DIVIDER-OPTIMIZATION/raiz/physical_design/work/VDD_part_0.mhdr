@@ -1,0 +1,66 @@
+* The organization, structure, and layout of this file are copyrights and
+* confidential and proprietary trade secrets of Cadence Design Systems, Inc.,
+* subject to the terms and conditions of the license agreement in effect
+* between you and Cadence Design Systems, Inc. This file and its information
+* may not be disclosed, sold, or otherwise transferred to any third party
+* without the express written consent of Cadence Design Systems, Inc. Export
+* of any or all of this file in violation of any statute or regulation is
+* strictly prohibited.
+* 
+
+FORMAT: 11.0
+PROJECT: none
+NET: VDD 
+CREATOR: QX
+
+CREATED: 2025-Dec-03 22:39:31 (2025-Dec-04 01:39:31 GMT)
+
+LAYOUT_XMIN: -20
+LAYOUT_YMIN: 1100
+LAYOUT_XMAX: 148420
+LAYOUT_YMAX: 142920
+
+NODES: 2476
+NODE_FILE: VDD_part_0.mnode
+RESISTORS: 2509
+INDUCTORS: 0
+
+LAYERS: 21
+LAYER: METAL_11 M 30 VDD_part_0.ml00
+LAYER: VIA_10 V 32 VDD_part_0.ml01
+LAYER: METAL_10 M 58 VDD_part_0.ml02
+LAYER: VIA_9 V 40 VDD_part_0.ml03
+LAYER: METAL_9 M 0 VDD_part_0.ml04
+LAYER: VIA_8 V 40 VDD_part_0.ml05
+LAYER: METAL_8 M 0 VDD_part_0.ml06
+LAYER: VIA_7 V 40 VDD_part_0.ml07
+LAYER: METAL_7 M 0 VDD_part_0.ml08
+LAYER: VIA_6 V 40 VDD_part_0.ml09
+LAYER: METAL_6 M 0 VDD_part_0.ml10
+LAYER: VIA_5 V 40 VDD_part_0.ml11
+LAYER: METAL_5 M 0 VDD_part_0.ml12
+LAYER: VIA_4 V 40 VDD_part_0.ml13
+LAYER: METAL_4 M 0 VDD_part_0.ml14
+LAYER: VIA_3 V 40 VDD_part_0.ml15
+LAYER: METAL_3 M 0 VDD_part_0.ml16
+LAYER: VIA_2 V 40 VDD_part_0.ml17
+LAYER: METAL_2 M 0 VDD_part_0.ml18
+LAYER: VIA_1 V 40 VDD_part_0.ml19
+LAYER: METAL_1 M 2029 VDD_part_0.ml20
+
+CUT_LAYER: none
+GRID_CAP: false
+DIFF_CAP: false
+NUM_PINS: 0
+PINS: VDD_part_0.bmpin
+NUM_INSTANCE_TAPS: 1541
+INSTANCES: VDD_part_0.bminst
+I_LOADS:
+NODE_MAP:
+RESISTOR_MAP:
+TILE_FILE: VDD_part_0.mtile
+OUTPUT_WLT: drawn
+LAYOUT_SCALE_FACTOR: 1
+TEMPERATURE: 25
+BINARY_INST: true
+MICRON_UNITS: 2000

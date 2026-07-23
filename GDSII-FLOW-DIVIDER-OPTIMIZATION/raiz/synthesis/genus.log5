@@ -1,0 +1,379 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[16:12:49.518586] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+Version: 21.19-s055_1, built Wed May 29 12:33:07 PDT 2024
+Options: -files -sv genus_script.tcl 
+Date:    Tue Dec 02 16:12:49 2025
+Host:    VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB) (65503084KB)
+PID:     204677
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+
+[16:12:49.028051] Periodic Lic check successful
+[16:12:49.028051] Feature usage summary:
+[16:12:49.028051] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (3 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source genus_script.tcl
+#@ Begin verbose source ./genus_script.tcl
+@file(genus_script.tcl) 1: set_db init_lib_search_path ../lib/
+  Setting attribute of root '/': 'init_lib_search_path' = ../lib/
+@file(genus_script.tcl) 2: set_db init_hdl_search_path ../rtl/
+  Setting attribute of root '/': 'init_hdl_search_path' = ../rtl/
+@file(genus_script.tcl) 3: read_libs slow_vdd1v0_basicCells.lib
+
+Threads Configured:3
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@file(genus_script.tcl) 5: read_hdl -sv opdiv.sv
+@file(genus_script.tcl) 6: elaborate
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'opdiv' from file '../rtl/opdiv.sv'.
+Warning : Connected signal is wider than module port. [CDFG-464]
+        : Signal width (33) does not match width of input port 'A' (32) of instance 'inst0Count' of module 'counter_bit' in file '../rtl/opdiv.sv' on line 21.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Warning : Module port is wider than connected signal. [CDFG-465]
+        : Signal width (6) does not match width of output port 'nBits' (11) of instance 'inst0Count' of module 'counter_bit' in file '../rtl/opdiv.sv' on line 21.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'opdiv' in file '../rtl/opdiv.sv' on line 209.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'opdiv'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: opdiv, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: opdiv, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |        0.00 | 
+| hlo_clip           |       0 |       0 |        0.00 | 
+--------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(genus_script.tcl) 7: read_sdc ../constraints/constraints_top.sdc
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '1' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'clk'
+        : Use get_* commands to find the objects along with a wild card entry in the name of the object to check if the object is existing with different naming style.
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file '../constraints/constraints_top.sdc': create_clock -name clk -period 10 -waveform {0 5} [get_ports 'clk'].
+        : The 'read_sdc' command encountered a problem while trying to evaluate an SDC command. This SDC command will be added to the Tcl variable $::dc::sdc_failed_commands.
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '2' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -rise 0.1 [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '3' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -fall 0.1 [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '4' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'clk'
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+        : This SDC command requires the indicated options.  Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '4' of the SDC file '../constraints/constraints_top.sdc': set_clock_uncertainty 0.01 [get_ports 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '5' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'rst'
+Warning : Maximum message print count reached. [MESG-11] [get_clocks]
+        : Maximum print count of '5' reached for message 'SDC-208'.
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept empty ports lists
+        : This option is not valid for the indicated SDC command. Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Warning : Suppressed remaining 'SDC-208' warnings. [SDC-236]
+        : The line '5' of the SDC file '../constraints/constraints_top.sdc' had total 2 failures.
+        : Use the attribute 'collapse_sdc_msg' to control printing of warning 'SDC-208'.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '5' of the SDC file '../constraints/constraints_top.sdc': set_input_delay -max 1.0 [get_ports 'rst'] -clock [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '6' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'count'
+Warning : Suppressed remaining 'SDC-208' warnings. [SDC-236]
+        : The line '6' of the SDC file '../constraints/constraints_top.sdc' had total 2 failures.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file '../constraints/constraints_top.sdc': set_output_delay -max 1.0 [get_ports 'count'] -clock [get_clocks 'clk'].
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      4 (runtime  0.00)
+ "get_ports"                - successful      0 , failed      4 (runtime  0.00)
+ "set_clock_transition"     - successful      0 , failed      2 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      1 (runtime  0.00)
+ "set_output_delay"         - successful      0 , failed      1 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 14
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+        : You can examine the failed commands or save them to a file by querying the Tcl variable $::dc::sdc_failed_commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@file(genus_script.tcl) 9: set_db syn_generic_effort medium
+  Setting attribute of root '/': 'syn_generic_effort' = medium
+@file(genus_script.tcl) 10: set_db syn_map_effort medium
+  Setting attribute of root '/': 'syn_map_effort' = medium
+@file(genus_script.tcl) 11: set_db syn_opt_effort medium
+  Setting attribute of root '/': 'syn_opt_effort' = medium
+@file(genus_script.tcl) 13: syn_generic
+
+Stage: pre_early_cg
+-----------------------------------------------
+| Transform | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------
+-----------------------------------------------
+##Generic Timing Info for library domain: _default_ typical gate delay: 127.6 ps std_slew: 17.9 ps std_load: 1.0 fF
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: opdiv, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.005s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[3]'.
+        : To prevent this optimization, set the 'optimize_constant_0_flops' root attribute to 'false' or 'optimize_constant_0_seq' instance attribute to 'false'. You can also see the complete list of deleted sequential with command "report sequential -deleted" (on Reason "constant0").
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[4]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[5]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[6]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[7]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[8]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[9]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[10]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[11]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[12]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[13]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[14]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[15]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[16]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[17]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[18]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[19]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[20]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[21]'.
+Info    : Replacing a flip-flop with a logic constant 0. [GLO-12]
+        : The instance is 'state_reg[22]'.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'GLO-12'.
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 29 sequential instances.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so a hierarchical instance does not drive any primary outputs anymore. To see the list of deleted hierarchical instances, set the 'information_level' attribute to 2 or above. If the message is truncated set the message attribute 'truncate' to false to see the complete list. To prevent this optimization, set the 'delete_unloaded_insts' root/subdesign attribute to 'false' or 'preserve' instance attribute to 'true'.
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'opdiv' to generic gates using 'medium' effort.
+Running Synthesis Turbo Flow Version 1.
+PBS_Generic-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:02) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:12:53 (Dec02) |  197.3 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+TNS Restructuring config: no_value at stage: generic applied.
+Info    : Partition Based Synthesis execution skipped. [PHYS-752]
+        : Design size is less than the partition size '100000' for distributed generic optimization to kick in.
+Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: opdiv, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.005s)
+
+Stage: pre_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Starting mux data reorder optimization [v1.0] (stage: post_to_gen_setup, startdef: opdiv, recur: true)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.004s)
+
+Stage: post_to_gen_setup
+-----------------------------------------------------
+| Transform       | Accepts | Rejects | Runtime (s) | 
+-----------------------------------------------------
+| hlo_mux_reorder |       0 |       0 |        0.00 | 
+-----------------------------------------------------
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: pre_hlo_rtlopt
+-------------------------------------------
+| Trick | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------
+-------------------------------------------
+Starting infer macro optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed infer macro optimization (accepts: 0, rejects: 84, runtime: 0.004s)
+Starting decode mux sandwich optimization [v2.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed decode mux sandwich optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting decode mux optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed decode mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chop wide muxes [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed chop wide muxes (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed mux input consolidation (accepts: 1, rejects: 0, runtime: 0.001s)
+Starting constant-data mux optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed constant-data mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting chain-to-tree inequality transform [v2.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed chain-to-tree inequality transform (accepts: 0, rejects: 0, runtime: 0.004s)
+Starting reconvergence optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed reconvergence optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting logic restructure optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed logic restructure optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common select mux optimization [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed common select mux optimization (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting identity transform [v3.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed identity transform (accepts: 0, rejects: 1, runtime: 0.001s)
+Starting reduce operator chain [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed reduce operator chain (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting optimize datapath elements [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed optimize datapath elements (accepts: 6, rejects: 0, runtime: 0.001s)
+Starting datapath recasting [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed datapath recasting (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: pre_rtlopt, startdef: opdiv, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: pre_rtlopt
+---------------------------------------------------------------
+| Transform                 | Accepts | Rejects | Runtime (s) | 
+---------------------------------------------------------------
+| hlo_infer_macro           |       0 |      84 |        0.00 | 
+| hlo_decode_mux_sandwich   |       0 |       0 |        0.00 | 
+| hlo_mux_decode            |       0 |       0 |        0.00 | 
+| hlo_chop_mux              |       0 |       0 |        0.00 | 
+| hlo_mux_cascade_opt       |       0 |       0 |        0.00 | 
+| hlo_mux_consolidation     |       1 |       0 |        0.00 | 
+| hlo_constant_mux_opt      |       0 |       0 |        0.00 | 
+| hlo_inequality_transform  |       0 |       0 |        0.00 | 
+| hlo_reconv_opt            |       0 |       0 |        0.00 | 
+| hlo_restructure           |       0 |       0 |        0.00 | 
+| hlo_common_select_muxopto |       0 |       0 |        0.00 | 
+| hlo_identity_transform    |       0 |       1 |        0.00 | 
+| hlo_reduce_operator_chain |       0 |       0 |        0.00 | 
+| hlo_mux_cascade_opt       |       0 |       0 |        0.00 | 
+| hlo_mux_consolidation     |       0 |       0 |        0.00 | 
+| hlo_optimize_datapath     |       6 |       0 |        0.00 | 
+| hlo_datapath_recast       |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input        |       0 |       0 |        0.00 | 
+| hlo_clip                  |       0 |       0 |        0.00 | 
+---------------------------------------------------------------
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_hlo_rtlopt
+-------------------------------------------------
+| Trick       | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------
+| ume_runtime |       0 |       0 |        0.00 | 
+-------------------------------------------------
+Number of big hc bmuxes before = 1
+Number of non-ctl's : 2
+mux_nBits_265_19 mux_nBits_264_3 
+SOP DEBUG : Module= counter_bit, Cluster= ctl_A_265_19, ctl= 2, Non-ctl= 2
+Selected impl_type 1 (pla_form1 (optimized)) for sop cluster ctl_A_265_19.
+Number of non-ctl's : 11
+mux_next_164_22 mux_next_in_ready_o_164_22 mux_next_out_valid_o_164_22 mux_165_3349 mux_171_3351 mux_173_3353 mux_next_171_3355 mux_next_out_valid_o_171_3361 mux_next_184_3357 mux_next_in_ready_o_184_3359 mux_next_out_valid_o_184_3363 
+SOP DEBUG : Module= opdiv, Cluster= ctl_state_164_22, ctl= 9, Non-ctl= 11
+Selected impl_type 0 (ctl + 1-hot mux form) for sop cluster ctl_state_164_22.
+Info    : Pre-processed datapath logic. [DPOPT-6]
+        : Pre-processing optimizations applied to datapath logic in 'opdiv':
+          live_trim(2) sop(2) 
+Info    : Optimizing datapath logic. [DPOPT-1]
+        : Optimizing datapath logic in 'opdiv'.
+Info    : Implementing datapath configurations. [DPOPT-3]
+        : Implementing datapath configurations for 'CDN_DP_region_1_0'
+CSAGen Prep Share:0 Re-Write:8 Speculation: 0
+MaxCSA: Successfully built Maximal CSA Expression Expr0
+MaxCSA: Successfully built Maximal CSA Expression Expr1
+MaxCSA: Successfully built Maximal CSA Expression Expr2
+MaxCSA: Successfully built Maximal CSA Expression Expr3
+MaxCSA: Successfully built Maximal CSA Expression Expr4
+MaxCSA: Successfully built Maximal CSA Expression Expr5
+Info    : Accepted resource sharing opportunity. [RTLOPT-30]
+        : Merged the following sets of instances in 'CDN_DP_region_1_0_c7 in opdiv':
+	  (final_adder_ADD_TC_OP_4, final_adder_ADD_TC_OP_2, ADD_TC_OP149)
+
+Info    : Accepted resource sharing opportunity. [RTLOPT-30]
+        : Merged the following sets of instances in 'CDN_DP_region_1_0_c1 in opdiv':
+	  (ADD_TC_OP, addinc_add_218_48)
+	  (SUB_UNS_OP2, SUB_UNS_OP1, SUB_UNS_OP)
+
+Info    : Accepted resource sharing opportunity. [RTLOPT-30]
+        : Merged the following sets of instances in 'CDN_DP_region_1_0_c2 in opdiv':
+	  (SUB_UNS_OP2, SUB_UNS_OP1, SUB_UNS_OP)
+
+Info    : Accepted resource sharing opportunity. [RTLOPT-30]
+        : Merged the following sets of instances in 'CDN_DP_region_1_0_c3 in opdiv':
+	  (ADD_TC_OP, addinc_add_218_48)
+	  (SUB_UNS_OP2, SUB_UNS_OP1, SUB_UNS_OP)
+

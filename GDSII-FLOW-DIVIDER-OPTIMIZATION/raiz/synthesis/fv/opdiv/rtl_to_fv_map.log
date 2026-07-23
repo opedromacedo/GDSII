@@ -1,0 +1,146 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 564 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.05    seconds
+Elapse time  : 0       seconds
+Memory usage : 89.43   M bytes
+0
+// Command: set_mapping_method -sensitive
+0
+// Command: set_verification_information rtl_fv_map_db
+// Verification information is set to /home/xmen/Desktop/divider_optimization/rtl_fv_map_db.
+0
+// Command: read_implementation_information synthesis/fv/opdiv -revised fv_map
+// Reading implementation information from synthesis/fv/opdiv ...
+// Note: Implementation information 'fv_map.fv.json' will be used
+================================================================================
+          Information Category                         Count
+--------------------------------------------------------------------------------
+     Sequential instance phase                           142
+       Sequential optimization                             4
+        Sequential duplication                             0
+         Boundary optimization                            10
+            Synthesis equation                             5
+    Combinational loop breaker                             0
+                       Mapping                             0
+================================================================================
+// Note: Read implementation information successfully.
+0
+// Command: set_parallel_option -threads 1,4 -norelease_license
+// Number of threads is set to 1,4.
+0
+// Command: set_compare_options -threads 1,4
+Set computing threads of compare to 1,4.
+0
+// Command: set env(RC_VERSION)     "21.19-s055_1"
+21.19-s055_1
+// Command: set env(CDN_SYNTH_ROOT) "/usr/local/cadence/GENUS211/tools.lnx86"
+/usr/local/cadence/GENUS211/tools.lnx86
+// Command: set CDN_SYNTH_ROOT      "/usr/local/cadence/GENUS211/tools.lnx86"
+/usr/local/cadence/GENUS211/tools.lnx86
+// Command: set env(CW_DIR) "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware"
+/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware
+// Command: set CW_DIR      "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware"
+/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware
+// Command: set lec_version_required "21.20249"
+21.20249
+// Command: if { ($lec_version < $lec_version_required) &&
+//              [file exists /usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/old_encrypt_sim]} {
+//              set env(CW_DIR_SIM) "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/old_encrypt_sim"
+//              set CW_DIR_SIM      "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/old_encrypt_sim"
+//          } else {
+//              set env(CW_DIR_SIM) "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/sim"
+//              set CW_DIR_SIM      "/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/sim"
+//          }
+/usr/local/cadence/GENUS211/tools.lnx86/lib/chipware/sim
+// Command: set_multiplier_implementation boothrca -both
+0
+// Command: set_undefined_cell black_box -noascend -both
+0
+// Command: add_search_path ../lib/ -library -both
+// Warning: Directory '../lib/' doesn't exist and is ignored
+0
+// Command: read_library -liberty -both \
+//              /home/xmen/Desktop/divider_optimization/synthesis/../lib/slow_vdd1v0_basicCells.lib \
+//              /home/xmen/Desktop/divider_optimization/synthesis/../lib/slow_vdd1v0_basicCells.lib
+// Parsing file /home/xmen/Desktop/divider_optimization/synthesis/../lib/slow_vdd1v0_basicCells.lib ...
+// Liberty file /home/xmen/Desktop/divider_optimization/synthesis/../lib/slow_vdd1v0_basicCells.lib has been read. Skip it...
+// Note: (FIL1.8) File read in multiple times (occurrence:1)
+// Note: (FIL1.9) Duplicated liberty filenames skipped (occurrence:1)
+// Warning: (RTL9.17) Cell doesn't have any output pins or all output pins are undriven (blackboxed) (occurrence:1)
+// Note: (RTL9.26) Liberty pin with internal_node use default input_map (occurrence:16)
+// Note: Read Liberty library successfully
+0
+// Command: set_undriven_signal 0 -golden
+0
+// Command: set lec_version_required "16.20100"
+16.20100
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_style genus -golden
+//          } else {
+//              set_naming_style rc -golden
+//          }
+// Command: set_naming_style genus -golden
+0
+// Command: set_naming_rule "%s\[%d\]" -instance_array -golden
+0
+// Command: set_naming_rule "%s_reg" -register -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -instance -golden
+0
+// Command: set_naming_rule "%L.%s" "%L\[%d\].%s" "%s" -variable -golden
+0
+// Command: set lec_version_required "17.10200"
+17.10200
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_naming_rule -ungroup_separator {_} -golden
+//          }
+// Command: set_naming_rule -ungroup_separator _ -golden
+0
+// Command: set lec_version_required "17.20301"
+17.20301
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -const_port_extend
+//          }
+// Command: set_hdl_options -const_port_extend
+0
+// Command: set_hdl_options -unsigned_conversion_overflow on
+0
+// Command: set_hdl_option -v_to_vd on
+// Command: set_hdl_options -v_to_vd on
+// Note: '-v' to '-vd' option is 'ON'
+0
+// Command: set lec_version_required "20.20226"
+20.20226
+// Command: if {$lec_version >= $lec_version_required} {
+//              set_hdl_options -VERILOG_INCLUDE_DIR "sep:src"
+//          } else {
+//              set_hdl_options -VERILOG_INCLUDE_DIR "sep:src:cwd"
+//          }
+// Command: set_hdl_options -VERILOG_INCLUDE_DIR sep:src
+0
+// Command: delete_search_path -all -design -golden
+0
+// Command: add_search_path ../rtl/ -design -golden
+// Warning: Directory '../rtl/' doesn't exist and is ignored
+0
+// Command: read_design -enumconstraint -define SYNTHESIS  -merge bbox -golden -lastmod -noelab  -sv09 ../rtl/opdiv_correct.sv
+// Error: Directory ../rtl of file '../rtl/opdiv_correct.sv' does not exist.
+// Error: FIL1.2: Failed to open file
+//  Design file not found
+// Error: Total 1 error(s) of fail to open file found during read design. Please review parsing message.
+1
+    while executing
+"read_design -enumconstraint -define SYNTHESIS  -merge bbox -golden -lastmod -noelab  -sv09 ../rtl/opdiv_correct.sv"
+// 'dofile /home/xmen/Desktop/divider_optimization/synthesis/fv/opdiv/rtl_to_fv_map.do' is aborted at line 110
+// Warning: Error exit from dofile 'synthesis/fv/opdiv/rtl_to_fv_map.do' due to 'set dofile abort exit' command

@@ -1,0 +1,11 @@
+# Cadence Modus
+#   Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64)
+#   Date: Saturday, December 13, 2025
+source sample_script.tcl
+source sample_script.tcl
+source sample_script.tcl
+source sample_script.tcl
+verify_test_structures -workdir mydir -testmode FULLSCAN
+source sample_script.tcl
+write_vectors -workdir mydir -testmode FULLSCAN -inexperiment logic -language verilog -scanformat serial -outputfilename test_results
+write_vectors -workdir mydir -testmode FULLSCAN -inexperiment logic -language verilog -scanformat serial -outputfilename test_results

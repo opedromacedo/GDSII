@@ -1,0 +1,37 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 564 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: tclmode
+// Command: set_screen_display -noprogress
+0
+// Command: set_dofile_abort exit
+0
+// Command: set lec_version [regsub {(-)[A-Za-z]} $env(LEC_VERSION) ""]
+24.10100
+// Command: set wlec_analyze_dp_flowgraph true
+true
+// Command: set share_dp_analysis         true
+true
+// Command: set lec_version_required "19.10100"
+19.10100
+// Command: if {$lec_version >= $lec_version_required &&
+//              $wlec_analyze_dp_flowgraph} {
+//              set DATAPATH_SOLVER_OPTION "-flowgraph"
+//          } elseif {$share_dp_analysis} {
+//              set DATAPATH_SOLVER_OPTION "-share"
+//          } else {
+//              set DATAPATH_SOLVER_OPTION ""
+//          }
+-flowgraph
+// Command: tcl_set_command_name_echo on
+// Command: set logfile synthesis/fv/opdiv/rtl_to_fv_map.log ;# user can modify this name for succeeding runs
+synthesis/fv/opdiv/rtl_to_fv_map.log
+// Command: set_log_file $logfile -replace

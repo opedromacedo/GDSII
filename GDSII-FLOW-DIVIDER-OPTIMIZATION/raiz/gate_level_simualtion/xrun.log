@@ -1,0 +1,30 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Dec 04, 2025 at 11:48:35 -03
+xrun
+	-timescale 1ns/10ps
+	opdiv_netlist.v
+	op_test_div2.sv
+	-v slow_vdd1v0_basiccells.v
+	-access +rwc
+	-define SDF_TEST
+	-mess
+	-gui
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /usr/local/cadence/XCELIUM2403/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb.a tb.b tb.c tb.clock tb.in_ready_o tb.in_valid_i tb.nreset tb.out_ready_i tb.out_valid_o tb.r tb.signal_division
+Created probe 1
+xcelium> reset
+Loaded snapshot worklib.tb:sv
+xcelium> run
+TIME=25500 a=100 b=3 -> c=33 r=1
+TIME=80500 a=200 b=7 -> c=28 r=4
+Fim da simulação em tempo 105500
+Simulation complete via $finish(1) at time 1055 NS + 0
+./op_test_div2.sv:72         $finish;
+xcelium> TOOL:	xrun(64)	24.03-s005: Exiting on Dec 13, 2025 at 19:08:38 -03  (total: 223:20:03)

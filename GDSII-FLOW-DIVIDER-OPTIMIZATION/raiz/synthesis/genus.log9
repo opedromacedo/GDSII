@@ -1,0 +1,45 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[16:31:58.518594] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+Version: 21.19-s055_1, built Wed May 29 12:33:07 PDT 2024
+Options: -files -sv sample_script.tcl 
+Date:    Tue Dec 02 16:31:58 2025
+Host:    VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB) (65503084KB)
+PID:     208208
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+
+[16:31:58.109810] periodic Lic check successful
+[16:31:58.109810] Feature usage summary:
+[16:31:58.109811]   Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (3 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source sample_script.tcl
+#@ Begin verbose source ./sample_script.tcl
+@file(sample_script.tcl) 3: build_model <workdir | directory> -designsource <netlist> -techlib <files or directories> -designtop <top_level_cell>
+#@ End verbose source ./sample_script.tcl
+invalid command name "build_model"
+Encountered problems processing file: sample_script.tcl
+WARNING: This version of the tool is 551 days old.
+@genus:root: 2> exit
+
+Lic Summary:
+[16:32:29.078512] Cdslmd servers: melicense
+[16:32:29.078521] Feature usage summary:
+[16:32:29.078521] Genus_Synthesis
+
+Normal exit.

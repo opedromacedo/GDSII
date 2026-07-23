@@ -1,0 +1,348 @@
+Starting Command: verify_test_structures 
+
+INFO (TDA-005): Command Line Invocation: 
+            verify_test_structures -testmode FULLSCAN -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121525153507-316072000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Monday Dec 15 15:35:07 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 1132196.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -LOGFILE mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121525153507-316072000
+[end TDA_009]
+INFO (TSV-900): verify_test_structures processing has started Mon Dec 15 15:35:07 2025    [end TSV_900] 
+------------------- verify_test_structures Process Preview ---------------------
+  apply constraints ...................................... constraints=yes    
+  Print 1 message per source of clock race ............... limitcisource=yes  
+  Print 1 Message per capture of clock race .............. limitcicapture=yes 
+  Check for mutually exclusive gating logic (MEG) ........ megraces=yes       
+  Use raise message severity attributes if they exist .... raisemsgsev=no    
+  Reporting options ...................................... report[option]=yes/no 
+    Process Preview ......................................   preview=yes     
+    Circuit Statistics ...................................   circuit=yes      
+    Message Summary ......................................   summary=yes      
+    Specific Messages ....................................   specific=yes     
+    Tests Status .........................................   status=no       
+    Output File Names and Size ...........................   filestats=yes    
+    Display messages for cloaked objects .................   cloakedobj=no   
+  Re-run verify_test_structures test(s) ................... reruntests=no     
+  Use message suppression attributes if they exist ....... suppressmsg=no    
+  Test selected .......................................... test[option]=yes/no 
+    Analyze test clock control of memory elements ........   testclockusage=yes 
+    Analyze three-state drivers for contention ...........   tsdcontention=yes 
+    Analyze feedback loops and keeper devices ............   feedback=yes 
+    Analyze clock choppers ...............................   clockchopper=yes 
+    Analyze flip-flop and latch scan characteristics .....   latchusage=yes 
+    Analyze explicit fixed value latches .................   explicitfvlatch=yes 
+    Analyze potential clock signal races .................   clocksignalraces=yes 
+    Analyze internal scan chains .........................   internalscanchains=yes 
+
+--------------------Circuit Statistics--------------------
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          7,067  Blocks                       5,679  Blocks
+         22,383  Pins                         5,679  Nodes
+         12,771  Nets
+
+Primary Inputs:                      Primary Outputs:
+         71  Input Only                        67  Output Only
+          0  Input/Output                       0  Input/Output
+         71  Total Inputs                      67  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        426  Tied to 0                          0  Two-State
+        142  Tied to 1                          0  Three-State
+          1  Tied to X                          0  Total Dotted Nets
+        569  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+        142  Rising  Edge Flop w/Set and Reset-Dominant Port
+        142  Total Flops
+
+      1,223  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          2  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+         67      PI  +SC                                  nreset / nreset
+         65      PI  -EC  -SC                             clock / clock
+          0      PI  +SE                                  SE / SE
+         69      PI   SI                                  scan_in / scan_in
+        137      PO   SO                                  scan_out / scan_out
+
+  
+   Analyze test clocks' control of memory elements    
+WARNING (TSV-315): Memory element block \Quatient_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block a_signal_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin a_signal_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block b_signal_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin b_signal_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block ena_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin ena_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block in_ready_o_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin in_ready_o_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block out_valid_o_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin out_valid_o_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block signal_division_intern_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin signal_division_intern_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+
+Analyze test clocks' control of memory elements process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze three-state drivers for contention 
+
+Analyze three-state drivers for contention process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze feedback loops and keeper devices          
+
+Analyze feedback loops and keeper devices process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze clock choppers                             
+
+Analyze clock choppers process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.02
+  
+   Analyze flip-flop and latch scan characteristics   
+WARNING (TSV-400): Observable scan chain ending at pin scan_out is not a controllable scan chain. The last observation flop that was found in the scan chain is unidentified. [end TSV_400] 
+INFO (TSV-379): Observable scan chain ending at 'pin scan_out' is not a controllable scan chain. The length of the scan chain is 0 bit positions.   [end TSV_379] 
+INFO (TSV-567): There are 0 controllable scan chains fed by Scan In (SI) primary inputs.   [end TSV_567] 
+INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.   [end TSV_568] 
+INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).   [end TSV_569] 
+INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).   [end TSV_570] 
+WARNING (TSV-571): A Scan In (SI) pin scan_in does not feed to a Scan Out (SO), a Multiple-Input Signature Register (MISR) input, Pattern Generator, or a controllable latch.   [end TSV_571] 
+INFO (TSV-383): There are 284 floating latches.   [end TSV_383] 
+
+Analyze flip-flop and latch scan characteristics process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze explicit fixed value latches 
+
+Analyze explicit fixed value latches process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze potential clock signal races               
+   Check for mutually exclusive gating logic (MEG)    
+
+Analyze potential clock signal races process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze internal scan chains 
+
+Analyze channel inputs for validity process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+
+--------------------File Information----------------------
+          65536 mydir/tbdata/TSVmessageFile.FULLSCAN 
+
+INFO (TSV-908): verify_test_structures processing complete.   [end TSV_908] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,050,208  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:20.06                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:35:27 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TLM-055): Design Summary
+      1 INFO (TSV-379): Observable scan chain ending at 'pin scan_out' is not a controllable scan chain. The length of the scan chain is 0 bit positions.    
+      1 INFO (TSV-383): There are 284 floating latches.    
+      1 INFO (TSV-567): There are 0 controllable scan chains fed by Scan In (SI) primary inputs.    
+      1 INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.    
+      1 INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).    
+      1 INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).    
+      1 INFO (TSV-900): verify_test_structures processing has started Mon Dec 15 15:35:07 2025     
+      1 INFO (TSV-908): verify_test_structures processing complete.    
+
+  WARNING Messages...
+    142 WARNING (TSV-315): Memory element block \Quatient_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.    
+      1 WARNING (TSV-400): Observable scan chain ending at pin scan_out is not a controllable scan chain. The last observation flop that was found in the scan chain is unidentified.  
+      1 WARNING (TSV-571): A Scan In (SI) pin scan_in does not feed to a Scan Out (SO), a Multiple-Input Signature Register (MISR) input, Pattern Generator, or a controllable latch.    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

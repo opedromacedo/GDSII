@@ -1,0 +1,41 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+Date:		Mon Feb  2 15:52:16 2026
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[15:52:16.518562] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_1127825_VT0138_xmen_VMd5yu.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+**WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+set_multi_cpu_usage -local_cpu 32
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+**ERROR: (IMPSYT-6696):	Initfile (innovus_script_old.tcl) does not exist.
+@innovus 1> gui_select -point {0.05700 0.03100}
+@innovus 2> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Mon Feb  2 15:52:35 2026
+  Total CPU time:     0:00:10
+  Total real time:    0:00:20
+  Peak memory (main): 995.97MB
+
+
+*** Memory Usage v#1 (Current mem = 1004.523M, initial mem = 495.000M) ***
+*** Message Summary: 1 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:09.9, real=0:00:19.0, mem=1004.5M) ---

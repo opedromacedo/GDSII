@@ -1,0 +1,94 @@
+
+INFO (TDA-005): Command Line Invocation: 
+            build_testmode -assignfile opdiv.FULLSCAN.pinassign -testmode FULLSCAN -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_testmode_FULLSCAN_121525153446-070382000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Monday Dec 15 15:34:46 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 1132048.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -ASSIGNFILE opdiv.FULLSCAN.pinassign
+          * update_assign_file=
+            -LOGFILE mydir/testresults/logs/log_build_testmode_FULLSCAN_121525153446-070382000
+[end TDA_009]
+MODEDEFPATH set to:  /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+
+   TDR NAME      =  dummy.tdr 
+
+   SCAN_TYPE     =  GSD 
+   BOUNDARY      =  NONE 
+   IN            =  PI 
+   OUT           =  PO 
+
+INFO (TTM-391): A default modeinit sequence will be generated.   [end TTM_391] 
+INFO (TTM-387): A default scanop sequence will be generated.   [end TTM_387] 
+INFO (THM-814): Testmode contains 97.46% active logic,  2.54% inactive logic and  0.00% constraint logic.   [end THM_814] 
+INFO (TTM-359): There are 1 scan chains which are only observable.  [end TTM_359] 
+
+There are no PPIs for Test Mode:  FULLSCAN
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+ Latch Summary for Test Mode:  FULLSCAN
+ Latch Type                #Active   #Inactive       Total
+ ---------------------   ---------   ---------   ---------
+ Test Constraint (TC)            0           0           0 
+ Scan Enable     (SE)            0           0           0 
+ Fixed Value     (FV)            0           0           0 
+ Floating                      284           0         284 
+ Finite State    (FSM)           0           0           0 
+
+INFO (TTM-800): build_testmode has created mode FULLSCAN. [end TTM_800] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          2  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+         67      PI  +SC                                  nreset / nreset
+         65      PI  -EC  -SC                             clock / clock
+          0      PI  +SE                                  SE / SE
+         69      PI   SI                                  scan_in / scan_in
+        137      PO   SO                                  scan_out / scan_out
+
+
+               Total Memory =           16,205,392  bytes
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.05
+               Elapsed Time =   0:00:20.20
+
+

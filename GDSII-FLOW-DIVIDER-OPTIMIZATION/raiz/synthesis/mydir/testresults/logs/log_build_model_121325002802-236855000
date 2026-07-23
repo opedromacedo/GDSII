@@ -1,0 +1,66 @@
+Starting Command: build_model 
+
+INFO (TDA-005): Command Line Invocation: 
+            build_model -designtop opdiv -workdir mydir -designsource opdiv_netlist.v -techlib ../../lib/slow_vdd1v0_basiccells.v  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325002802-236855000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Saturday Dec 13 00:28:02 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 921462.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+
+            -designtop opdiv
+            -TECHLIB ../../lib/slow_vdd1v0_basiccells.v
+            -LOGFILE mydir/testresults/logs/log_build_model_121325002802-236855000
+            -DESIGNSOURCE opdiv_netlist.v
+[end TDA_009]
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file 'opdiv_netlist.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates. [end TEI_030] 
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              810,912  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      2 ERROR (TEI-023): Build Model: unable to read file 'opdiv_netlist.v'. Specify a valid file or path name with proper permissions.   
+      1 ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

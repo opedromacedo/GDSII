@@ -1,0 +1,59 @@
+[02/01 17:51:19      0s] 
+[02/01 17:51:19      0s] Cadence Innovus(TM) Implementation System.
+[02/01 17:51:19      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/01 17:51:19      0s] 
+[02/01 17:51:19      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[02/01 17:51:19      0s] Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+[02/01 17:51:19      0s] Date:		Sun Feb  1 17:51:19 2026
+[02/01 17:51:19      0s] Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+[02/01 17:51:19      0s] OS:		Rocky Linux 8.10 (Green Obsidian)
+[02/01 17:51:19      0s] 
+[02/01 17:51:19      0s] License:
+[02/01 17:51:19      0s] 		[17:51:19.518594] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+[02/01 17:51:19      0s] 
+[02/01 17:51:19      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[02/01 17:51:19      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[02/01 17:51:24      4s] 
+[02/01 17:51:24      4s] 
+[02/01 17:51:26      6s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[02/01 17:51:27      7s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[02/01 17:51:27      7s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[02/01 17:51:27      7s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[02/01 17:51:27      7s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[02/01 17:51:27      7s] @(#)CDS: CPE v21.19-s026
+[02/01 17:51:27      7s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[02/01 17:51:27      7s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[02/01 17:51:27      7s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[02/01 17:51:27      7s] @(#)CDS: RCDB 11.15.0
+[02/01 17:51:27      7s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[02/01 17:51:27      7s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[02/01 17:51:27      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_757751_VT0138_xmen_PKM2rT.
+
+[02/01 17:51:27      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_757751_VT0138_xmen_PKM2rT.
+[02/01 17:51:27      7s] 
+[02/01 17:51:27      7s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[02/01 17:51:27      7s] **WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+[02/01 17:51:27      7s] set_multi_cpu_usage -local_cpu 32
+[02/01 17:51:27      7s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[02/01 17:51:27      7s] [INFO] Loading PVS 23.11 fill procedures
+[02/01 17:51:27      7s] Innovus terminated by user interrupt.
+[02/01 17:51:27      7s] QObject::~QObject: Timers cannot be stopped from another thread
+[02/01 17:51:27      7s] TclStackFree: incorrect freePtr (0x7fd66d620dd0 != 0x7fd66d6211d0). Call out of sequence?
+[02/01 17:51:27      7s] Innovus terminated by internal (ABORT) error/signal...
+[02/01 17:51:27      7s] *** Stack trace:
+[02/01 17:51:27      7s] 
+[02/01 17:51:27      7s] *** Memory Usage v#1 (Current mem = 990.949M, initial mem = 495.000M) ***
+[02/01 17:51:27      7s] /usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x19409bab]
+[02/01 17:51:27      7s] 
+[02/01 17:51:27      7s] *** Summary of all messages that are not suppressed in this session:
+[02/01 17:51:27      7s] Severity  ID               Count  Summary                                  
+[02/01 17:51:27      7s] WARNING   PRL-39               1  Number of local CPUs specified (%d) > Ac...
+[02/01 17:51:27      7s] *** Message Summary: 1 warning(s), 0 error(s)
+[02/01 17:51:27      7s] 
+[02/01 17:51:27      7s] --- Ending "Innovus" (totcpu=0:00:07.9, real=0:00:08.0, mem=990.9M) ---
+[02/01 17:51:27      7s] /usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0x9c)[0x1940a027]
+[02/01 17:51:27      7s] /usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x6c19b96]
+[02/01 17:51:27      7s] /lib64/libpthread.so.0(+0x1298f)[0x7fd69d8b798f]
+[02/01 17:51:27      7s] /lib64/libc.so.6(gsignal+0x10f)[0x7fd69cd0552f]
+[02/01 17:51:27      7s] /lib64/libc.so.6(abort+0x126)[0x7fd69ccd8e64]
+[02/01 17:51:27      7s] /usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_PanicVA+0x15d)[0x2a1b970d]

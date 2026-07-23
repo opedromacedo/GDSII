@@ -1,0 +1,2 @@
+#e1(02Dec2025:12:22:25): source ./xcelium.d/env.d/env.history.02Dec2025_12_22_25
+s1(02Dec2025:12:22:25):  xrun op_test_div.sv -access +rwc -gui 

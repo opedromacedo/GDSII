@@ -1,0 +1,240 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[17:03:24.518538] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+Version: 21.19-s055_1, built Wed May 29 12:33:07 PDT 2024
+Options: 
+Date:    Tue Dec 02 17:03:24 2025
+Host:    VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB) (65503084KB)
+PID:     215414
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+
+[17:03:24.057954] Periodic Lic check successful
+[17:03:24.057962] Feature usage summary:
+[17:03:24.057962] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (3 seconds elapsed).
+
+WARNING: This version of the tool is 552 days old.
+@genus:root: 1> set_db init_lib_search_path ../lib/set_db init_hdl_search_path ../rtl/read_libs slow_vdd1v0_basicCells.libread_hdl -sv opdiv.svelaborate
+Error   : A command argument did not match any of the acceptable command options. [TUI-64] [set_db]
+        : The argument in question is '../rtl/read_libs'.
+        : Check the command usage and correct the input to the command.
+  set_db: set attributes on objects 
+
+Usage: set_db [-quiet] [-verbose] [-dbu] [-index <string>] <string> <string> [<string>]
+
+    [-quiet]:
+        keeps quiet unless there are problems 
+    [-verbose]:
+        enables verbose 
+    [-dbu]:
+        indicates that attribute (coord, pt, rect, polygon, area, etc.) will be in database units 
+    [-index <string>]:
+        list of indices in a form of pairs of index_name value or a object name 
+    <string>:
+        <start> can be any object list (or collection) or <shorthand> (e.g., nets, insts, etc) 
+    <string>:
+        the <chain> is in the form [.<attribute_name1>[.<attribute_name2>]...] 
+    [<string>]:
+        the attribute value 
+1
+@genus:root: 2> set_db init_lib_search_path ../lib/
+  Setting attribute of root '/': 'init_lib_search_path' = ../lib/
+1 ../lib/
+@genus:root: 3> set_db init_hdl_search_path ../rtl/
+  Setting attribute of root '/': 'init_hdl_search_path' = ../rtl/
+1 ../rtl/
+@genus:root: 4> read_libs slow_vdd1v0_basicCells.lib
+
+Threads Configured:3
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@genus:root: 5> read_hdl -sv opdiv.sv
+@genus:root: 6> elaborate
+  Library has 324 usable logic and 128 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'opdiv' from file '../rtl/opdiv.sv'.
+Warning : Connected signal is wider than module port. [CDFG-464]
+        : Signal width (33) does not match width of input port 'A' (32) of instance 'inst0Count' of module 'counter_bit' in file '../rtl/opdiv.sv' on line 21.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Warning : Module port is wider than connected signal. [CDFG-465]
+        : Signal width (6) does not match width of output port 'nBits' (11) of instance 'inst0Count' of module 'counter_bit' in file '../rtl/opdiv.sv' on line 21.
+        : This may cause simulation mismatches between the original and synthesized designs.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'opdiv' in file '../rtl/opdiv.sv' on line 209.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'opdiv'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: opdiv, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: opdiv, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------
+| Transform          | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------
+| hlo_clip_mux_input |       0 |       0 |        0.00 | 
+| hlo_clip           |       0 |       0 |        0.00 | 
+--------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+design:opdiv
+@genus:root: 7> read_sdc ../constraints/constraints_top.sdc
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '1' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'clk'
+        : Use get_* commands to find the objects along with a wild card entry in the name of the object to check if the object is existing with different naming style.
+Error   : A required object parameter could not be found. [TUI-61] [create_clock]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file '../constraints/constraints_top.sdc': create_clock -name clk -period 10 -waveform {0 5} [get_ports 'clk'].
+        : The 'read_sdc' command encountered a problem while trying to evaluate an SDC command. This SDC command will be added to the Tcl variable $::dc::sdc_failed_commands.
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '2' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -rise 0.1 [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '3' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -fall 0.1 [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '4' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'clk'
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The set_clock_uncertainty command requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+        : This SDC command requires the indicated options.  Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '4' of the SDC file '../constraints/constraints_top.sdc': set_clock_uncertainty 0.01 [get_ports 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '5' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'rst'
+Warning : Maximum message print count reached. [MESG-11] [get_clocks]
+        : Maximum print count of '5' reached for message 'SDC-208'.
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept empty ports lists
+        : This option is not valid for the indicated SDC command. Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Warning : Suppressed remaining 'SDC-208' warnings. [SDC-236]
+        : The line '5' of the SDC file '../constraints/constraints_top.sdc' had total 2 failures.
+        : Use the attribute 'collapse_sdc_msg' to control printing of warning 'SDC-208'.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '5' of the SDC file '../constraints/constraints_top.sdc': set_input_delay -max 1.0 [get_ports 'rst'] -clock [get_clocks 'clk'].
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '6' of the SDC file '../constraints/constraints_top.sdc'  cannot find any ports named 'count'
+Warning : Suppressed remaining 'SDC-208' warnings. [SDC-236]
+        : The line '6' of the SDC file '../constraints/constraints_top.sdc' had total 2 failures.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file '../constraints/constraints_top.sdc': set_output_delay -max 1.0 [get_ports 'count'] -clock [get_clocks 'clk'].
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      4 (runtime  0.00)
+ "get_ports"                - successful      0 , failed      4 (runtime  0.00)
+ "set_clock_transition"     - successful      0 , failed      2 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      1 (runtime  0.00)
+ "set_output_delay"         - successful      0 , failed      1 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 14
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+        : You can examine the failed commands or save them to a file by querying the Tcl variable $::dc::sdc_failed_commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@genus:root: 8> read_sdc ../constraints/constraints_top.sdc
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '2' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clock'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '2' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -rise 0.1 [get_clocks 'clock'].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '3' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clock'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file '../constraints/constraints_top.sdc': set_clock_transition -fall 0.1 [get_clocks 'clock'].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '5' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clock'
+Error   : Invalid SDC command option combination. [SDC-204] [set_io_delay]
+        : The set_io_delay command does not accept any invalid clock
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '5' of the SDC file '../constraints/constraints_top.sdc': set_input_delay -max 1.0 [get_ports 'nreset'] -clock [get_clocks 'clock'].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '6' of the SDC file '../constraints/constraints_top.sdc'  cannot find any clocks named 'clock'
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '6' of the SDC file '../constraints/constraints_top.sdc': set_output_delay -max 1.0 [get_ports 'c'] -clock [get_clocks 'clock'].
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      4 (runtime  0.00)
+ "get_ports"                - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_transition"     - successful      0 , failed      2 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      1 (runtime  0.00)
+ "set_output_delay"         - successful      0 , failed      1 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 8
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+read_sdc completed in 00:00:00 (hh:mm:ss)
+@genus:root: 9> read_sdc ../constraints/constraints_top.sdc
+Info    : Removing exception that can no longer be satisfied. [TIM-308]
+        : The exception is 'path_groups/clk'. The underlying object being freed is clock 'clock:opdiv/clk'.
+        : This occurs when from, through, or to points for the exception are deleted.
+Statistics for commands executed by read_sdc:
+ "create_clock"             - successful      1 , failed      0 (runtime  0.00)
+ "get_clocks"               - successful      4 , failed      0 (runtime  0.00)
+ "get_ports"                - successful      4 , failed      0 (runtime  0.00)
+ "set_clock_transition"     - successful      2 , failed      0 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      1 , failed      0 (runtime  0.00)
+ "set_input_delay"          - successful      1 , failed      0 (runtime  0.00)
+ "set_output_delay"         - successful      1 , failed      0 (runtime  0.00)
+read_sdc completed in 00:00:00 (hh:mm:ss)
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 3023s, ST: 14s, FG: 14s, CPU: 1.0%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.1, cpu: 32, total: 62.5G, free: 21.7G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 3025s, ST: 14s, FG: 14s, CPU: 1.0%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.1, cpu: 32, total: 62.5G, free: 21.7G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 3030s, ST: 14s, FG: 14s, CPU: 1.0%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.1, cpu: 32, total: 62.5G, free: 21.7G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 3100s, ST: 14s, FG: 14s, CPU: 1.0%}, MEM {curr: 1.0G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.1, cpu: 32, total: 62.5G, free: 21.7G}
+Abnormal exit.

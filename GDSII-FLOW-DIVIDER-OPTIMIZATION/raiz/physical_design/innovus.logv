@@ -1,0 +1,95 @@
+[12/03 20:18:54      0s] 
+[12/03 20:18:54      0s] Cadence Innovus(TM) Implementation System.
+[12/03 20:18:54      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[12/03 20:18:54      0s] 
+[12/03 20:18:54      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[12/03 20:18:54      0s] Options:	-stylus 
+[12/03 20:18:54      0s] Date:		Wed Dec  3 20:18:54 2025
+[12/03 20:18:54      0s] Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+[12/03 20:18:54      0s] OS:		Rocky Linux 8.10 (Green Obsidian)
+[12/03 20:18:54      0s] 
+[12/03 20:18:54      0s] License:
+[12/03 20:18:54      0s] 		[20:18:54.518562] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+[12/03 20:18:54      0s] 
+[12/03 20:18:54      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[12/03 20:18:54      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[12/03 20:18:59      4s] 
+[12/03 20:18:59      4s] 
+[12/03 20:19:01      6s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[12/03 20:19:02      7s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[12/03 20:19:02      7s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[12/03 20:19:02      7s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[12/03 20:19:02      7s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[12/03 20:19:02      7s] @(#)CDS: CPE v21.19-s026
+[12/03 20:19:02      7s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[12/03 20:19:02      7s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[12/03 20:19:02      7s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[12/03 20:19:02      7s] @(#)CDS: RCDB 11.15.0
+[12/03 20:19:02      7s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[12/03 20:19:02      7s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[12/03 20:19:02      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_326228_VT0138_xmen_9EPECE.
+
+[12/03 20:19:02      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_326228_VT0138_xmen_9EPECE.
+[12/03 20:19:02      7s] 
+[12/03 20:19:02      7s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[12/03 20:19:02      7s] [INFO] Loading PVS 23.11 fill procedures
+[12/03 20:19:03      8s] 
+[12/03 20:19:03      8s] **INFO:  MMMC transition support version v31-84 
+[12/03 20:19:03      8s] 
+[12/03 20:19:04      9s] @innovus 1> set_db init_power_nets VDD
+[12/03 20:21:29     12s] @innovus 2> set_db init_ground_nets VSS
+[12/03 20:21:29     12s] @innovus 3> #################################
+[12/03 20:21:29     12s] read_mmmc opdiv.view
+[12/03 20:21:29     12s] #################################
+[12/03 20:21:29     12s] #@ Begin verbose source opdiv.view (pre)
+[12/03 20:21:29     12s] #@ End verbose source opdiv.view
+[12/03 20:21:29     12s] **ERROR: (TCLCMD-1320):	The file 'opdiv.view' provided to the read_mmmc command  did not contain enough data to successfully initialize the system.  The minimum requirement for this file is that it fully creates one analysis view and its sub-components successfully - and then activates that view.   You should check the log file for issues related creation of the MMMC objects or the enabling of the active views via set_analysis_view.
+[12/03 20:21:34     12s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv.view'.For more details, refer to error message from console.
+[12/03 20:21:34     12s] 
+[12/03 20:21:34     12s] #################################
+[12/03 20:21:34     12s] read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+[12/03 20:21:34     12s] #################################
+[12/03 20:21:34     12s] 
+[12/03 20:21:34     12s] Loading LEF file ../lef/gsclib045_tech.lef ...
+[12/03 20:21:34     12s] 
+[12/03 20:21:34     12s] Loading LEF file ../lef/gsclib045_macro.lef ...
+[12/03 20:21:34     12s] Set DBUPerIGU to M2 pitch 400.
+[12/03 20:21:34     13s] **WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[12/03 20:21:34     13s] Type 'man IMPLF-200' for more detail.
+[12/03 20:21:34     13s] 
+[12/03 20:21:34     13s] ##  Check design process and node:  
+[12/03 20:21:34     13s] ##  Both design process and tech node are not set.
+[12/03 20:21:34     13s] 
+[12/03 20:21:34     13s] #################################
+[12/03 20:21:34     13s] read_netlist opdiv_netlist.v
+[12/03 20:21:34     13s] #################################
+[12/03 20:21:34     13s] #% Begin Load netlist data ... (date=12/03 20:21:34, mem=1012.8M)
+[12/03 20:21:34     13s] *** Begin netlist parsing (mem=1028.9M) ***
+[12/03 20:21:34     13s] Created 0 new cells from 0 timing libraries.
+[12/03 20:21:34     13s] Reading netlist ...
+[12/03 20:21:34     13s] Backslashed names will retain backslash and a trailing blank character.
+[12/03 20:21:34     13s] Reading verilog netlist 'opdiv_netlist.v'
+[12/03 20:21:34     13s] 
+[12/03 20:21:34     13s] *** Memory Usage v#1 (Current mem = 1032.859M, initial mem = 495.000M) ***
+[12/03 20:21:34     13s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1032.9M) ***
+[12/03 20:21:34     13s] #% End Load netlist data ... (date=12/03 20:21:34, total cpu=0:00:00.0, real=0:00:00.0, peak res=1018.1M, current mem=1018.1M)
+[12/03 20:21:34     13s] Top level cell is opdiv.
+[12/03 20:21:34     13s] Hooked 0 DB cells to tlib cells.
+[12/03 20:21:34     13s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1022.0M, current mem=1022.0M)
+[12/03 20:21:34     13s] Starting recursive module instantiation check.
+[12/03 20:21:34     13s] No recursion found.
+[12/03 20:21:34     13s] Building hierarchical netlist for Cell opdiv ...
+[12/03 20:21:34     13s] *** Netlist is unique.
+[12/03 20:21:34     13s] Setting Std. cell height to 3420 DBU (smallest netlist inst).
+[12/03 20:21:34     13s] ** info: there are 576 modules.
+[12/03 20:21:34     13s] ** info: there are 1433 stdCell insts.
+[12/03 20:21:34     13s] 
+[12/03 20:21:34     13s] *** Memory Usage v#1 (Current mem = 1080.273M, initial mem = 495.000M) ***
+[12/03 20:21:34     13s] **WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[12/03 20:21:34     13s] Type 'man IMPFP-3961' for more detail.
+[12/03 20:21:34     13s] **WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+[12/03 20:21:34     13s] Type 'man IMPFP-3961' for more detail.
+[12/03 20:21:34     13s] Start create_tracks
+[12/03 20:21:34     13s] Extraction setup Started 
+[12/03 20:21:34     13s] 
+[12/03 20:21:34     13s] Trim Metal Layers:

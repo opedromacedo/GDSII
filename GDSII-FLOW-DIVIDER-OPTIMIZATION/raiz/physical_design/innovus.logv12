@@ -1,0 +1,837 @@
+[01/21 15:00:04      0s] 
+[01/21 15:00:04      0s] Cadence Innovus(TM) Implementation System.
+[01/21 15:00:04      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[01/21 15:00:04      0s] 
+[01/21 15:00:04      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[01/21 15:00:04      0s] Options:	-stylus 
+[01/21 15:00:04      0s] Date:		Wed Jan 21 15:00:04 2026
+[01/21 15:00:04      0s] Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+[01/21 15:00:04      0s] OS:		Rocky Linux 8.10 (Green Obsidian)
+[01/21 15:00:04      0s] 
+[01/21 15:00:04      0s] License:
+[01/21 15:00:04      0s] 		[15:00:04.518482] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+[01/21 15:00:04      0s] 
+[01/21 15:00:04      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[01/21 15:00:04      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[01/21 15:00:09      4s] 
+[01/21 15:00:09      4s] 
+[01/21 15:00:11      6s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[01/21 15:00:12      7s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[01/21 15:00:12      7s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[01/21 15:00:12      7s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[01/21 15:00:12      7s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[01/21 15:00:12      7s] @(#)CDS: CPE v21.19-s026
+[01/21 15:00:12      7s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[01/21 15:00:12      7s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[01/21 15:00:12      7s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[01/21 15:00:12      7s] @(#)CDS: RCDB 11.15.0
+[01/21 15:00:12      7s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[01/21 15:00:12      7s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[01/21 15:00:12      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_12945_VT0138_xmen_rhdFe2.
+
+[01/21 15:00:12      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_12945_VT0138_xmen_rhdFe2.
+[01/21 15:00:12      7s] 
+[01/21 15:00:12      7s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[01/21 15:00:12      7s] [INFO] Loading PVS 23.11 fill procedures
+[01/21 15:00:13      8s] 
+[01/21 15:00:13      8s] **INFO:  MMMC transition support version v31-84 
+[01/21 15:00:13      8s] 
+[01/21 15:00:14      9s] @innovus 1> set_db init_power_nets VDD
+[01/21 15:09:10     73s] @innovus 2> set_db init_ground_nets VSS
+[01/21 15:09:10     73s] @innovus 3> #################################
+[01/21 15:09:10     73s] read_mmmc opdiv_correct.view
+[01/21 15:09:10     73s] #################################
+[01/21 15:09:10     73s] #@ Begin verbose source opdiv_correct.view (pre)
+[01/21 15:09:10     73s] @file 1:
+[01/21 15:09:10     73s] @@file 2: create_library_set -name max_timing\
+[01/21 15:09:10     73s]    -timing ../lib/slow_vdd1v0_basicCells.lib
+[01/21 15:09:10     73s] @file 4:
+[01/21 15:09:10     73s] @@file 5: create_library_set -name min_timing\
+[01/21 15:09:10     73s]    -timing ../lib/fast_vdd1v0_basicCells.lib
+[01/21 15:09:10     73s] @file 7:
+[01/21 15:09:10     73s] @@file 8: create_timing_condition -name default_mapping_tc_2\
+[01/21 15:09:10     73s]    -library_sets min_timing
+[01/21 15:09:10     73s] @@file 10: create_timing_condition -name default_mapping_tc_1\
+[01/21 15:09:10     73s]    -library_sets max_timing
+[01/21 15:09:10     73s] @file 12:
+[01/21 15:09:10     73s] @@file 13: create_rc_corner -name rccorners\
+[01/21 15:09:10     73s]    -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+[01/21 15:09:10     73s]    -pre_route_res 1\
+[01/21 15:09:10     73s]    -post_route_res 1\
+[01/21 15:09:10     73s]    -pre_route_cap 1\
+[01/21 15:09:10     73s]    -post_route_cap 1\
+[01/21 15:09:10     73s]    -post_route_cross_cap 1\
+[01/21 15:09:10     73s]    -pre_route_clock_res 0\
+[01/21 15:09:10     73s]    -pre_route_clock_cap 0\
+[01/21 15:09:10     73s]    -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+[01/21 15:09:10     73s] @file 23:
+[01/21 15:09:10     73s] @file 24:
+[01/21 15:09:10     73s] @@file 25: create_delay_corner -name max_delay\
+[01/21 15:09:10     73s]    -timing_condition {default_mapping_tc_1}\
+[01/21 15:09:10     73s]    -rc_corner rccorners
+[01/21 15:09:10     73s] @@file 28: create_delay_corner -name min_delay\
+[01/21 15:09:10     73s]    -timing_condition {default_mapping_tc_2}\
+[01/21 15:09:10     73s]    -rc_corner rccorners
+[01/21 15:09:10     73s] @file 31:
+[01/21 15:09:10     73s] @@file 32: create_constraint_mode -name sdc_cons\
+[01/21 15:09:10     73s]    -sdc_files\
+[01/21 15:09:10     73s]     opdiv_sdc_correct.sdc 
+[01/21 15:09:10     73s] **ERROR: (TCLCMD-989):	cannot open SDC file 'opdiv_sdc_correct.sdc' for mode 'sdc_cons'
+[01/21 15:09:10     73s] **ERROR: (IMPSE-110):	File 'opdiv_correct.view' line 32: errors out.
+[01/21 15:09:10     73s] #@ End verbose source opdiv_correct.view
+[01/21 15:09:10     73s] 
+[01/21 15:09:10     73s]     while executing
+[01/21 15:09:10     73s] "create_constraint_mode -name sdc_cons\
+[01/21 15:09:10     73s]    -sdc_files\
+[01/21 15:09:10     73s]     opdiv_sdc_correct.sdc "
+[01/21 15:09:10     73s]     (file "opdiv_correct.view" line 32)
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "::se_source_orig opdiv_correct.view"
+[01/21 15:09:10     73s]     ("uplevel" body line 1)
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "uplevel [concat ::se_source_orig $args]"
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:09:10     73s]               ::SE::source_verbose_start $file_name
+[01/21 15:09:10     73s]               set st [uplevel [concat ::s..."
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "if {$useTclVerbose} {
+[01/21 15:09:10     73s]           # use tcl internal method
+[01/21 15:09:10     73s]           set st ""
+[01/21 15:09:10     73s]           if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:09:10     73s]      ..."
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "if {$largeFile == 1} {
+[01/21 15:09:10     73s]     if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+[01/21 15:09:10     73s]       $putCmd "Sourcing $file_name"
+[01/21 15:09:10     73s]     }
+[01/21 15:09:10     73s]     set st [uplevel [concat..."
+[01/21 15:09:10     73s]     (procedure "source" line 163)
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "source opdiv_correct.view"
+[01/21 15:09:10     73s]     ("uplevel" body line 1)
+[01/21 15:09:10     73s]     invoked from within
+[01/21 15:09:10     73s] "uplevel #0 {source opdiv_correct.view}"
+[01/21 15:09:12     73s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv_correct.view'.For more details, refer to error message from console.
+[01/21 15:09:12     73s] 
+[01/21 15:09:12     73s] #################################
+[01/21 15:09:12     73s] read_physical -lef {../lef/gsclib045_macro.lef}
+[01/21 15:09:12     73s] #################################
+[01/21 15:09:13     73s] 
+[01/21 15:09:13     73s] Loading LEF file ../lef/gsclib045_macro.lef ...
+[01/21 15:09:13     73s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:09:13     73s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:09:13     73s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:09:13     73s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:09:13     73s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:09:13     73s] **ERROR: (IMPLF-53):	The layer 'Metal1' referenced in pin 'CON' in macro 'ACHCONX2' is not found in the database. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_files variable to see if the layer does not exist or is specified after the one that defines the macro.
+[01/21 15:09:13     73s] Type 'man IMPLF-53' for more detail.
+[01/21 15:09:13     73s] **ERROR: (IMPLF-3):	Error found when processing LEF file '../lef/gsclib045_macro.lef'. The subsequent file content is ignored. Refer to error messages above for details. Fix the errors, and restart 'Innovus'.
+[01/21 15:09:13     73s] Type 'man IMPLF-3' for more detail.
+[01/21 15:09:13     73s] **ERROR: (IMPLF-26):	No technology information is defined in the first LEF file.
+[01/21 15:09:13     73s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[01/21 15:09:13     73s] first one, exit and restart Innovus.
+[01/21 15:09:13     73s] **ERROR: (IMPLF-26):	No technology information is defined in the first LEF file.
+[01/21 15:09:13     73s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[01/21 15:09:13     73s] first one, exit and restart Innovus.
+[01/21 15:09:13     73s] **ERROR: (IMPSYT-16013):	Loading LEF file(s) failed, and has aborted. Refer to error messages above for details. Please exit the tools and fix the errors first, then re-load design again.
+[01/21 15:09:17     73s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_macro.lef}'.For more details, refer to error message from console.
+[01/21 15:09:17     73s] 
+[01/21 15:09:17     73s] #################################
+[01/21 15:09:17     73s] read_netlist ../synthesis/outputs/opdiv_correct_netlist.v
+[01/21 15:09:17     73s] #################################
+[01/21 15:09:17     73s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:09:17     73s] The MMMC init sequence looks like this: 
+[01/21 15:09:17     73s] read_mmmc top.mmmc 
+[01/21 15:09:17     73s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:09:17     73s] read_netlist top.v 
+[01/21 15:09:17     73s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:09:17     73s] init_design 
+[01/21 15:09:17     73s] 
+[01/21 15:09:17     73s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:09:17     73s] read_libs all.lib 
+[01/21 15:09:17     73s] read_netlist top.v 
+[01/21 15:09:17     73s] read_sdc top.sdc 
+[01/21 15:09:17     73s] init_design 
+[01/21 15:09:17     73s] 
+[01/21 15:09:17     73s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:09:17     73s] Common UI User Guide for more details.
+[01/21 15:09:18     73s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist ../synthesis/outputs/opdiv_correct_netlist.v'.For more details, refer to error message from console.
+[01/21 15:09:18     73s] 
+[01/21 15:09:18     73s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:09:18     73s] The MMMC init sequence looks like this: 
+[01/21 15:09:18     73s] read_mmmc top.mmmc 
+[01/21 15:09:18     73s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:09:18     73s] read_netlist top.v 
+[01/21 15:09:18     73s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:09:18     73s] init_design 
+[01/21 15:09:18     73s] 
+[01/21 15:09:18     73s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:09:18     73s] read_libs all.lib 
+[01/21 15:09:18     73s] read_netlist top.v 
+[01/21 15:09:18     73s] read_sdc top.sdc 
+[01/21 15:09:18     73s] init_design 
+[01/21 15:09:18     73s] 
+[01/21 15:09:18     73s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:09:18     73s] Common UI User Guide for more details.
+[01/21 15:13:02     79s] #################################
+[01/21 15:13:02     79s] read_mmmc opdiv_correct.view
+[01/21 15:13:02     79s] #################################
+[01/21 15:13:02     79s] #@ Begin verbose source opdiv_correct.view (pre)
+[01/21 15:13:02     79s] @file 1:
+[01/21 15:13:02     79s] @@file 2: create_library_set -name max_timing\
+[01/21 15:13:02     79s]    -timing ../lib/slow_vdd1v0_basicCells.lib
+[01/21 15:13:02     79s] The existing library_set 'max_timing' has been replaced with new attributes.
+[01/21 15:13:02     79s] @file 4:
+[01/21 15:13:02     79s] @@file 5: create_library_set -name min_timing\
+[01/21 15:13:02     79s]    -timing ../lib/fast_vdd1v0_basicCells.lib
+[01/21 15:13:02     79s] The existing library_set 'min_timing' has been replaced with new attributes.
+[01/21 15:13:02     79s] @file 7:
+[01/21 15:13:02     79s] @@file 8: create_timing_condition -name default_mapping_tc_2\
+[01/21 15:13:02     79s]    -library_sets min_timing
+[01/21 15:13:02     79s] The existing timing condition 'default_mapping_tc_2' has been replaced with new attributes.
+[01/21 15:13:02     79s] @@file 10: create_timing_condition -name default_mapping_tc_1\
+[01/21 15:13:02     79s]    -library_sets max_timing
+[01/21 15:13:02     79s] The existing timing condition 'default_mapping_tc_1' has been replaced with new attributes.
+[01/21 15:13:02     79s] @file 12:
+[01/21 15:13:02     79s] @@file 13: create_rc_corner -name rccorners\
+[01/21 15:13:02     79s]    -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+[01/21 15:13:02     79s]    -pre_route_res 1\
+[01/21 15:13:02     79s]    -post_route_res 1\
+[01/21 15:13:02     79s]    -pre_route_cap 1\
+[01/21 15:13:02     79s]    -post_route_cap 1\
+[01/21 15:13:02     79s]    -post_route_cross_cap 1\
+[01/21 15:13:02     79s]    -pre_route_clock_res 0\
+[01/21 15:13:02     79s]    -pre_route_clock_cap 0\
+[01/21 15:13:02     79s]    -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+[01/21 15:13:02     79s] The existing rc_corner 'rccorners' has been replaced with new attributes.
+[01/21 15:13:02     79s] Extraction setup Started 
+[01/21 15:13:02     79s] 
+[01/21 15:13:02     79s] Trim Metal Layers:
+[01/21 15:13:02     79s] 
+[01/21 15:13:02     79s] Trim Metal Layers:
+[01/21 15:13:02     79s] 
+[01/21 15:13:02     79s] Trim Metal Layers:
+[01/21 15:13:02     79s] @file 23:
+[01/21 15:13:02     79s] @file 24:
+[01/21 15:13:02     79s] @@file 25: create_delay_corner -name max_delay\
+[01/21 15:13:02     79s]    -timing_condition {default_mapping_tc_1}\
+[01/21 15:13:02     79s]    -rc_corner rccorners
+[01/21 15:13:02     79s] The existing delay_corner 'max_delay' has been replaced with new attributes.
+[01/21 15:13:02     79s] @@file 28: create_delay_corner -name min_delay\
+[01/21 15:13:02     79s]    -timing_condition {default_mapping_tc_2}\
+[01/21 15:13:02     79s]    -rc_corner rccorners
+[01/21 15:13:02     79s] The existing delay_corner 'min_delay' has been replaced with new attributes.
+[01/21 15:13:02     79s] @file 31:
+[01/21 15:13:02     79s] @@file 32: create_constraint_mode -name sdc_cons\
+[01/21 15:13:02     79s]    -sdc_files\
+[01/21 15:13:02     79s]     opdiv_sdc_correct.sdc 
+[01/21 15:13:02     79s] **ERROR: (TCLCMD-989):	cannot open SDC file 'opdiv_sdc_correct.sdc' for mode 'sdc_cons'
+[01/21 15:13:02     79s] **ERROR: (IMPSE-110):	File 'opdiv_correct.view' line 32: errors out.
+[01/21 15:13:02     79s] #@ End verbose source opdiv_correct.view
+[01/21 15:13:02     79s] 
+[01/21 15:13:02     79s]     while executing
+[01/21 15:13:02     79s] "create_constraint_mode -name sdc_cons\
+[01/21 15:13:02     79s]    -sdc_files\
+[01/21 15:13:02     79s]     opdiv_sdc_correct.sdc "
+[01/21 15:13:02     79s]     (file "opdiv_correct.view" line 32)
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "::se_source_orig opdiv_correct.view"
+[01/21 15:13:02     79s]     ("uplevel" body line 1)
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "uplevel [concat ::se_source_orig $args]"
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:13:02     79s]               ::SE::source_verbose_start $file_name
+[01/21 15:13:02     79s]               set st [uplevel [concat ::s..."
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "if {$useTclVerbose} {
+[01/21 15:13:02     79s]           # use tcl internal method
+[01/21 15:13:02     79s]           set st ""
+[01/21 15:13:02     79s]           if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:13:02     79s]      ..."
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "if {$largeFile == 1} {
+[01/21 15:13:02     79s]     if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+[01/21 15:13:02     79s]       $putCmd "Sourcing $file_name"
+[01/21 15:13:02     79s]     }
+[01/21 15:13:02     79s]     set st [uplevel [concat..."
+[01/21 15:13:02     79s]     (procedure "source" line 163)
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "source opdiv_correct.view"
+[01/21 15:13:02     79s]     ("uplevel" body line 1)
+[01/21 15:13:02     79s]     invoked from within
+[01/21 15:13:02     79s] "uplevel #0 {source opdiv_correct.view}"
+[01/21 15:13:07     79s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv_correct.view'.For more details, refer to error message from console.
+[01/21 15:13:07     79s] 
+[01/21 15:13:07     79s] #################################
+[01/21 15:13:07     79s] read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}
+[01/21 15:13:07     79s] #################################
+[01/21 15:13:07     79s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:07     79s] The MMMC init sequence looks like this: 
+[01/21 15:13:07     79s] read_mmmc top.mmmc 
+[01/21 15:13:07     79s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:07     79s] read_netlist top.v 
+[01/21 15:13:07     79s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:07     79s] init_design 
+[01/21 15:13:07     79s] 
+[01/21 15:13:07     79s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:07     79s] read_libs all.lib 
+[01/21 15:13:07     79s] read_netlist top.v 
+[01/21 15:13:07     79s] read_sdc top.sdc 
+[01/21 15:13:07     79s] init_design 
+[01/21 15:13:07     79s] 
+[01/21 15:13:07     79s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:07     79s] Common UI User Guide for more details.
+[01/21 15:13:08     79s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}'.For more details, refer to error message from console.
+[01/21 15:13:08     79s] 
+[01/21 15:13:08     79s] #################################
+[01/21 15:13:08     79s] read_netlist ../synthesis/outputs/opdiv_correct_netlist.v opdiv_correct_netlist.v
+[01/21 15:13:08     79s] #################################
+[01/21 15:13:08     79s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:08     79s] The MMMC init sequence looks like this: 
+[01/21 15:13:08     79s] read_mmmc top.mmmc 
+[01/21 15:13:08     79s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:08     79s] read_netlist top.v 
+[01/21 15:13:08     79s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:08     79s] init_design 
+[01/21 15:13:08     79s] 
+[01/21 15:13:08     79s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:08     79s] read_libs all.lib 
+[01/21 15:13:08     79s] read_netlist top.v 
+[01/21 15:13:08     79s] read_sdc top.sdc 
+[01/21 15:13:08     79s] init_design 
+[01/21 15:13:08     79s] 
+[01/21 15:13:08     79s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:08     79s] Common UI User Guide for more details.
+[01/21 15:13:17     79s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist ../synthesis/outputs/opdiv_correct_netlist.v opdiv_correct_netlist.v'.For more details, refer to error message from console.
+[01/21 15:13:17     79s] 
+[01/21 15:13:17     79s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:17     79s] The MMMC init sequence looks like this: 
+[01/21 15:13:17     79s] read_mmmc top.mmmc 
+[01/21 15:13:17     79s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:17     79s] read_netlist top.v 
+[01/21 15:13:17     79s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:17     79s] init_design 
+[01/21 15:13:17     79s] 
+[01/21 15:13:17     79s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:17     79s] read_libs all.lib 
+[01/21 15:13:17     79s] read_netlist top.v 
+[01/21 15:13:17     79s] read_sdc top.sdc 
+[01/21 15:13:17     79s] init_design 
+[01/21 15:13:17     79s] 
+[01/21 15:13:17     79s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:17     79s] Common UI User Guide for more details.
+[01/21 15:13:30     80s] #################################
+[01/21 15:13:30     80s] read_mmmc opdiv_correct.view
+[01/21 15:13:30     80s] #################################
+[01/21 15:13:30     80s] #@ Begin verbose source opdiv_correct.view (pre)
+[01/21 15:13:30     80s] @file 1:
+[01/21 15:13:30     80s] @@file 2: create_library_set -name max_timing\
+[01/21 15:13:30     80s]    -timing ../lib/slow_vdd1v0_basicCells.lib
+[01/21 15:13:30     80s] The existing library_set 'max_timing' has been replaced with new attributes.
+[01/21 15:13:30     80s] @file 4:
+[01/21 15:13:30     80s] @@file 5: create_library_set -name min_timing\
+[01/21 15:13:30     80s]    -timing ../lib/fast_vdd1v0_basicCells.lib
+[01/21 15:13:30     80s] The existing library_set 'min_timing' has been replaced with new attributes.
+[01/21 15:13:30     80s] @file 7:
+[01/21 15:13:30     80s] @@file 8: create_timing_condition -name default_mapping_tc_2\
+[01/21 15:13:30     80s]    -library_sets min_timing
+[01/21 15:13:30     80s] The existing timing condition 'default_mapping_tc_2' has been replaced with new attributes.
+[01/21 15:13:30     80s] @@file 10: create_timing_condition -name default_mapping_tc_1\
+[01/21 15:13:30     80s]    -library_sets max_timing
+[01/21 15:13:30     80s] The existing timing condition 'default_mapping_tc_1' has been replaced with new attributes.
+[01/21 15:13:30     80s] @file 12:
+[01/21 15:13:30     80s] @@file 13: create_rc_corner -name rccorners\
+[01/21 15:13:30     80s]    -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+[01/21 15:13:30     80s]    -pre_route_res 1\
+[01/21 15:13:30     80s]    -post_route_res 1\
+[01/21 15:13:30     80s]    -pre_route_cap 1\
+[01/21 15:13:30     80s]    -post_route_cap 1\
+[01/21 15:13:30     80s]    -post_route_cross_cap 1\
+[01/21 15:13:30     80s]    -pre_route_clock_res 0\
+[01/21 15:13:30     80s]    -pre_route_clock_cap 0\
+[01/21 15:13:30     80s]    -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+[01/21 15:13:30     80s] The existing rc_corner 'rccorners' has been replaced with new attributes.
+[01/21 15:13:30     80s] Extraction setup Started 
+[01/21 15:13:30     80s] 
+[01/21 15:13:30     80s] Trim Metal Layers:
+[01/21 15:13:30     80s] 
+[01/21 15:13:30     80s] Trim Metal Layers:
+[01/21 15:13:30     80s] 
+[01/21 15:13:30     80s] Trim Metal Layers:
+[01/21 15:13:30     80s] @file 23:
+[01/21 15:13:30     80s] @file 24:
+[01/21 15:13:30     80s] @@file 25: create_delay_corner -name max_delay\
+[01/21 15:13:30     80s]    -timing_condition {default_mapping_tc_1}\
+[01/21 15:13:30     80s]    -rc_corner rccorners
+[01/21 15:13:30     80s] The existing delay_corner 'max_delay' has been replaced with new attributes.
+[01/21 15:13:30     80s] @@file 28: create_delay_corner -name min_delay\
+[01/21 15:13:30     80s]    -timing_condition {default_mapping_tc_2}\
+[01/21 15:13:30     80s]    -rc_corner rccorners
+[01/21 15:13:30     80s] The existing delay_corner 'min_delay' has been replaced with new attributes.
+[01/21 15:13:30     80s] @file 31:
+[01/21 15:13:30     80s] @@file 32: create_constraint_mode -name sdc_cons\
+[01/21 15:13:30     80s]    -sdc_files\
+[01/21 15:13:30     80s]     opdiv_sdc_correct.sdc 
+[01/21 15:13:30     80s] **ERROR: (TCLCMD-989):	cannot open SDC file 'opdiv_sdc_correct.sdc' for mode 'sdc_cons'
+[01/21 15:13:30     80s] **ERROR: (IMPSE-110):	File 'opdiv_correct.view' line 32: errors out.
+[01/21 15:13:30     80s] #@ End verbose source opdiv_correct.view
+[01/21 15:13:30     80s] 
+[01/21 15:13:30     80s]     while executing
+[01/21 15:13:30     80s] "create_constraint_mode -name sdc_cons\
+[01/21 15:13:30     80s]    -sdc_files\
+[01/21 15:13:30     80s]     opdiv_sdc_correct.sdc "
+[01/21 15:13:30     80s]     (file "opdiv_correct.view" line 32)
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "::se_source_orig opdiv_correct.view"
+[01/21 15:13:30     80s]     ("uplevel" body line 1)
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "uplevel [concat ::se_source_orig $args]"
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:13:30     80s]               ::SE::source_verbose_start $file_name
+[01/21 15:13:30     80s]               set st [uplevel [concat ::s..."
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "if {$useTclVerbose} {
+[01/21 15:13:30     80s]           # use tcl internal method
+[01/21 15:13:30     80s]           set st ""
+[01/21 15:13:30     80s]           if {[::SE::source_verbose_file_state $file_name] == 1} {
+[01/21 15:13:30     80s]      ..."
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "if {$largeFile == 1} {
+[01/21 15:13:30     80s]     if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+[01/21 15:13:30     80s]       $putCmd "Sourcing $file_name"
+[01/21 15:13:30     80s]     }
+[01/21 15:13:30     80s]     set st [uplevel [concat..."
+[01/21 15:13:30     80s]     (procedure "source" line 163)
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "source opdiv_correct.view"
+[01/21 15:13:30     80s]     ("uplevel" body line 1)
+[01/21 15:13:30     80s]     invoked from within
+[01/21 15:13:30     80s] "uplevel #0 {source opdiv_correct.view}"
+[01/21 15:13:32     80s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv_correct.view'.For more details, refer to error message from console.
+[01/21 15:13:32     80s] 
+[01/21 15:13:32     80s] #################################
+[01/21 15:13:32     80s] read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}
+[01/21 15:13:32     80s] #################################
+[01/21 15:13:32     80s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:32     80s] The MMMC init sequence looks like this: 
+[01/21 15:13:32     80s] read_mmmc top.mmmc 
+[01/21 15:13:32     80s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:32     80s] read_netlist top.v 
+[01/21 15:13:32     80s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:32     80s] init_design 
+[01/21 15:13:32     80s] 
+[01/21 15:13:32     80s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:32     80s] read_libs all.lib 
+[01/21 15:13:32     80s] read_netlist top.v 
+[01/21 15:13:32     80s] read_sdc top.sdc 
+[01/21 15:13:32     80s] init_design 
+[01/21 15:13:32     80s] 
+[01/21 15:13:32     80s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:32     80s] Common UI User Guide for more details.
+[01/21 15:13:37     80s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}'.For more details, refer to error message from console.
+[01/21 15:13:37     80s] 
+[01/21 15:13:37     80s] #################################
+[01/21 15:13:37     80s] read_netlist opdiv_correct_netlist.v
+[01/21 15:13:37     80s] #################################
+[01/21 15:13:37     80s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:37     80s] The MMMC init sequence looks like this: 
+[01/21 15:13:37     80s] read_mmmc top.mmmc 
+[01/21 15:13:37     80s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:37     80s] read_netlist top.v 
+[01/21 15:13:37     80s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:37     80s] init_design 
+[01/21 15:13:37     80s] 
+[01/21 15:13:37     80s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:37     80s] read_libs all.lib 
+[01/21 15:13:37     80s] read_netlist top.v 
+[01/21 15:13:37     80s] read_sdc top.sdc 
+[01/21 15:13:37     80s] init_design 
+[01/21 15:13:37     80s] 
+[01/21 15:13:37     80s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:37     80s] Common UI User Guide for more details.
+[01/21 15:13:38     80s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist opdiv_correct_netlist.v'.For more details, refer to error message from console.
+[01/21 15:13:38     80s] 
+[01/21 15:13:38     80s] **ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+[01/21 15:13:38     80s] The MMMC init sequence looks like this: 
+[01/21 15:13:38     80s] read_mmmc top.mmmc 
+[01/21 15:13:38     80s] read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+[01/21 15:13:38     80s] read_netlist top.v 
+[01/21 15:13:38     80s] read_power_intent -1801 top.1801	    #only for MSV designs 
+[01/21 15:13:38     80s] init_design 
+[01/21 15:13:38     80s] 
+[01/21 15:13:38     80s] Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+[01/21 15:13:38     80s] read_libs all.lib 
+[01/21 15:13:38     80s] read_netlist top.v 
+[01/21 15:13:38     80s] read_sdc top.sdc 
+[01/21 15:13:38     80s] init_design 
+[01/21 15:13:38     80s] 
+[01/21 15:13:38     80s] See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+[01/21 15:13:38     80s] Common UI User Guide for more details.
+[01/21 15:14:30     81s] #################################
+[01/21 15:14:30     81s] read_mmmc opdiv.view
+[01/21 15:14:30     81s] #################################
+[01/21 15:14:30     81s] #@ Begin verbose source opdiv.view (pre)
+[01/21 15:14:30     81s] @file 1:
+[01/21 15:14:30     81s] @@file 2: create_library_set -name max_timing\
+[01/21 15:14:30     81s]    -timing ../lib/slow_vdd1v0_basicCells.lib
+[01/21 15:14:30     81s] The existing library_set 'max_timing' has been replaced with new attributes.
+[01/21 15:14:30     81s] @file 4:
+[01/21 15:14:30     81s] @@file 5: create_library_set -name min_timing\
+[01/21 15:14:30     81s]    -timing ../lib/fast_vdd1v0_basicCells.lib
+[01/21 15:14:30     81s] The existing library_set 'min_timing' has been replaced with new attributes.
+[01/21 15:14:30     81s] @file 7:
+[01/21 15:14:30     81s] @@file 8: create_timing_condition -name default_mapping_tc_2\
+[01/21 15:14:30     81s]    -library_sets min_timing
+[01/21 15:14:30     81s] The existing timing condition 'default_mapping_tc_2' has been replaced with new attributes.
+[01/21 15:14:30     81s] @@file 10: create_timing_condition -name default_mapping_tc_1\
+[01/21 15:14:30     81s]    -library_sets max_timing
+[01/21 15:14:30     81s] The existing timing condition 'default_mapping_tc_1' has been replaced with new attributes.
+[01/21 15:14:30     81s] @file 12:
+[01/21 15:14:30     81s] @@file 13: create_rc_corner -name rccorners\
+[01/21 15:14:30     81s]    -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+[01/21 15:14:30     81s]    -pre_route_res 1\
+[01/21 15:14:30     81s]    -post_route_res 1\
+[01/21 15:14:30     81s]    -pre_route_cap 1\
+[01/21 15:14:30     81s]    -post_route_cap 1\
+[01/21 15:14:30     81s]    -post_route_cross_cap 1\
+[01/21 15:14:30     81s]    -pre_route_clock_res 0\
+[01/21 15:14:30     81s]    -pre_route_clock_cap 0\
+[01/21 15:14:30     81s]    -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+[01/21 15:14:30     81s] The existing rc_corner 'rccorners' has been replaced with new attributes.
+[01/21 15:14:30     81s] Extraction setup Started 
+[01/21 15:14:30     81s] 
+[01/21 15:14:30     81s] Trim Metal Layers:
+[01/21 15:14:30     81s] 
+[01/21 15:14:30     81s] Trim Metal Layers:
+[01/21 15:14:30     81s] 
+[01/21 15:14:30     81s] Trim Metal Layers:
+[01/21 15:14:30     81s] @file 23:
+[01/21 15:14:30     81s] @file 24:
+[01/21 15:14:30     81s] @@file 25: create_delay_corner -name max_delay\
+[01/21 15:14:30     81s]    -timing_condition {default_mapping_tc_1}\
+[01/21 15:14:30     81s]    -rc_corner rccorners
+[01/21 15:14:30     81s] The existing delay_corner 'max_delay' has been replaced with new attributes.
+[01/21 15:14:30     81s] @@file 28: create_delay_corner -name min_delay\
+[01/21 15:14:30     81s]    -timing_condition {default_mapping_tc_2}\
+[01/21 15:14:30     81s]    -rc_corner rccorners
+[01/21 15:14:30     81s] @file 31:
+[01/21 15:14:30     81s] @@file 32: create_constraint_mode -name sdc_cons\
+[01/21 15:14:30     81s]    -sdc_files\
+[01/21 15:14:30     81s]     opdiv_sdc.sdc 
+[01/21 15:14:30     81s] @file 35:
+[01/21 15:14:30     81s] @@file 36: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+[01/21 15:14:30     81s] @@file 37: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+[01/21 15:14:30     81s] @file 38:
+[01/21 15:14:30     81s] @@file 39: set_analysis_view -setup wc -hold bc
+[01/21 15:14:30     81s] @file 40:
+[01/21 15:14:30     81s] @file 41:
+[01/21 15:14:30     81s] #@ End verbose source opdiv.view
+[01/21 15:14:30     81s] Reading max_timing timing library '/home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib' ...
+[01/21 15:14:30     81s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib)
+[01/21 15:14:30     81s] Read 480 cells in library 'slow_vdd1v0' 
+[01/21 15:14:30     81s] Reading min_timing timing library '/home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib' ...
+[01/21 15:14:30     82s] **WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib)
+[01/21 15:14:30     82s] Read 480 cells in library 'fast_vdd1v0' 
+[01/21 15:14:30     82s] Ending "PreSetAnalysisView" (total cpu=0:00:00.4, real=0:00:00.0, peak res=1089.9M, current mem=1038.0M)
+[01/21 15:14:30     82s] #################################
+[01/21 15:14:30     82s] read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}
+[01/21 15:14:30     82s] #################################
+[01/21 15:14:30     82s] 
+[01/21 15:14:30     82s] Loading LEF file ../lef/gsclib045_macro.lef ...
+[01/21 15:14:30     82s] **WARN: (IMPLF-58):	MACRO 'ACHCONX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data, and certain properties, will be ignored.
+[01/21 15:14:30     82s] Review the LEF files specified in the init_lef_files variable and remove redundant definitions.
+[01/21 15:14:30     82s] Type 'man IMPLF-58' for more detail.
+[01/21 15:14:30     82s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:14:30     82s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:14:30     82s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:14:30     82s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:14:30     82s] **ERROR: (IMPLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[01/21 15:14:30     82s] **WARN: (IMPLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'A' can be added for existing macro.
+[01/21 15:14:30     82s] **WARN: (IMPLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'B' can be added for existing macro.
+[01/21 15:14:30     82s] **WARN: (IMPLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'CI' can be added for existing macro.
+[01/21 15:14:30     82s] **WARN: (IMPLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VSS' can be added for existing macro.
+[01/21 15:14:30     82s] **WARN: (IMPLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VDD' can be added for existing macro.
+[01/21 15:14:30     82s] **ERROR: (IMPLF-53):	The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX1' is not found in the database. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_files variable to see if the layer does not exist or is specified after the one that defines the macro.
+[01/21 15:14:30     82s] Type 'man IMPLF-53' for more detail.
+[01/21 15:14:30     82s] **ERROR: (IMPLF-3):	Error found when processing LEF file '../lef/gsclib045_macro.lef'. The subsequent file content is ignored. Refer to error messages above for details. Fix the errors, and restart 'Innovus'.
+[01/21 15:14:30     82s] Type 'man IMPLF-3' for more detail.
+[01/21 15:14:30     82s] **ERROR: (IMPLF-26):	No technology information is defined in the first LEF file.
+[01/21 15:14:30     82s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[01/21 15:14:30     82s] first one, exit and restart Innovus.
+[01/21 15:14:30     82s] **WARN: (IMPLF-61):	1 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data, and certain properties, have been ignored.
+[01/21 15:14:30     82s] Review the LEF files specified in the init_lef_files variable and remove redundant definitions.
+[01/21 15:14:30     82s] Type 'man IMPLF-61' for more detail.
+[01/21 15:14:30     82s] **ERROR: (IMPLF-26):	No technology information is defined in the first LEF file.
+[01/21 15:14:30     82s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[01/21 15:14:30     82s] first one, exit and restart Innovus.
+[01/21 15:14:30     82s] **ERROR: (IMPSYT-16013):	Loading LEF file(s) failed, and has aborted. Refer to error messages above for details. Please exit the tools and fix the errors first, then re-load design again.
+[01/21 15:14:38     82s] **ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_macro.lef ../lef/gsclib045_tech.lef}'.For more details, refer to error message from console.
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] #################################
+[01/21 15:14:38     82s] read_netlist opdiv_correct_netlist.v
+[01/21 15:14:38     82s] #################################
+[01/21 15:14:38     82s] #% Begin Load netlist data ... (date=01/21 15:14:38, mem=1038.0M)
+[01/21 15:14:38     82s] *** Begin netlist parsing (mem=1070.7M) ***
+[01/21 15:14:38     82s] Created 480 new cells from 2 timing libraries.
+[01/21 15:14:38     82s] Reading netlist ...
+[01/21 15:14:38     82s] Backslashed names will retain backslash and a trailing blank character.
+[01/21 15:14:38     82s] Reading verilog netlist 'opdiv_correct_netlist.v'
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] *** Memory Usage v#1 (Current mem = 1070.660M, initial mem = 495.000M) ***
+[01/21 15:14:38     82s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1070.7M) ***
+[01/21 15:14:38     82s] #% End Load netlist data ... (date=01/21 15:14:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=1051.0M, current mem=1051.0M)
+[01/21 15:14:38     82s] Top level cell is opdiv.
+[01/21 15:14:38     82s] Hooked 960 DB cells to tlib cells.
+[01/21 15:14:38     82s] ** Removed 413 unused lib cells.
+[01/21 15:14:38     82s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1061.8M, current mem=1061.8M)
+[01/21 15:14:38     82s] Starting recursive module instantiation check.
+[01/21 15:14:38     82s] No recursion found.
+[01/21 15:14:38     82s] Building hierarchical netlist for Cell opdiv ...
+[01/21 15:14:38     82s] *** Netlist is unique.
+[01/21 15:14:38     82s] **WARN: (IMPTRN-1103):	Cell (0) ADDFHX1's height is less than placement-grid.
+[01/21 15:14:38     82s] **WARN: (IMPTRN-1103):	Cell (0) ADDFHX1's height is less than placement-grid.
+[01/21 15:14:38     82s] **WARN: (IMPTRN-1103):	Cell (0) ACHCONX2's height is less than placement-grid.
+[01/21 15:14:38     82s] **WARN: (IMPTRN-1103):	Cell (0) ACHCONX2's height is less than placement-grid.
+[01/21 15:14:38     82s] **WARN: (IMPTRN-1100):	Cannot determine standard cell height.  Assume it 10 IGU.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1698__2398 of the cell OA21X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1699__5107 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1700__6260 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1701__4319 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1702__8428 of the cell NOR2BX1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1703__5526 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1704__6783 of the cell AOI211XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1705__3680 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1706__1617 of the cell OAI31X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1707__2802 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1708__1705 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1709__5122 of the cell AOI211XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1710__8246 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1711 of the cell INVXL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1712__7098 of the cell AOI211XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1713__6131 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1714__1881 of the cell AOI21X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1715__5115 of the cell AOI31X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1716__7482 of the cell NOR2X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-102):	Instance inst0Count/g1717__4733 of the cell OAI31X1 has no physical library or has wrong dimen-
+[01/21 15:14:38     82s] sion values (<=0). Check your design setup to make sure the physical
+[01/21 15:14:38     82s]  library is loaded in and the attributes specified in physical library are correct.
+[01/21 15:14:38     82s] Type 'man IMPREPO-102' for more detail.
+[01/21 15:14:38     82s] **WARN: (EMS-27):	Message (IMPREPO-102) has exceeded the current message display limit of 20.
+[01/21 15:14:38     82s] To increase the message display limit, refer to the product command reference manual.
+[01/21 15:14:38     82s] ** info: there are 136 modules.
+[01/21 15:14:38     82s] ** info: there are 1187 stdCell insts.
+[01/21 15:14:38     82s] **ERROR: (IMPREPO-103):	There are 1187 instances (65 cells) with no dimension defined.
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] *** Memory Usage v#1 (Current mem = 1123.074M, initial mem = 495.000M) ***
+[01/21 15:14:38     82s] **ERROR: (IMPFP-1594):	No site specified. Check the LEF/OA file to make sure a site is specified for core cell.
+[01/21 15:14:38     82s] Type 'man IMPFP-1594' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPSYC-1595):	No row created.
+[01/21 15:14:38     82s] Extraction setup Started 
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[01/21 15:14:38     82s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+[01/21 15:14:38     82s] Type 'man IMPEXT-6202' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+[01/21 15:14:38     82s] **ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+[01/21 15:14:38     82s] *Info: initialize multi-corner CTS.
+[01/21 15:14:38     82s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1340.7M, current mem=1084.3M)
+[01/21 15:14:38     82s] Reading timing constraints file 'opdiv_sdc.sdc' ...
+[01/21 15:14:38     82s] Current (total cpu=0:01:23, real=0:14:34, peak res=1354.8M, current mem=1354.8M)
+[01/21 15:14:38     82s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_sdc.sdc, Line 9).
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_sdc.sdc, Line 10).
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] opdiv
+[01/21 15:14:38     82s] INFO (CTE): Reading of timing constraints file opdiv_sdc.sdc completed, with 2 WARNING
+[01/21 15:14:38     82s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1362.2M, current mem=1362.2M)
+[01/21 15:14:38     82s] Current (total cpu=0:01:23, real=0:14:34, peak res=1362.2M, current mem=1362.2M)
+[01/21 15:14:38     82s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[01/21 15:14:38     82s] Summary for sequential cells identification: 
+[01/21 15:14:38     82s]   Identified SBFF number: 0
+[01/21 15:14:38     82s]   Identified MBFF number: 0
+[01/21 15:14:38     82s]   Identified SB Latch number: 0
+[01/21 15:14:38     82s]   Identified MB Latch number: 0
+[01/21 15:14:38     82s]   Not identified SBFF number: 0
+[01/21 15:14:38     82s]   Not identified MBFF number: 0
+[01/21 15:14:38     82s]   Not identified SB Latch number: 0
+[01/21 15:14:38     82s]   Not identified MB Latch number: 0
+[01/21 15:14:38     82s]   Number of sequential cells which are not FFs: 0
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Deleting Cell Server Begin ...
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Deleting Cell Server End ...
+[01/21 15:14:38     82s] Total number of combinational cells: 2
+[01/21 15:14:38     82s] Total number of sequential cells: 0
+[01/21 15:14:38     82s] Total number of tristate cells: 0
+[01/21 15:14:38     82s] Total number of level shifter cells: 0
+[01/21 15:14:38     82s] Total number of power gating cells: 0
+[01/21 15:14:38     82s] Total number of isolation cells: 0
+[01/21 15:14:38     82s] Total number of power switch cells: 0
+[01/21 15:14:38     82s] Total number of pulse generator cells: 0
+[01/21 15:14:38     82s] Total number of always on buffers: 0
+[01/21 15:14:38     82s] Total number of retention cells: 0
+[01/21 15:14:38     82s] Total number of physical cells: 0
+[01/21 15:14:38     82s] List of usable buffers:
+[01/21 15:14:38     82s] Total number of usable buffers: 0
+[01/21 15:14:38     82s] List of unusable buffers:
+[01/21 15:14:38     82s] Total number of unusable buffers: 0
+[01/21 15:14:38     82s] List of usable inverters:
+[01/21 15:14:38     82s] Total number of usable inverters: 0
+[01/21 15:14:38     82s] List of unusable inverters:
+[01/21 15:14:38     82s] Total number of unusable inverters: 0
+[01/21 15:14:38     82s] List of identified usable delay cells:
+[01/21 15:14:38     82s] Total number of identified usable delay cells: 0
+[01/21 15:14:38     82s] List of identified unusable delay cells:
+[01/21 15:14:38     82s] Total number of identified unusable delay cells: 0
+[01/21 15:14:38     82s] No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+[01/21 15:14:38     82s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1392.4M, current mem=1392.3M)
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[01/21 15:14:38     82s] Summary for sequential cells identification: 
+[01/21 15:14:38     82s]   Identified SBFF number: 0
+[01/21 15:14:38     82s]   Identified MBFF number: 0
+[01/21 15:14:38     82s]   Identified SB Latch number: 0
+[01/21 15:14:38     82s]   Identified MB Latch number: 0
+[01/21 15:14:38     82s]   Not identified SBFF number: 0
+[01/21 15:14:38     82s]   Not identified MBFF number: 0
+[01/21 15:14:38     82s]   Not identified SB Latch number: 0
+[01/21 15:14:38     82s]   Not identified MB Latch number: 0
+[01/21 15:14:38     82s]   Number of sequential cells which are not FFs: 0
+[01/21 15:14:38     82s]  Visiting view : wc
+[01/21 15:14:38     82s] **WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+[01/21 15:14:38     82s] Type 'man IMPOPT-3000' for more detail.
+[01/21 15:14:38     82s] **WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+[01/21 15:14:38     82s] Type 'man IMPOPT-3001' for more detail.
+[01/21 15:14:38     82s]    : PowerDomain = none : Weighted F : unweighted  = -922337203685477632.00 (1.000) with rcCorner = -1
+[01/21 15:14:38     82s]    : PowerDomain = none : no stdDelay from this view
+[01/21 15:14:38     82s]    : PowerDomain = none : Weighted F : unweighted  = -922337203685477632.00 (1.000) with rcCorner = -1
+[01/21 15:14:38     82s]  Visiting view : bc
+[01/21 15:14:38     82s]    : PowerDomain = none : Weighted F : unweighted  = -922337203685477632.00 (1.000) with rcCorner = -1
+[01/21 15:14:38     82s]    : PowerDomain = none : no stdDelay from this view
+[01/21 15:14:38     82s]    : PowerDomain = none : Weighted F : unweighted  = -922337203685477632.00 (1.000) with rcCorner = -1
+[01/21 15:14:38     82s] *INFO : stdDelay is calculated as zero; using legacy method.
+[01/21 15:14:38     82s] *INFO : stdSlew is calculated as zero; using legacy method.
+[01/21 15:14:38     82s] TLC MultiMap info (StdDelay):
+[01/21 15:14:38     82s]   : min_delay + min_timing + 1 + no RcCorner := -9.22337e+17ps
+[01/21 15:14:38     82s]   : min_delay + min_timing + 1 + rccorners := -9.22337e+17ps
+[01/21 15:14:38     82s]   : max_delay + max_timing + 1 + no RcCorner := -9.22337e+17ps
+[01/21 15:14:38     82s]   : max_delay + max_timing + 1 + rccorners := -9.22337e+17ps
+[01/21 15:14:38     82s]  Setting StdDelay to: 10ps
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Deleting Cell Server Begin ...
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] TimeStamp Deleting Cell Server End ...
+[01/21 15:14:38     82s] Extraction setup Started 
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] 
+[01/21 15:14:38     82s] Trim Metal Layers:
+[01/21 15:14:38     82s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[01/21 15:14:38     82s] **WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+[01/21 15:14:38     82s] Type 'man IMPEXT-6202' for more detail.
+[01/21 15:14:38     82s] **ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+[01/21 15:14:38     82s] **ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+[01/21 15:36:50    109s] 
+[01/21 15:36:50    109s] *** Summary of all messages that are not suppressed in this session:
+[01/21 15:36:50    109s] Severity  ID               Count  Summary                                  
+[01/21 15:36:50    109s] ERROR     IMPLF-3              2  Error found when processing LEF file '%s...
+[01/21 15:36:50    109s] ERROR     IMPLF-26             4  No technology information is defined in ...
+[01/21 15:36:50    109s] ERROR     IMPLF-53             2  The layer '%s' referenced %s is not foun...
+[01/21 15:36:50    109s] WARNING   IMPLF-58             1  MACRO '%s' has been found in the databas...
+[01/21 15:36:50    109s] WARNING   IMPLF-61             1  %d duplicated MACRO definitions have bee...
+[01/21 15:36:50    109s] ERROR     IMPLF-328           10  The layer '%s' specified in macro pin '%...
+[01/21 15:36:50    109s] WARNING   IMPLF-209            5  Cell '%s' has been found in db, no extra...
+[01/21 15:36:50    109s] WARNING   IMPTRN-1100          1  Cannot determine standard cell height.  ...
+[01/21 15:36:50    109s] WARNING   IMPTRN-1103          4  Cell (%d) %s's %s is less than %s.       
+[01/21 15:36:50    109s] ERROR     IMPSE-110            3  File '%s' line %s: %s.                   
+[01/21 15:36:50    109s] ERROR     IMPFP-1594           1  No site specified. Check the LEF/OA file...
+[01/21 15:36:50    109s] WARNING   IMPEXT-6202          2  In addition to the technology file, the ...
+[01/21 15:36:50    109s] ERROR     IMPEXT-2677          2  Multi-corner RC initialization is aborte...
+[01/21 15:36:50    109s] ERROR     IMPEXT-3466          2  The technology layer information is not ...
+[01/21 15:36:50    109s] ERROR     IMPSYT-16013         2  Loading LEF file(s) failed, and has abor...
+[01/21 15:36:50    109s] ERROR     IMPSYT-16031        13  %s                                       
+[01/21 15:36:50    109s] ERROR     IMPSYC-1595          1  No row created.                          
+[01/21 15:36:50    109s] WARNING   IMPOPT-3000          1  Buffer footprint is not defined or is an...
+[01/21 15:36:50    109s] WARNING   IMPOPT-3001          1  Inverter footprint is not defined or is ...
+[01/21 15:36:50    109s] ERROR     IMPREPO-102       1187  Instance %s of the cell %s has no physic...
+[01/21 15:36:50    109s] ERROR     IMPREPO-103          1  There are %d instances (%d cells) with n...
+[01/21 15:36:50    109s] ERROR     IMPIMEX-7041         1  Netlist files are not allowed to be read...
+[01/21 15:36:50    109s] ERROR     IMPIMEX-12           9  'init_design' failed. You are missing on...
+[01/21 15:36:50    109s] ERROR     IMPIMEX-7030         1  LEF files are not allowed to be read in ...
+[01/21 15:36:50    109s] ERROR     TCLCMD-989           3  cannot open SDC file '%s' for mode '%s'  
+[01/21 15:36:50    109s] WARNING   TCLCMD-1306          1  read_mmmc command should be called once ...
+[01/21 15:36:50    109s] WARNING   TCLCMD-1461          2  Skipped unsupported command: %s          
+[01/21 15:36:50    109s] WARNING   TECHLIB-302          2  No function defined for cell '%s'. The c...

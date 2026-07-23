@@ -1,0 +1,294 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+Date:		Sun Feb  1 17:07:03 2026
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[17:07:03.518546] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_637844_VT0138_xmen_tKt6Xg.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+**WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+set_multi_cpu_usage -local_cpu 32
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source innovus_script_old.tcl
+#@ Begin verbose source (pre): source innovus_script_old.tcl
+@file 1:
+@file 2: #set_db init_read_netlist_files ../sim/outputs_genus/opdiv_x_netlist.v ../physical_design/pads.v ../physical_design/chip.v 
+@file 3: #Inicializando o ambiente e bibliotecas
+@file 4: set LEF_PATH $env(HOME)/PDK/gsclib045/lef
+@file 5: set LEF_PATH_IO_PAD $env(HOME)/PDK/giolib045/lef
+@file 6: #set_db init_lib_search_path [list $LEF_PATH $LEF_PATH_IO_PAD]
+@@file 7: set_db init_lef_files {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef}
+@file 8: set QRC_PATH $env(HOME)/PDK/gsclib045/qrc/qx
+@file 9:
+@file 10: # DefiniÃ§Ã£o de redes de alimentaÃ§Ã£o
+@@file 11: set_db init_power_nets VDD
+@@file 12: set_db init_ground_nets VSS
+@file 13:
+@file 14: # Leitura de restriÃ§Ãµes temporais (MMMC)
+@file 15: #read_netlist ../sim/output_files/opdiv_x_netli'st.v
+@@file 16: read_mmmc opdiv_correct.view
+#@ Begin verbose source opdiv_correct.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+@file 23:
+@file 24:
+@@file 25: create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+@@file 28: create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+@file 31:
+@@file 32: create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_correct_sdc.sdc 
+@file 35:
+@@file 36: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+@@file 37: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+@file 38:
+@@file 39: set_analysis_view -setup wc -hold bc
+@file 40:
+@file 41:
+#@ End verbose source opdiv_correct.view
+Starting library reading in 'Multi-threaded flow' (with '32' threads)
+
+Threads Configured:32
+Reading max_timing timing library /home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library slow_vdd1v0.
+Library reading multithread flow ended.
+Starting library reading in 'Multi-threaded flow' (with '32' threads)
+
+Threads Configured:32
+Reading min_timing timing library /home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library fast_vdd1v0.
+Library reading multithread flow ended.
+@file 17:
+@file 18: # Leitura do design fÃ­sico e lÃ³gico
+@file 19: #read_physical -lefs $LEF_PATH/gsclib045_tech.lef  $LEF_PATH/gsclib045_macro.lef $LEF_PATH_IO_PAD/giolib045.lef ../physical_design/pdkIO.lef
+@@file 20: read_physical -lefs $LEF_PATH/gsclib045_tech.lef  $LEF_PATH/gsclib045_macro.lef
+
+Loading LEF file /home/xmen/PDK/gsclib045/lef/gsclib045_tech.lef ...
+
+Loading LEF file /home/xmen/PDK/gsclib045/lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+@@file 21: read_netlist \
+  ../synthesis/outputs/opdiv_correct_netlist.v
+#% Begin Load netlist data ... (date=02/01 17:07:13, mem=1024.1M)
+*** Begin netlist parsing (mem=1611.2M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../synthesis/outputs/opdiv_correct_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1611.176M, initial mem = 495.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1611.2M) ***
+#% End Load netlist data ... (date=02/01 17:07:13, total cpu=0:00:00.0, real=0:00:00.0, peak res=1040.7M, current mem=1040.7M)
+Top level cell is opdiv.
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell opdiv ...
+*** Netlist is unique.
+** info: there are 1067 modules.
+** info: there are 1187 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1622.676M, initial mem = 495.000M) ***
+@file 23:
+@file 24: # read_netlist \
+@file 25: #   ../synthesis/outputs/opdiv_correct_netlist.v \
+@file 26: #   ../physical_design/pads.v \
+@file 27: #   ../physical_design/chip.v \
+@file 28: #   -top chip
+@file 29: # Iniciar desginer fÃ­sico
+@file 30:
+@@file 31: init_design
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+Reading Capacitance Table File ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl ...
+Cap table was created using Encounter 10.10-b056_1.
+Process name: cln28hpl_1p10m+alrdl_5x2yu2yz_typical.
+Set Shrink Factor to 0.90000
+Importing multi-corner RC tables ... 
+Summary of Active RC-Corners : 
+ 
+ Analysis View: wc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch'
+ 
+ Analysis View: bc
+    RC-Corner Name        : rccorners
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : '../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl'
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: '/home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner capacitance tables ... 
+Initializing multi-corner resistance tables ...
+Creating RPSQ from WeeR and WRes ...
+*Info: initialize multi-corner CTS.
+Reading timing constraints file 'opdiv_correct_sdc.sdc' ...
+Current (total cpu=0:00:14.0, real=0:00:11.0, peak res=1351.2M, current mem=1351.2M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_correct_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_correct_sdc.sdc, Line 10).
+
+opdiv
+INFO (CTE): Reading of timing constraints file opdiv_correct_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1372.0M, current mem=1372.0M)
+Current (total cpu=0:00:14.1, real=0:00:11.0, peak res=1372.0M, current mem=1372.0M)
+Total number of combinational cells: 318
+Total number of sequential cells: 152
+Total number of tristate cells: 10
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFX2 BUFX12 BUFX16 BUFX20 CLKBUFX2 BUFX3 BUFX4 BUFX6 BUFX8 CLKBUFX12 CLKBUFX16 CLKBUFX20 CLKBUFX3 CLKBUFX4 CLKBUFX6 CLKBUFX8
+Total number of usable buffers: 16
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CLKINVX1 CLKINVX2 CLKINVX12 CLKINVX16 CLKINVX20 CLKINVX4 CLKINVX3 CLKINVX6 CLKINVX8 INVX1 INVX2 INVX12 INVX16 INVX20 INVXL INVX3 INVX4 INVX6 INVX8
+Total number of usable inverters: 19
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: DLY1X1 DLY1X4 DLY2X1 DLY2X4 DLY3X1 DLY3X4 DLY4X1 DLY4X4
+Total number of identified usable delay cells: 8
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+@file 32:
+@file 33: # DefiniÃ§Ã£o de IOS
+@file 34: #read_io_file {../physical_design/opdiv_x_pins_io_pad.io}
+@file 35:
+@file 36: # Floorplan 
+@file 37: source ../physical_design/power.tcl
+#@ Begin verbose source ../physical_design/power.tcl (pre)
+@@file 1: connect_global_net VDD -type pg_pin -pin VDD -inst *
+@@file 2: connect_global_net VSS -type pg_pin -pin VSS -inst *
+@@file 3: connect_global_net VDD -type tie_hi 
+@@file 4: connect_global_net VSS -type tie_lo 
+@@file 5: connect_global_net VDD -type tie_hi -pin VDD -inst *
+@@file 6: connect_global_net VSS -type tie_lo -pin VSS -inst *
+@file 7:
+#@ End verbose source ../physical_design/power.tcl
+@file 38: # source power.tcl
+@file 39: #---------------------------------------------------------------------------------
+@file 40: # Experimental
+@@file 41: set_io_flow_flag 0
+@file 42: #create_floorplan -site CoreSite -core_density_size 1 0.75
+@file 43: #create_floorplan -site CoreSite -core_density_size 1 0.70
+@file 44: #create_floorplan -site CoreSite -core_density_size 0.998002350176 0.70
+@file 45: floorPlan -site CoreSite \
+          -s 400 400 \
+          20 20 20 20
+**ERROR: (IMPSE-110):	File 'innovus_script_old.tcl' line 45: invalid command name "floorPlan".
+#@ End verbose source innovus_script_old.tcl
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'innovus_script_old.tcl' was returned and script processing was stopped. Review the following error in 'innovus_script_old.tcl' then restart.
+**ERROR: (IMPSYT-6693):	Error message: innovus_script_old.tcl: invalid command name "floorPlan".
+@innovus 2> source innovus_script_old.tcl
+#@ Begin verbose source (pre): source innovus_script_old.tcl
+@file 1:
+@file 2: #set_db init_read_netlist_files ../sim/outputs_genus/opdiv_x_netlist.v ../physical_design/pads.v ../physical_design/chip.v 
+@file 3: #Inicializando o ambiente e bibliotecas
+@file 4: set LEF_PATH $env(HOME)/PDK/gsclib045/lef
+@file 5: set LEF_PATH_IO_PAD $env(HOME)/PDK/giolib045/lef
+@file 6: #set_db init_lib_search_path [list $LEF_PATH $LEF_PATH_IO_PAD]
+@@file 7: set_db init_lef_files {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef}
+@file 8: set QRC_PATH $env(HOME)/PDK/gsclib045/qrc/qx
+@file 9:
+@file 10: # DefiniÃ§Ã£o de redes de alimentaÃ§Ã£o
+@@file 11: set_db init_power_nets VDD
+@@file 12: set_db init_ground_nets VSS
+@file 13:
+@file 14: # Leitura de restriÃ§Ãµes temporais (MMMC)
+@file 15: #read_netlist ../sim/output_files/opdiv_x_netli'st.v
+@@file 16: read_mmmc opdiv_correct.view
+**WARN: (TCLCMD-1306):	read_mmmc command should be called once before init_design.
+**ERROR: (IMPSE-110):	File 'innovus_script_old.tcl' line 16: 1.
+#@ End verbose source innovus_script_old.tcl
+1
+1
+@innovus 3> exit
+
+
+*** Memory Usage v#1 (Current mem = 2260.785M, initial mem = 495.000M) ***
+*** Message Summary: 10 warning(s), 4 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:15.4, real=0:01:17, mem=2260.8M) ---

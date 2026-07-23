@@ -1,0 +1,152 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[16:07:21.518538] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+Version: 21.19-s055_1, built Wed May 29 12:33:07 PDT 2024
+Options: -files -sv genus_script.tcl 
+Date:    Tue Dec 02 16:07:21 2025
+Host:    VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB) (65503084KB)
+PID:     203218
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+
+[16:07:21.325114] Periodic Lic check successful
+[16:07:21.325121] Feature usage summary:
+[16:07:21.325121] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (3 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source genus_script.tcl
+#@ Begin verbose source ./genus_script.tcl
+@file(genus_script.tcl) 1: set_db init_lib_search_path ../lib/
+  Setting attribute of root '/': 'init_lib_search_path' = ../lib/
+@file(genus_script.tcl) 2: set_db init_hdl_search_path ../rtl/
+  Setting attribute of root '/': 'init_hdl_search_path' = ../rtl/
+@file(genus_script.tcl) 3: read_libs slow_vdd1v0_basicCells.lib
+
+Threads Configured:3
+
+  Message Summary for Library slow_vdd1v0_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+@file(genus_script.tcl) 5: read_hdl opdiv.sv
+    input  logic                clock               ,
+                                    |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Undeclared datatype encountered here in file '../rtl/opdiv.sv' on line 2, column 37.
+        : Invalid Verilog syntax is parsed, or unsupported Verilog syntax is encountered.
+    input  logic                clock               ,
+                                                    |
+Error   : SystemVerilog feature. [VLOGPT-9] [read_hdl]
+        : Interface port in file '../rtl/opdiv.sv' on line 2, column 53.
+        : The design must be read in with 'read_hdl -sv'.
+    input  logic                nreset              ,
+                                     |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Undeclared datatype encountered here in file '../rtl/opdiv.sv' on line 3, column 38.
+    input  logic                nreset              ,
+                                                    |
+Error   : SystemVerilog feature. [VLOGPT-9] [read_hdl]
+        : Interface port in file '../rtl/opdiv.sv' on line 3, column 53.
+    input  logic signed [31:0]  a                   ,
+                      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ')', found 'signed' in file '../rtl/opdiv.sv' on line 4, column 23.
+    input  logic signed [31:0]  a                   ,
+                      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'signed' in file '../rtl/opdiv.sv' on line 4, column 23.
+    logic ena, a_signal,b_signal,signal_division_intern, c_signal, next_in_ready_o, next_out_valid_o, compair;
+             |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 15, column 14.
+    logic [5:0] qbits;
+                    |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 16, column 21.
+        : According to Verilog IEEE standard it is mandatory to give instance name while instantiating a module. For more details see the 'module instantiation syntax' section in the Verilog IEEE Reference manual.
+    logic [5:0] qbits;
+                    |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 16, column 21.
+    logic signed [31:0] state, next, k,r_temp;
+               |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 17, column 16.
+    logic signed [31:0] state, next, k,r_temp;
+               |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 17, column 16.
+    logic signed [32:0] a_reg, b_reg,minuend;
+               |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 18, column 16.
+    logic signed [32:0] a_reg, b_reg,minuend;
+               |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 18, column 16.
+    logic [31:0] left_updade,right_updade;
+                           |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 19, column 28.
+    logic [31:0] left_updade,right_updade;
+                           |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 19, column 28.
+    logic signed [31:0] next_k,Quatient;
+               |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 20, column 16.
+    logic signed [31:0] next_k,Quatient;
+               |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'logic' in file '../rtl/opdiv.sv' on line 20, column 16.
+    enum {IDLE,INITIALISE_AND_COUNTER_BITS,SET_AK_MINUEND,LOOP,UPDATE_MINUEND_RIGHT,UPDATE_MINUEND_LEFT,INCREASE_K,DONE} states;
+         |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 27, column 10.
+    enum {IDLE,INITIALISE_AND_COUNTER_BITS,SET_AK_MINUEND,LOOP,UPDATE_MINUEND_RIGHT,UPDATE_MINUEND_LEFT,INCREASE_K,DONE} states;
+         |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'enum' in file '../rtl/opdiv.sv' on line 27, column 10.
+    always_ff@(posedge clock, negedge nreset)begin
+             |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '../rtl/opdiv.sv' on line 29, column 14.
+    always_ff@(posedge clock, negedge nreset)begin
+             |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'always_ff' in file '../rtl/opdiv.sv' on line 29, column 14.
+#@ End verbose source ./genus_script.tcl
+1
+Encountered problems processing file: genus_script.tcl
+WARNING: This version of the tool is 551 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 44s, ST: 3s, FG: 3s, CPU: 0.8%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.3, cpu: 32, total: 62.5G, free: 23.9G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 51s, ST: 3s, FG: 3s, CPU: 0.8%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.3, cpu: 32, total: 62.5G, free: 23.9G}
+Abnormal exit.

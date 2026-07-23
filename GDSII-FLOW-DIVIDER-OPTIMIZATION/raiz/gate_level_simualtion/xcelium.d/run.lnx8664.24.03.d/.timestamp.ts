@@ -1,0 +1,3 @@
+1764859443 /home/xmen/Desktop/divider_optimization/gate_level_simualtion/op_test_div2.sv
+1764858711 /home/xmen/Desktop/divider_optimization/gate_level_simualtion/opdiv_netlist.v
+1764858754 /home/xmen/Desktop/divider_optimization/gate_level_simualtion/slow_vdd1v0_basiccells.v

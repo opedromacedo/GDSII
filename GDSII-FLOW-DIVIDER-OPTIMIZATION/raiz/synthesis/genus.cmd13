@@ -1,0 +1,40 @@
+# Cadence Genus(TM) Synthesis Solution, Version 21.19-s055_1, built May 29 2024 16:33:07
+
+# Date: Tue Dec 02 17:55:08 2025
+# Host: VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB)
+# OS:   Rocky Linux release 8.10 (Green Obsidian)
+
+create_clock -name "clock" -period 10 -waveform {0 5} [get_ports "clock"]
+set_clock_transition -rise 0.1 [get_clocks "clock"]
+set_clock_transition -fall 0.1 [get_clocks "clock"]
+set_clock_uncertainty 0.01 [get_ports "clock"]
+set_input_delay -max 1.0 [get_ports "nreset"] -clock [get_clocks "clock"]
+set_output_delay -max 1.0 [get_ports "c"] -clock [get_clocks "clock"]
+read_sdc ../constraints/constraints_top.sdc
+set_db init_lib_search_path ../lib/
+set_db init_hdl_search_path ../rtl/
+read_libs slow_vdd1v0_basicCells.lib
+read_hdl -sv opdiv.sv
+elaborate
+read_sdc ../constraints/constraints_top.sdc
+set_db dft_scan_style muxed_scan
+set_db dft_prefix dft_
+define_shift_enable -name SE -active high -create_port SE
+check_dft_rules
+set_db syn_generic_effort medium
+syn_generic
+set_db syn_map_effort medium
+syn_map
+check_dft_rules
+set_db design:opdiv .dft_min_number_of_scan_chains 1
+define_scan_chain -name top_chain -sdi scan_in -sdo scan_out -create_ports
+connect_scan_chains -auto_create_chains
+syn_opt -incremental
+report_scan_chains
+write_dft_atpg -library ../lib/slow_vdd1v0_basiccells.v
+write_hdl > outputs/opdiv_netlist_dft.v
+write_sdc > outputs/opdiv_sdc_dft.sdc
+write_sdf -nonegchecks -edges check_edge -timescale ns -recrem split  -setuphold split > outputs/dft_delays.sdf
+write_scandef > outputs/opdiv_scanDEF.scandef
+write_dft_atpg -library ../lib/slow_vdd1v0_basiccells.v
+exit

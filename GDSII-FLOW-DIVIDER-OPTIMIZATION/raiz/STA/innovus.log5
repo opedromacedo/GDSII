@@ -1,0 +1,245 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-stylus 
+Date:		Wed Dec  3 20:38:47 2025
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[20:38:47.518594] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_332837_VT0138_xmen_LaB7gl.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> #################################
+read_mmmc opdiv.view
+#################################
+#@ Begin verbose source opdiv.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech ../QRC_Tech/gpdk045.tch
+**ERROR: (TCLCMD-995):	Can not open file '../QRC_Tech/gpdk045.tch' for RC corner
+**ERROR: (IMPSE-110):	File 'opdiv.view' line 13: errors out.
+#@ End verbose source opdiv.view
+
+    while executing
+"create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+ ..."
+    (file "opdiv.view" line 13)
+    invoked from within
+"::se_source_orig opdiv.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 163)
+    invoked from within
+"source opdiv.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 {source opdiv.view}"
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv.view'.For more details, refer to error message from console.
+
+#################################
+read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+#################################
+
+Loading LEF file ../lef/gsclib045_tech.lef ...
+
+Loading LEF file ../lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+#################################
+read_netlist opdiv_netlist.v
+#################################
+#% Begin Load netlist data ... (date=12/03 20:39:53, mem=1018.4M)
+*** Begin netlist parsing (mem=1029.0M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'opdiv_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1033.039M, initial mem = 495.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1033.0M) ***
+#% End Load netlist data ... (date=12/03 20:39:53, total cpu=0:00:00.0, real=0:00:00.0, peak res=1023.5M, current mem=1023.5M)
+Top level cell is opdiv.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell opdiv ...
+*** Netlist is unique.
+** info: there are 576 modules.
+** info: there are 1433 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1081.453M, initial mem = 495.000M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+set_gui
+invalid command name "set_gui"
+invalid command name "set_gui"
+@innovus 2> gui
+
+ambiguous command name "gui": gui_add_marker gui_add_ui gui_attach_to_cursor gui_bind_key gui_browse_db gui_clear_bus_guide_colors gui_clear_highlight gui_clear_hinst_colors gui_clear_scan_chains gui_clear_spare_cells gui_clear_trace_flightline gui_close_cell_view gui_create_floorplan_snapshot gui_create_user_bundle_net gui_ctd_close gui_ctd_get_title gui_ctd_get_window_id gui_ctd_highlight gui_ctd_open gui_ctd_save_view gui_ctd_set_title gui_ctd_write_histogram gui_ctd_zoom gui_delete_objs gui_delete_ui gui_delete_user_bundle_net gui_deselect gui_dim_foreground gui_find_ui gui_fit gui_get_box gui_get_coord gui_get_coords gui_get_legend gui_get_record_obj_by_info gui_get_ui gui_get_visible_nets gui_group_hinst gui_gtd_highlight_timing_report gui_hide gui_highlight gui_highlight_feedthru_nets gui_highlight_pin gui_highlight_pin_connection gui_highlight_proto_models gui_list_marker gui_move_cursor gui_open_cell_view gui_open_gtd gui_open_schematic gui_pan gui_pan_center gui_pan_page gui_redo gui_redraw gui_register_edit_callback gui_remove_marker gui_report_trace_flightline gui_select gui_select_highlighted gui_set_draw_view gui_set_legend gui_set_obj_color gui_set_power_rail_display gui_set_power_rail_layers_nets gui_set_select_hinst_color gui_set_tool gui_set_ui gui_set_visible_nets gui_show gui_show_buffer_tree gui_show_bump_connections gui_show_bus_guide_multi_colors gui_show_edge_number gui_show_floorplan_snapshot gui_show_hinst_in_floorplan gui_show_markers gui_show_obj_connectivity gui_show_partition_wire_cross_over gui_show_scan_chains gui_show_spare_cells gui_show_timing_map gui_show_user_bundle_nets gui_trace_flightline gui_undo gui_ungroup_hinst gui_unregister_edit_callback gui_view_box gui_write_flightline gui_write_flow_gifs gui_write_picture gui_zoom
+ambiguous command name "gui": gui_add_marker gui_add_ui gui_attach_to_cursor gui_bind_key gui_browse_db gui_clear_bus_guide_colors gui_clear_highlight gui_clear_hinst_colors gui_clear_scan_chains gui_clear_spare_cells gui_clear_trace_flightline gui_close_cell_view gui_create_floorplan_snapshot gui_create_user_bundle_net gui_ctd_close gui_ctd_get_title gui_ctd_get_window_id gui_ctd_highlight gui_ctd_open gui_ctd_save_view gui_ctd_set_title gui_ctd_write_histogram gui_ctd_zoom gui_delete_objs gui_delete_ui gui_delete_user_bundle_net gui_deselect gui_dim_foreground gui_find_ui gui_fit gui_get_box gui_get_coord gui_get_coords gui_get_legend gui_get_record_obj_by_info gui_get_ui gui_get_visible_nets gui_group_hinst gui_gtd_highlight_timing_report gui_hide gui_highlight gui_highlight_feedthru_nets gui_highlight_pin gui_highlight_pin_connection gui_highlight_proto_models gui_list_marker gui_move_cursor gui_open_cell_view gui_open_gtd gui_open_schematic gui_pan gui_pan_center gui_pan_page gui_redo gui_redraw gui_register_edit_callback gui_remove_marker gui_report_trace_flightline gui_select gui_select_highlighted gui_set_draw_view gui_set_legend gui_set_obj_color gui_set_power_rail_display gui_set_power_rail_layers_nets gui_set_select_hinst_color gui_set_tool gui_set_ui gui_set_visible_nets gui_show gui_show_buffer_tree gui_show_bump_connections gui_show_bus_guide_multi_colors gui_show_edge_number gui_show_floorplan_snapshot gui_show_hinst_in_floorplan gui_show_markers gui_show_obj_connectivity gui_show_partition_wire_cross_over gui_show_scan_chains gui_show_spare_cells gui_show_timing_map gui_show_user_bundle_nets gui_trace_flightline gui_undo gui_ungroup_hinst gui_unregister_edit_callback gui_view_box gui_write_flightline gui_write_flow_gifs gui_write_picture gui_zoom
+@innovus 3> gui_show
+
+@innovus 4> #################################
+read_mmmc opdiv.view
+#################################
+#@ Begin verbose source (pre): 
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+The existing library_set 'max_timing' has been replaced with new attributes.
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+The existing library_set 'min_timing' has been replaced with new attributes.
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+The existing timing condition 'default_mapping_tc_2' has been replaced with new attributes.
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+The existing timing condition 'default_mapping_tc_1' has been replaced with new attributes.
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech ../QRC_Tech/gpdk045.tch
+**ERROR: (TCLCMD-995):	Can not open file '../QRC_Tech/gpdk045.tch' for RC corner
+**ERROR: (IMPSE-110):	File 'opdiv.view' line 13: errors out.
+#@ End verbose source opdiv.view
+
+    while executing
+"create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+ ..."
+    (file "opdiv.view" line 13)
+    invoked from within
+"::se_source_orig opdiv.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 163)
+    invoked from within
+"source opdiv.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 {source opdiv.view}"
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc opdiv.view'.For more details, refer to error message from console.
+
+#################################
+read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+#################################
+**ERROR: (IMPIMEX-7030):	LEF files are not allowed to be read in after the design is in memory. If you want to modify the current list of LEF files, please refer to read_physical -add_lefs**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}'.For more details, refer to error message from console.
+
+#################################
+read_netlist opdiv_netlist.v -top opdiv
+#################################
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_netlist opdiv_netlist.v -top opdiv'.For more details, refer to error message from console.
+
+**ERROR: (IMPIMEX-12):	'init_design' failed. You are missing one or more of the required commands before running init_design.
+The MMMC init sequence looks like this: 
+read_mmmc top.mmmc 
+read_physical -lef {tech.lef stdcell.lef}   #optional in Tempus, required for Innovus 
+read_netlist top.v 
+read_power_intent -1801 top.1801	    #only for MSV designs 
+init_design 
+
+Tempus also supports a single-mode timing init sequence with no MMMC file like this: 
+read_libs all.lib 
+read_netlist top.v 
+read_sdc top.sdc 
+init_design 
+
+See the 'Stylus Common UI Initialization' section in the 'Design Import and Export Capabilities' chapter of the Innovus Stylus 
+Common UI User Guide for more details.
+**INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+Innovus terminated by user interrupt.
+
+*** Memory Usage v#1 (Current mem = 1330.328M, initial mem = 495.000M) ***
+*** Message Summary: 3 warning(s), 11 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:36.7, real=0:25:52, mem=1330.3M) ---

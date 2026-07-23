@@ -1,0 +1,3 @@
+SOURCE=opdiv_correct_netlist_dft.v
+TECHLIB=../../lib/slow_vdd1v0_basiccells.v
+RUNDIR=/home/xmen/Desktop/divider_optimization/synthesis/test_scripts/

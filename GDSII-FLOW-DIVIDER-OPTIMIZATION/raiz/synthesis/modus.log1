@@ -1,0 +1,339 @@
+
+ 
+Copyright (C) 2002-2023 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 23.11-s014_1, built Mar 14 2024 (linux26_64)
+Options : 
+Date    : Sat, December 13 00:23:55 2025
+Host    : VT0138 (x86_64 Linux 4.18.0-553.47.1.el8_10.x86_64) (24*Intel(R) Core(TM) i9-14900F 36864KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+@modus:root:/ 1> source sample_script.tcl 
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv.test_netlist.v -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325002506-066432000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file 'opdiv.test_netlist.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates. [end TEI_030] 
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              807,168  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      2 ERROR (TEI-023): Build Model: unable to read file 'opdiv.test_netlist.v'. Specify a valid file or path name with proper permissions.   
+      1 ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 2> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv.test_netlist.v -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325002656-541672000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file 'opdiv.test_netlist.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates. [end TEI_030] 
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              809,536  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      2 ERROR (TEI-023): Build Model: unable to read file 'opdiv.test_netlist.v'. Specify a valid file or path name with proper permissions.   
+      1 ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 3> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv_netlist.v -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325002802-236855000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file 'opdiv_netlist.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates. [end TEI_030] 
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              810,912  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      2 ERROR (TEI-023): Build Model: unable to read file 'opdiv_netlist.v'. Specify a valid file or path name with proper permissions.   
+      1 ERROR (TEI-030): No valid input was found for DESIGNSOURCE or TECHLIB. Check preceding messages. Processing terminates.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 4> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model \
+  -workdir mydir \
+  -designsource ../synthesis/outputs/opdiv_netlist_dft.v \
+  -techlib ../../lib/slow_vdd1v0_basiccells.v \
+  -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325003124-499565000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+Search Order  1:  "../synthesis/outputs/opdiv_netlist_dft.v"
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              812,336  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 5> verify_test_structures -workdir mydir -testmode FULLSCAN
+Starting Command: verify_test_structures 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121325003231-578316000 [end TDA_015]
+
+ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+[end TFW_968]
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+      1 ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5
+@modus:root:/ 6> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model \
+  -workdir mydir \
+  -designsource ../synthesis/outputs/opdiv_netlist_dft.v \
+  -techlib ../../lib/slow_vdd1v0_basiccells.v \
+  -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325003307-370302000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+Search Order  1:  "../synthesis/outputs/opdiv_netlist_dft.v"
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              815,568  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-023): Build Model: unable to read file '../../lib/slow_vdd1v0_basiccells.v'. Specify a valid file or path name with proper permissions.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 7> write_vectors -workdir mydir -testmode FULLSCAN -inexperiment logic -language verilog -scanformat serial -outputfilename test_results
+Starting Command: write_vectors 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121325003433-763471000 [end TDA_015]
+
+ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+[end TFW_968]
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+      1 ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5
+@modus:root:/ 8> write_vectors -workdir mydir -testmode FULLSCAN -inexperiment logic -language verilog -scanformat serial -outputfilename test_results
+Starting Command: write_vectors 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121325173707-470588000 [end TDA_015]
+
+ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+[end TFW_968]
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+      1 ERROR (TFW-968): The -TESTMODE FULLSCAN specification has an invalid value. 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5

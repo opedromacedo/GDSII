@@ -1,0 +1,170 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+Date:		Sat Jan 31 14:49:49 2026
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[14:49:49.518650] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_454541_VT0138_xmen_gJYucc.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+**WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+set_multi_cpu_usage -local_cpu 32
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source innovus_script_old.tcl
+#@ Begin verbose source (pre): source innovus_script_old.tcl
+@file 1:
+@file 2: #set_db init_read_netlist_files ../sim/outputs_genus/opdiv_x_netlist.v ../physical_design/pads.v ../physical_design/chip.v 
+@file 3: #Inicializando o ambiente e bibliotecas
+@file 4: set LEF_PATH $env(HOME)/PDK/gsclib045/lef
+@file 5: set LEF_PATH_IO_PAD $env(HOME)/PDK/giolib045/lef
+@@file 6: set_db init_lib_search_path [list $LEF_PATH $LEF_PATH_IO_PAD]
+@@file 7: set_db init_lef_files {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef ../physical_design/pdkIO.lef}
+@file 8: set QRC_PATH $env(HOME)/PDK/gsclib045/qrc/qx
+@file 9:
+@file 10: # DefiniÃ§Ã£o de redes de alimentaÃ§Ã£o
+@@file 11: set_db init_power_nets VDD
+@@file 12: set_db init_ground_nets VSS
+@file 13:
+@file 14: # Leitura de restriÃ§Ãµes temporais (MMMC)
+@file 15: #read_netlist ../sim/output_files/opdiv_x_netli'st.v
+@@file 16: read_mmmc opdiv_correct.view
+#@ Begin verbose source opdiv_correct.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+@file 23:
+@file 24:
+@@file 25: create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+@@file 28: create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+@file 31:
+@@file 32: create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_sdc_correct.sdc 
+**ERROR: (TCLCMD-989):	cannot open SDC file 'opdiv_sdc_correct.sdc' for mode 'sdc_cons'
+**ERROR: (IMPSE-110):	File 'opdiv_correct.view' line 32: errors out.
+#@ End verbose source opdiv_correct.view
+
+    while executing
+"create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_sdc_correct.sdc "
+    (file "opdiv_correct.view" line 32)
+    invoked from within
+"::se_source_orig opdiv_correct.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 163)
+    invoked from within
+"source opdiv_correct.view"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 {source opdiv_correct.view}"
+**ERROR: (IMPSE-110):	File 'innovus_script_old.tcl' line 16: errors out.
+#@ End verbose source innovus_script_old.tcl
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'innovus_script_old.tcl' was returned and script processing was stopped. Review the following error in 'innovus_script_old.tcl' then restart.
+Error info: innovus_script_old.tcl: 
+    while executing
+"read_mmmc opdiv_correct.view"
+    (file "innovus_script_old.tcl" line 16)
+    invoked from within
+"::se_source_orig innovus_script_old.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 163)
+    invoked from within
+"source innovus_script_old.tcl"
+    invoked from within
+"::se::run_command_from_console "source innovus_script_old.tcl""
+    invoked from within
+"eval_novus {::se::run_command_from_console "source innovus_script_old.tcl"}"
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval_novus "::se::run_command_from_console \"source $fileName\""".
+@innovus 2> set_db edit_wire_type regular
+@innovus 3> gui_select -point {0.06800 0.03900}
+@innovus 4> gui_select -point {0.06500 0.04900}
+@innovus 5> gui_select -point {0.06200 0.08000}
+@innovus 6> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sat Jan 31 15:30:02 2026
+  Total CPU time:     0:00:50
+  Total real time:    0:40:14
+  Peak memory (main): 1005.00MB
+
+
+*** Memory Usage v#1 (Current mem = 1014.281M, initial mem = 495.000M) ***
+*** Message Summary: 1 warning(s), 4 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:49.9, real=0:40:13, mem=1014.3M) ---

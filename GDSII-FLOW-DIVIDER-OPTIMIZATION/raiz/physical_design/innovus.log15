@@ -1,0 +1,343 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+Date:		Sat Jan 31 15:31:39 2026
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[15:31:39.518578] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_461148_VT0138_xmen_9wluci.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+**WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+set_multi_cpu_usage -local_cpu 32
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source innovus_script_old.tcl
+#@ Begin verbose source (pre): source innovus_script_old.tcl
+@file 1:
+@file 2: #set_db init_read_netlist_files ../sim/outputs_genus/opdiv_x_netlist.v ../physical_design/pads.v ../physical_design/chip.v 
+@file 3: #Inicializando o ambiente e bibliotecas
+@file 4: set LEF_PATH $env(HOME)/PDK/gsclib045/lef
+@file 5: set LEF_PATH_IO_PAD $env(HOME)/PDK/giolib045/lef
+@@file 6: set_db init_lib_search_path [list $LEF_PATH $LEF_PATH_IO_PAD]
+@@file 7: set_db init_lef_files {gsclib045_tech.lef gsclib045_macro.lef giolib045.lef ../physical_design/pdkIO.lef}
+@file 8: set QRC_PATH $env(HOME)/PDK/gsclib045/qrc/qx
+@file 9:
+@file 10: # DefiniÃ§Ã£o de redes de alimentaÃ§Ã£o
+@@file 11: set_db init_power_nets VDD
+@@file 12: set_db init_ground_nets VSS
+@file 13:
+@file 14: # Leitura de restriÃ§Ãµes temporais (MMMC)
+@file 15: #read_netlist ../sim/output_files/opdiv_x_netli'st.v
+@@file 16: read_mmmc opdiv_correct.view
+#@ Begin verbose source opdiv_correct.view (pre)
+@file 1:
+@@file 2: create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+@file 4:
+@@file 5: create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+@file 7:
+@@file 8: create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+@@file 10: create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+@file 12:
+@@file 13: create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+@file 23:
+@file 24:
+@@file 25: create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+@@file 28: create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+@file 31:
+@@file 32: create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_correct_sdc.sdc 
+@file 35:
+@@file 36: create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+@@file 37: create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+@file 38:
+@@file 39: set_analysis_view -setup wc -hold bc
+@file 40:
+@file 41:
+#@ End verbose source opdiv_correct.view
+Starting library reading in 'Multi-threaded flow' (with '32' threads)
+
+Threads Configured:32
+Reading max_timing timing library /home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/slow_vdd1v0_basicCells.lib)
+Read 480 cells in library slow_vdd1v0.
+Library reading multithread flow ended.
+Starting library reading in 'Multi-threaded flow' (with '32' threads)
+
+Threads Configured:32
+Reading min_timing timing library /home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib.
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/xmen/Desktop/divider_optimization/lib/fast_vdd1v0_basicCells.lib)
+Read 480 cells in library fast_vdd1v0.
+Library reading multithread flow ended.
+@file 17:
+@file 18: # Leitura do design fÃ­sico e lÃ³gico
+@@file 19: read_physical -lefs $LEF_PATH/gsclib045_tech.lef  $LEF_PATH/gsclib045_macro.lef $LEF_PATH_IO_PAD/giolib045.lef ../physical_design/pdkIO.lef
+**ERROR: (IMPIMEX-10):	Specified file cannot be found: ../physical_design/pdkIO.lef.
+@@file 20: read_netlist \
+  ../synthesis/outputs/opdiv_correct_netlist.v
+#% Begin Load netlist data ... (date=01/31 15:31:49, mem=1005.0M)
+*** Begin netlist parsing (mem=1609.0M) ***
+Created 480 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../synthesis/outputs/opdiv_correct_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1608.965M, initial mem = 495.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1609.0M) ***
+#% End Load netlist data ... (date=01/31 15:31:49, total cpu=0:00:00.0, real=0:00:00.0, peak res=1023.5M, current mem=1023.5M)
+Top level cell is opdiv.
+Hooked 960 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell opdiv ...
+*** Netlist is unique.
+**WARN: (IMPTRN-1100):	Cannot determine standard cell height.  Assume it 10 IGU.
+**WARN: (IMPTRN-1101):	Could not determine power-rail locations in cells. Use default value GNDOnBtm.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1698__2398 of the cell OA21X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1699__5107 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1700__6260 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1701__4319 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1702__8428 of the cell NOR2BX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1703__5526 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1704__6783 of the cell AOI211XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1705__3680 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1706__1617 of the cell OAI31X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1707__2802 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1708__1705 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1709__5122 of the cell AOI211XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1710__8246 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1711 of the cell INVXL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1712__7098 of the cell AOI211XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1713__6131 of the cell AOI2BB1XL has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1714__1881 of the cell AOI21X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1715__5115 of the cell AOI31X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1716__7482 of the cell NOR2X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance inst0Count/g1717__4733 of the cell OAI31X1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**WARN: (EMS-27):	Message (IMPREPO-102) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+** info: there are 962 modules.
+** info: there are 1187 stdCell insts.
+**ERROR: (IMPREPO-103):	There are 1187 instances (65 cells) with no dimension defined.
+
+*** Memory Usage v#1 (Current mem = 1622.379M, initial mem = 495.000M) ***
+@file 22:
+@file 23: # read_netlist \
+@file 24: #   ../synthesis/outputs/opdiv_correct_netlist.v \
+@file 25: #   ../physical_design/pads.v \
+@file 26: #   ../physical_design/chip.v \
+@file 27: #   -top chip
+@file 28: # Iniciar desginer fÃ­sico
+@file 29:
+@@file 30: init_design
+**ERROR: (IMPFP-1594):	No site specified. Check the LEF/OA file to make sure a site is specified for core cell.
+Type 'man IMPFP-1594' for more detail.
+**ERROR: (IMPSYC-1595):	No row created.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file 'opdiv_correct_sdc.sdc' ...
+Current (total cpu=0:00:14.1, real=0:00:11.0, peak res=1330.4M, current mem=1329.8M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_correct_sdc.sdc, Line 9).
+
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File opdiv_correct_sdc.sdc, Line 10).
+
+opdiv
+INFO (CTE): Reading of timing constraints file opdiv_correct_sdc.sdc completed, with 2 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1349.3M, current mem=1349.3M)
+Current (total cpu=0:00:14.1, real=0:00:11.0, peak res=1349.3M, current mem=1349.3M)
+Total number of combinational cells: 0
+Total number of sequential cells: 0
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers:
+Total number of usable buffers: 0
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters:
+Total number of usable inverters: 0
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+Type 'man IMPOPT-3000' for more detail.
+**WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+Type 'man IMPOPT-3001' for more detail.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+**WARN: (IMPEXT-6202):	In addition to the technology file, the capacitance table file is specified for all the RC corners. If the technology file  is already specified for all the RC corners, the capacitance table file is not required for pre_route and post_route extraction. In a new session, the capacitance table files can be removed from the create_rc_corner command to enable the technology file to be used for pre_route and post_route (effort level medium/high/signoff) extraction engines.
+Type 'man IMPEXT-6202' for more detail.
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+@file 31:
+@file 32: # DefiniÃ§Ã£o de IOS
+@@file 33: read_io_file {../physical_design/opdiv_x_pins_io_pad.io}
+**ERROR: (IMPSYUTIL-96):	Cannot open (for read) FE IO file file: '../physical_design/opdiv_x_pins_io_pad.io'. The reason is: No such file or directory
+Type 'man IMPSYUTIL-96' for more detail.
+**WARN: (IMPFP-110):	Failed to open file '../physical_design/opdiv_x_pins_io_pad.io' for reading.
+**ERROR: (IMPSE-110):	File 'innovus_script_old.tcl' line 33: errors out.
+#@ End verbose source innovus_script_old.tcl
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'innovus_script_old.tcl' was returned and script processing was stopped. Review the following error in 'innovus_script_old.tcl' then restart.
+Error info: innovus_script_old.tcl: 
+    while executing
+"read_io_file {../physical_design/opdiv_x_pins_io_pad.io}"
+    (file "innovus_script_old.tcl" line 33)
+    invoked from within
+"::se_source_orig innovus_script_old.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 163)
+    invoked from within
+"source innovus_script_old.tcl"
+    invoked from within
+"::se::run_command_from_console "source innovus_script_old.tcl""
+    invoked from within
+"eval_novus {::se::run_command_from_console "source innovus_script_old.tcl"}"
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval_novus "::se::run_command_from_console \"source $fileName\""".
+@innovus 2> gui_select -rect {-1.13700 0.32700 1.07300 -0.35700}
+@innovus 3> gui_select -point {-0.10400 -0.15000}
+@innovus 4> gui_select -rect {-0.56500 0.05000 -0.41200 0.04400}
+@innovus 5> gui_select -point {-0.42900 0.05500}
+@innovus 6> gui_select -point {-0.43500 0.04700}
+@innovus 7> gui_select -point {-0.45000 0.05000}
+@innovus 8> gui_select -rect {-0.56500 0.05700 -0.39700 0.03400}
+@innovus 9> gui_select -rect {-0.61700 0.11000 -0.19700 -0.02700}
+@innovus 10> gui_select -rect {-0.34600 -0.04000 -0.64800 0.21800}
+@innovus 11> gui_select -point {-0.44300 0.05400}
+@innovus 12> gui_select -point {-0.44300 0.05400}
+@innovus 13> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sat Jan 31 15:32:13 2026
+  Total CPU time:     0:00:16
+  Total real time:    0:00:35
+  Peak memory (main): 1482.87MB
+
+
+*** Memory Usage v#1 (Current mem = 2032.871M, initial mem = 495.000M) ***
+*** Message Summary: 12 warning(s), 1198 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:16.0, real=0:00:34.0, mem=2032.9M) ---

@@ -1,0 +1,14 @@
+#e1(22Jan2026:14:54:14): source ./xcelium.d/env.d/env.history.22Jan2026_14_54_14
+s1(22Jan2026:14:54:14):  xrun opdiv_correct_netlist.v -gui -access +rwc 
+#e2(22Jan2026:14:55:51): source ./xcelium.d/env.d/env.history.22Jan2026_14_55_51
+s2(22Jan2026:14:55:51):  xrun opdiv_correct_netlist.v 
+#e3(22Jan2026:14:55:57): source ./xcelium.d/env.d/env.history.22Jan2026_14_55_57
+s3(22Jan2026:14:55:57):  xrun opdiv_correct_netlist.v -verilog 
+#e4(22Jan2026:14:56:13): source ./xcelium.d/env.d/env.history.22Jan2026_14_56_13
+s4(22Jan2026:14:56:13):  xrun opdiv_correct_netlist.v 
+#e5(22Jan2026:14:57:20): source ./xcelium.d/env.d/env.history.22Jan2026_14_57_20
+s5(22Jan2026:14:57:20):  xrun -gui 
+#e6(22Jan2026:14:57:40): source ./xcelium.d/env.d/env.history.22Jan2026_14_57_40
+s6(22Jan2026:14:57:40):  xrun -f opdiv_correct_netlist.v 
+#e7(22Jan2026:14:57:59): source ./xcelium.d/env.d/env.history.22Jan2026_14_57_59
+s7(22Jan2026:14:57:59):  xrun -f opdiv_correct_netlist.v -gui -access +rwc 

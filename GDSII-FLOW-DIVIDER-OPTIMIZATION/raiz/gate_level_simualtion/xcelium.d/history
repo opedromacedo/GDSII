@@ -1,0 +1,8 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(04Dec2025:11:38:28):( xrun -timescale 1ns/10ps opdiv_netlist.v op_test_div2.sv -v slow_vdd1v0_basiccells.v -access +rwc -define SDF_TEST -mess -gui )&&(./xcelium.d/env.d/env.history.04Dec2025_11_38_28)
+s2::(04Dec2025:11:38:50):( xrun -timescale 1ns/10ps opdiv_netlist.v op_test_div2.sv -v slow_vdd1v0_basiccells.v -access +rwc -define SDF_TEST -mess -gui )&&(./xcelium.d/env.d/env.history.04Dec2025_11_38_50)
+s3::(04Dec2025:11:47:11):( xrun -timescale 1/10ns opdiv_netlist-rwc -access -gui )&&(./xcelium.d/env.d/env.history.04Dec2025_11_47_11)
+s4::(04Dec2025:11:48:35):( xrun -timescale 1ns/10ps opdiv_netlist.v op_test_div2.sv -v slow_vdd1v0_basiccells.v -access +rwc -define SDF_TEST -mess -gui )&&(./xcelium.d/env.d/env.history.04Dec2025_11_48_35)

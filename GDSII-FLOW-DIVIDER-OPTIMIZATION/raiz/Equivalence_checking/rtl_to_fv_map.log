@@ -1,0 +1,29 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 565 days old. You can download the latest version from http://downloads.cadence.com.
+
+0
+// Command: usage -auto -elapse
+CPU time     : 0.06    seconds
+Elapse time  : 0       seconds
+Memory usage : 89.39   M bytes
+0
+// Command: set_mapping_method -sensitive
+0
+// Command: set_verification_information rtl_fv_map_db
+// Verification information is set to /home/xmen/Desktop/divider_optimization/Equivalence_checking/rtl_fv_map_db.
+0
+// Command: read_implementation_information fv/opdiv -revised fv_map
+// Error: Directory /home/xmen/Desktop/divider_optimization/Equivalence_checking/fv/opdiv does not exist.
+1
+    while executing
+"read_implementation_information fv/opdiv -revised fv_map"
+// 'dofile /home/xmen/Desktop/divider_optimization/Equivalence_checking/rtl_to_fv_map.do' is aborted at line 42
+// Warning: Error exit from dofile 'rtl_to_fv_map.do' due to 'set dofile abort exit' command

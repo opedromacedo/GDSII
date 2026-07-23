@@ -1,0 +1,189 @@
+
+ 
+Copyright (C) 2002-2023 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 23.11-s014_1, built Mar 14 2024 (linux26_64)
+Options : 
+Date    : Sat, December 13 22:26:46 2025
+Host    : VT0138 (x86_64 Linux 4.18.0-553.47.1.el8_10.x86_64) (24*Intel(R) Core(TM) i9-14900F 36864KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+@modus:root:/ 1> source sample_script.tcl 
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv_correct_netlist_dft.v\
+  -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325222652-684474000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+ERROR (TEI-023): Build Model: unable to read file 'opdiv_correct_netlist_dft.v'. Specify a valid file or path name with proper permissions.  [end TEI_023] 
+
+Search Order  1:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =              871,792  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-023): Build Model: unable to read file 'opdiv_correct_netlist_dft.v'. Specify a valid file or path name with proper permissions.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 2> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv_correct_netlist_dft.v\
+  -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121325222757-556974000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "opdiv_correct_netlist_dft.v"
+Search Order  2:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+Reading Verilog data from opdiv_correct_netlist_dft.v
+
+Verilog Parser complete - 0 modules, 0 gates, 0 user defined primitives.
+
+
+Reading Verilog data from ../../lib/slow_vdd1v0_basiccells.v
+
+Verilog Parser complete - 546 modules, 1878 gates, 2 user defined primitives.
+
+ERROR (TEI-002): The 'cell opdiv' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-400): Build Model FAILED:
+  Cell named 'opdiv' could not be resolved
+  Unexpected Model Build Failure
+  [end TEI_400] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           53,778,592  bytes
+
+                      CPU Time =    0:00:00.16
+                  Elapsed Time =    0:00:00.27                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-002): The 'cell opdiv' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.   
+      1 ERROR (TEI-400): Build Model FAILED:
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 3> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv_correct_netlist_dft.v\
+  -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121525104029-564622000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "opdiv_correct_netlist_dft.v"
+Search Order  2:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+Reading Verilog data from opdiv_correct_netlist_dft.v
+
+Verilog Parser complete - 0 modules, 0 gates, 0 user defined primitives.
+
+
+Reading Verilog data from ../../lib/slow_vdd1v0_basiccells.v
+
+Verilog Parser complete - 546 modules, 1878 gates, 2 user defined primitives.
+
+ERROR (TEI-002): The 'cell opdiv' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-400): Build Model FAILED:
+  Cell named 'opdiv' could not be resolved
+  Unexpected Model Build Failure
+  [end TEI_400] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           53,779,888  bytes
+
+                      CPU Time =    0:00:00.17
+                  Elapsed Time =    0:00:00.28                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-002): The 'cell opdiv' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.   
+      1 ERROR (TEI-400): Build Model FAILED:
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 4> exit

@@ -1,0 +1,64 @@
+                          CONFORMAL (R)
+                   Version 24.10-p100 (30-May-2024) (64 bit executable)
+   Copyright (c) Cadence Design Systems, Inc., 1997-2024. All Rights Reserved
+
+
+This program is proprietary and confidential information belonging to
+Cadence Design Systems, Inc., and may be used and disclosed only as authorized
+in a license agreement controlling such use and disclosure.
+
+// Warning: This version is 552 days old. You can download the latest version from http://downloads.cadence.com.
+
+// Command: read library ../lib/slow_vdd1v0_basiccells.v -verilog -both
+// Parsing file ../lib/slow_vdd1v0_basiccells.v ...
+// Warning: (RTL14.1) Fanout load of the signal is removed (occurrence:56)
+// Warning: (VLG5.5) Internal primitive is recognized (occurrence:120)
+// Warning: (VLG5.6) Named port association is ignored for primitive gate (occurrence:120)
+// Warning: (IGN7.1) trireg net is modeled as a latch to hold value (occurrence:1)
+// Warning: (HRC1.4) Module/entity is empty (blackboxed) (occurrence:1)
+// Note: (HRC3.5b) Open output port connection is detected (occurrence:80)
+// Warning: (HRC3.10b) An input port is declared, but it is not used. Module is empty (occurrence:1)
+// Note: Read VERILOG library successfully
+// Command: read design  ../rtl/opdiv.sv -sv -golden
+// Parsing file ../rtl/opdiv.sv ...
+// Golden root module is set to 'opdiv'
+// Warning: (RTL1.2) Variable/signal is assigned by multiple non-blocking assignments (occurrence:2)
+// Warning: (RTL1.4) Assignment with LHS bit width is greater than RHS bit width (occurrence:4)
+// Warning: (RTL1.5a) Assignment with RHS bit width is greater than LHS bit width (occurrence:9)
+// Warning: (RTL1.5b) Potential loss of RHS msb or carry-out bit (occurrence:2)
+// Warning: (RTL3.1) Variable/signal is unassigned in asynchronous set/reset (occurrence:1)
+// Warning: (RTL4.7) Enum base-type defaults to 32-bit integer (occurrence:1)
+// Note: (RTL5.5a) Default case item with non-X assignment(s) (occurrence:12)
+// Note: (RTL5.7) Default case item with inconsistent assignment(s). (occurrence:1)
+// Warning: (RTL6.1) X created due to the assignment of value X (occurrence:2)
+// Warning: (RTL7.3) Array index in RHS might be out of range (occurrence:2)
+// Warning: (RTL7.4) Array index in LHS might be out of range (occurrence:2)
+// Warning: (RTL7.10b) Ternary branches have different data sizes (occurrence:5)
+// Warning: (RTL7.10d) Comparison with positive constant of different signedness (occurrence:3)
+// Warning: (RTL7.11b) Unsigned reference with index/part selection to a signed variable (occurrence:41)
+// Warning: (RTL7.13) Logical operator is applied to multiple-bit operand (occurrence:2)
+// Warning: (RTL23) Flop with asynchronous hold might cause non-equivalence with synthesized netlist (occurrence:1)
+// Note: (VLG2.2a) Non-binary case item is used in casex statement (occurrence:31)
+// Warning: (HRC3.6) Port connection width mis-matches. Undriven signals are floating (occurrence:1)
+// Warning: (HRC3.6b) Input port connection width mis-matches. Extra bits ignored (occurrence:1)
+// Warning: (HRC3.16) A wire is declared, but not used in the module (occurrence:2)
+// Note: Read VERILOG design successfully
+// Command: read design ../synthesis/outputs/opdiv_netlist_dft.v -verilog -revised
+// Parsing file ../synthesis/outputs/opdiv_netlist_dft.v ...
+// Revised root module is set to 'opdiv'
+// Note: Read VERILOG design successfully
+// Command: report module
+Golden:
+   opdiv 
+      VDW_SUB_33_1_0 
+      counter_bit 
+Revised:
+   opdiv 
+// Command: add pin constraints 0 SE  -revised
+// Command: add ignored inputs scan_in -revised
+// Command: add ignored outputs scan_out -revised
+// Command: set flatten model -seq_constant
+// Command: remodel -seq_constant -repeat -golden
+// Warning: Flatten netlists are not valid. Please 'set system mode lec' to build them
+// 'dofile /home/xmen/Desktop/divider_optimization/Equivalence_checking/opdiv.do' is aborted at line 10
+// Command: exit

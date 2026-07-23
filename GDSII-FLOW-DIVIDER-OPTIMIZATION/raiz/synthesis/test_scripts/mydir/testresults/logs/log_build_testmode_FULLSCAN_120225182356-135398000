@@ -1,0 +1,62 @@
+Starting Command: build_testmode 
+
+INFO (TDA-005): Command Line Invocation: 
+            build_testmode -assignfile opdiv.FULLSCAN.pinassign -testmode FULLSCAN -workdir mydir  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 23.11-s014_1, built Mar 14 2024 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_testmode_FULLSCAN_120225182356-135398000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Tuesday Dec 02 18:23:56 2025  -03
+            Host machine is VT0138, x86_64 running Linux 4.18.0-553.47.1.el8_10.x86_64.
+            This job is process number 222829.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR mydir
+            -TESTMODE FULLSCAN
+
+            -ASSIGNFILE opdiv.FULLSCAN.pinassign
+          * update_assign_file=
+            -LOGFILE mydir/testresults/logs/log_build_testmode_FULLSCAN_120225182356-135398000
+[end TDA_009]
+MODEDEFPATH set to:  /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+ERROR (THM-999): Terminating condition encountered. System Error Code: 2.  System Error Message: No such file or directory.  Logic Model Message: Unable to open file mydir/tbdata/hierModel3.  [end THM_999]
+ERROR (TTM-004): Error loading Hierarchical Model.  [end TTM_004] 
+
+ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+           see preceding message(s) for details. [end TTM_801] 
+
+
+Modus Build Test Mode(s) completed. Highest severity is (ERROR).
+
+               Total Memory =            4,476,288  bytes
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.00
+               Elapsed Time =   0:00:00.00
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (THM-999): Terminating condition encountered. System Error Code: 2.  System Error Message: No such file or directory.  Logic Model Message: Unable to open file mydir/tbdata/hierModel3.  
+      1 ERROR (TTM-004): Error loading Hierarchical Model.   
+      1 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

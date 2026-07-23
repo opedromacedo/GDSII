@@ -1,0 +1,182 @@
+
+ 
+Copyright (C) 2002-2023 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 23.11-s014_1, built Mar 14 2024 (linux26_64)
+Options : 
+Date    : Mon, December 15 15:28:26 2025
+Host    : VT0138 (x86_64 Linux 4.18.0-553.47.1.el8_10.x86_64) (24*Intel(R) Core(TM) i9-14900F 36864KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+@modus:root:/ 1> source sample_script.tcl 
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir -designsource opdiv_correct_netlist_dft.v\
+  -techlib ../../lib/slow_vdd1v0_basiccells.v -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121525152841-491945000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "opdiv_correct_netlist_dft.v"
+Search Order  2:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+Reading Verilog data from opdiv_correct_netlist_dft.v
+
+Verilog Parser complete - 1 modules, 142 gates, 0 user defined primitives.
+
+
+Reading Verilog data from ../../lib/slow_vdd1v0_basiccells.v
+
+Verilog Parser complete - 546 modules, 1878 gates, 2 user defined primitives.
+
+
+
+INFO (TEI-196): Build Model - Hierarchical Model Build starting: [end TEI_196] 
+
+
+
+Number of blocks in the hierarchical model is: 7,067.
+
+Number of technology library cell instances in the hierarchical model is: 1,223.
+
+
+INFO (TEI-197): Build Model - Hierarchical Model Build completed. [end TEI_197] 
+
+
+
+INFO (TEI-198): Build Model - Flat Model Build starting: [end TEI_198] 
+
+ defaultTIE = X
+ defaultDFN = T
+
+WARNING (TLM-117): TIEX is generated for sourceless net 'scan_out' in 'cell opdiv' based on input option 'defaultTIE' set to 'X'.  [end TLM_117] 
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          7,067  Blocks                       5,679  Blocks
+         22,383  Pins                         5,679  Nodes
+         12,771  Nets
+
+Primary Inputs:                      Primary Outputs:
+         71  Input Only                        67  Output Only
+          0  Input/Output                       0  Input/Output
+         71  Total Inputs                      67  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        426  Tied to 0                          0  Two-State
+        142  Tied to 1                          0  Three-State
+          1  Tied to X                          0  Total Dotted Nets
+        569  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+        142  Rising  Edge Flop w/Set and Reset-Dominant Port
+        142  Total Flops
+
+      1,223  Technology Library Cell Instances
+
+[end TLM_055] 
+Optimization removed logic for 1 of 67 cells in this design.
+
+Optimization removed a total of 0 tied Latch Ports.
+Optimization removed a total of 0 non-controlling inputs.
+Optimization removed a total of 142 dangling logic nodes.
+
+
+
+INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199] 
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =          102,553,424  bytes
+
+                      CPU Time =    0:00:00.18
+                  Elapsed Time =    0:00:00.40                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-196): Build Model - Hierarchical Model Build starting:  
+      1 INFO (TEI-197): Build Model - Hierarchical Model Build completed.  
+      1 INFO (TEI-198): Build Model - Flat Model Build starting:  
+      1 INFO (TEI-199): Build Model - Flat Model Build completed.   
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TLM-055): Design Summary
+
+  WARNING Messages...
+      1 WARNING (TLM-117): TIEX is generated for sourceless net 'scan_out' in 'cell opdiv' based on input option 'defaultTIE' set to 'X'.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 25: build_testmode -workdir mydir -testmode FULLSCAN -assignfile  opdiv_correct.FULLSCAN.pinassign
+Starting Command: build_testmode 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_testmode_FULLSCAN_121525152902-571913000 [end TDA_015]
+
+MODEDEFPATH set to:  /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+ERROR (TTM-003): Unable to resolve file opdiv_correct.FULLSCAN.pinassign from 'ASSIGNFILE' option.  [end TTM_003] 
+
+ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+           see preceding message(s) for details. [end TTM_801] 
+
+
+Modus Build Test Mode(s) completed. Highest severity is (ERROR).
+
+               Total Memory =              311,296  bytes
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.00
+               Elapsed Time =   0:00:00.00
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TTM-003): Unable to resolve file opdiv_correct.FULLSCAN.pinassign from 'ASSIGNFILE' option.   
+      1 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 25: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 2> exit

@@ -1,0 +1,36 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-stylus 
+Date:		Wed Dec  3 20:36:02 2025
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[20:36:02.518506] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_330013_VT0138_xmen_QqfJaN.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Dec  3 20:36:27 2025
+  Total CPU time:     0:00:10
+  Total real time:    0:00:27
+  Peak memory (main): 996.36MB
+
+
+*** Memory Usage v#1 (Current mem = 1012.930M, initial mem = 495.000M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:09.9, real=0:00:25.0, mem=1012.9M) ---

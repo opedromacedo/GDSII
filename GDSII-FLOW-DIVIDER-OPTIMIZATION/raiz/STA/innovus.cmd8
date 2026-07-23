@@ -1,0 +1,138 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Wed Dec  3 21:18:49 2025                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+#@(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+#@(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+#@(#)CDS: CPE v21.19-s026
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_db init_power_nets VDD
+set_db init_ground_nets VSS
+read_mmmc opdiv.view
+#@ Begin verbose source opdiv.view (pre)
+create_library_set -name max_timing\
+   -timing ../lib/slow_vdd1v0_basicCells.lib
+create_library_set -name min_timing\
+   -timing ../lib/fast_vdd1v0_basicCells.lib
+create_timing_condition -name default_mapping_tc_2\
+   -library_sets min_timing
+create_timing_condition -name default_mapping_tc_1\
+   -library_sets max_timing
+create_rc_corner -name rccorners\
+   -cap_table ../captable/cln28hpl_1p10m+alrdl_5x2yu2yz_typical.capTbl\
+   -pre_route_res 1\
+   -post_route_res 1\
+   -pre_route_cap 1\
+   -post_route_cap 1\
+   -post_route_cross_cap 1\
+   -pre_route_clock_res 0\
+   -pre_route_clock_cap 0\
+   -qrc_tech /home/xmen/Desktop/divider_optimization/QRC_TECH/gpdk045.tch
+create_delay_corner -name max_delay\
+   -timing_condition {default_mapping_tc_1}\
+   -rc_corner rccorners
+create_delay_corner -name min_delay\
+   -timing_condition {default_mapping_tc_2}\
+   -rc_corner rccorners
+create_constraint_mode -name sdc_cons\
+   -sdc_files\
+    opdiv_sdc.sdc 
+create_analysis_view -name wc -constraint_mode sdc_cons -delay_corner max_delay
+create_analysis_view -name bc -constraint_mode sdc_cons -delay_corner min_delay
+set_analysis_view -setup wc -hold bc
+#@ End verbose source opdiv.view
+connect_global_net VDD -type pg_pin -pin VDD -inst_base_name *
+connect_global_net VSS -type pg_pin -pin VSS -inst_base_name *
+set_db route_special_via_connect_to_shape { noshape }
+route_special -connect core_pin -layer_change_range { Metal1(1) Metal11(11) } -block_pin_target nearest_target -core_pin_target first_after_row_end -allow_jogging 1 -crossover_via_layer_range { Metal1(1) Metal11(11) } -nets { VSS VDD } -allow_layer_change 1 -target_via_layer_range { Metal1(1) Metal11(11) }
+read_def opdiv_scanDEF.scandef
+set_db reorder_scan_comp_logic true
+place_opt_design
+write_db place0pt
+create_clock_tree_spec
+ccopt_design
+write_db postCTSpot
+set_db route_design_with_timing_driven 1
+set_db route_design_with_si_driven 1
+set_db route_design_top_routing_layer 11
+set_db route_design_bottom_routing_layer 1
+set_db route_design_detail_end_iteration 1
+set_db route_design_with_timing_driven true
+set_db route_design_with_si_driven true
+route_design -global_detail
+reset_parasitics
+extract_rc
+reset_parasitics
+extract_rc
+reset_parasitics
+extract_rc
+set_db timing_analysis_type ocv
+time_design -post_route
+time_design -post_route -hold
+set_db check_drc_disable_rules {}
+set_db check_drc_ndr_spacing auto
+set_db check_drc_check_only default
+set_db check_drc_inside_via_def true
+set_db check_drc_exclude_pg_net false
+set_db check_drc_ignore_trial_route false
+set_db check_drc_ignore_cell_blockage false
+set_db check_drc_use_min_spacing_on_block_obs auto
+set_db check_drc_report opdiv.drc.rpt
+set_db check_drc_limit 1000
+check_drc
+set_db check_drc_area {0 0 0 0}
+check_connectivity -type all -error 1000 -warning 50
+source: power.tcl
+source: power.tcl
+#@ source power.tcl
+#@ Begin verbose source (pre): source power.tcl
+connect_global_net VDD -type pg_pin -pin VDD -inst *
+connect_global_net VSS -type pg_pin -pin VSS -inst *
+connect_global_net VDD -type tie_hi 
+connect_global_net VSS -type tie_lo 
+connect_global_net VDD -type tie_hi -pin VDD -inst *
+connect_global_net VSS -type tie_lo -pin VSS -inst *
+#@ End verbose source: power.tcl
+set_power_output_dir -reset
+set_power_output_dir ./run1
+set_default_switching_activity -reset
+set_default_switching_activity -input_activity 0.2 -period 10.0
+read_activity_file -reset
+set_power -reset
+set_dynamic_power_simulation -reset
+report_power -rail_analysis_format VS -out_file ./run1/opdiv.rpt
+gui_select -point {27.01150 54.63400}
+set_rail_analysis_config -method era_static -power_switch_eco false -write_movies false -write_voltage_waveforms false -accuracy xd -analysis_view wc -process_techgen_em_rules false -enable_rlrp_analysis false -extraction_tech_file ../QRC_TECH/gpdk045.tch -voltage_source_search_distance 50 -ignore_shorts false -enable_mfg_effects false -report_via_current_direction false
+write_power_pads -net VDD -voltage_source_file opdiv.pp
+set_pg_nets -net VDD -voltage 0.9 -threshold 0.81
+set_power_data -reset
+set_power_data -format current -scale 1 /home/xmen/Desktop/divider_optimization/physical_design/run1/static_VDD.ptiavg
+set_power_pads -reset
+set_power_pads -net VDD -format xy -file opdiv.pp
+set_package -reset
+set_package -spice_model_file {} -mapping_file {}
+set_net_group -reset
+set_advanced_rail_options -reset
+report_rail -type net -results_directory ./run1 VDD
+set_pg_nets -net VDD -voltage 0.9 -threshold 0.81
+set_power_data -reset
+set_power_data -format current -scale 1 /home/xmen/Desktop/divider_optimization/physical_design/run1/static_VDD.ptiavg
+set_power_pads -reset
+set_power_pads -net VDD -format xy -file opdiv.pp
+set_package -reset
+set_package -spice_model_file {} -mapping_file {}
+set_net_group -reset
+set_advanced_rail_options -reset
+report_rail -type net -results_directory ./run1 VDD
+add_fillers -base_cells FILL8 FILL64 FILL4 FILL32 FILL2 FILL16 FILL1 -prefix FILLER
+write_stream opdiv -lib_name DesignLib -unit 2000 -mode all
+write_stream opdivgdsi -lib_name DesignLib -unit 2000 -mode all
+write_stream opdivgdsi -lib_name DesignLib -unit 2000 -mode all
+write_db opdiv

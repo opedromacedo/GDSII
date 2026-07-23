@@ -1,0 +1,8 @@
+xrun(64): 24.03-s005: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.03-s005: Started on Dec 02, 2025 at 12:22:25 -03
+xrun
+	op_test_div.sv
+	-access +rwc
+	-gui
+xrun: *E,FILEMIS: Cannot find the provided file op_test_div.sv.
+TOOL:	xrun(64)	24.03-s005: Exiting on Dec 02, 2025 at 12:22:25 -03  (total: 00:00:00)

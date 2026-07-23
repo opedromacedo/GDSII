@@ -1,0 +1,11 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(22Jan2026:14:54:14):( xrun opdiv_correct_netlist.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.22Jan2026_14_54_14)
+s2::(22Jan2026:14:55:51):( xrun opdiv_correct_netlist.v )&&(./xcelium.d/env.d/env.history.22Jan2026_14_55_51)
+s3::(22Jan2026:14:55:57):( xrun opdiv_correct_netlist.v -verilog )&&(./xcelium.d/env.d/env.history.22Jan2026_14_55_57)
+s4::(22Jan2026:14:56:13):( xrun opdiv_correct_netlist.v )&&(./xcelium.d/env.d/env.history.22Jan2026_14_56_13)
+s5::(22Jan2026:14:57:20):( xrun -gui )&&(./xcelium.d/env.d/env.history.22Jan2026_14_57_20)
+s6::(22Jan2026:14:57:40):( xrun -f opdiv_correct_netlist.v )&&(./xcelium.d/env.d/env.history.22Jan2026_14_57_40)
+s7::(22Jan2026:14:57:59):( xrun -f opdiv_correct_netlist.v -gui -access +rwc )&&(./xcelium.d/env.d/env.history.22Jan2026_14_57_59)

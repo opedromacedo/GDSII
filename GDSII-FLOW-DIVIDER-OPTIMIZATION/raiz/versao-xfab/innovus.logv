@@ -1,0 +1,60 @@
+[02/02 15:52:16      0s] 
+[02/02 15:52:16      0s] Cadence Innovus(TM) Implementation System.
+[02/02 15:52:16      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/02 15:52:16      0s] 
+[02/02 15:52:16      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[02/02 15:52:16      0s] Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+[02/02 15:52:16      0s] Date:		Mon Feb  2 15:52:16 2026
+[02/02 15:52:16      0s] Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+[02/02 15:52:16      0s] OS:		Rocky Linux 8.10 (Green Obsidian)
+[02/02 15:52:16      0s] 
+[02/02 15:52:16      0s] License:
+[02/02 15:52:16      0s] 		[15:52:16.518562] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+[02/02 15:52:16      0s] 
+[02/02 15:52:16      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[02/02 15:52:16      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[02/02 15:52:20      4s] 
+[02/02 15:52:20      4s] 
+[02/02 15:52:22      6s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[02/02 15:52:23      7s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[02/02 15:52:23      7s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[02/02 15:52:23      7s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[02/02 15:52:23      7s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[02/02 15:52:23      7s] @(#)CDS: CPE v21.19-s026
+[02/02 15:52:23      7s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[02/02 15:52:23      7s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[02/02 15:52:23      7s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[02/02 15:52:23      7s] @(#)CDS: RCDB 11.15.0
+[02/02 15:52:23      7s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[02/02 15:52:23      7s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[02/02 15:52:23      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_1127825_VT0138_xmen_VMd5yu.
+
+[02/02 15:52:23      7s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_1127825_VT0138_xmen_VMd5yu.
+[02/02 15:52:23      7s] 
+[02/02 15:52:23      7s] Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[02/02 15:52:23      7s] **WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+[02/02 15:52:23      7s] set_multi_cpu_usage -local_cpu 32
+[02/02 15:52:24      7s] [INFO] Loading PVS 23.11 fill procedures
+[02/02 15:52:24      8s] 
+[02/02 15:52:24      8s] **INFO:  MMMC transition support version v31-84 
+[02/02 15:52:24      8s] 
+[02/02 15:52:26      9s] #@ Processing -files option
+[02/02 15:52:26      9s] **ERROR: (IMPSYT-6696):	Initfile (innovus_script_old.tcl) does not exist.
+[02/02 15:52:26      9s] @innovus 1> gui_select -point {0.05700 0.03100}
+[02/02 15:52:28      9s] @innovus 2> 
+[02/02 15:52:35      9s] --------------------------------------------------------------------------------
+[02/02 15:52:35      9s] Exiting Innovus on Mon Feb  2 15:52:35 2026
+[02/02 15:52:35      9s]   Total CPU time:     0:00:10
+[02/02 15:52:35      9s]   Total real time:    0:00:20
+[02/02 15:52:35      9s]   Peak memory (main): 995.97MB
+[02/02 15:52:35      9s] 
+[02/02 15:52:35      9s] 
+[02/02 15:52:35      9s] *** Memory Usage v#1 (Current mem = 1004.523M, initial mem = 495.000M) ***
+[02/02 15:52:35      9s] 
+[02/02 15:52:35      9s] *** Summary of all messages that are not suppressed in this session:
+[02/02 15:52:35      9s] Severity  ID               Count  Summary                                  
+[02/02 15:52:35      9s] ERROR     IMPSYT-6696          1  Initfile (%s) does not exist.            
+[02/02 15:52:35      9s] WARNING   PRL-39               1  Number of local CPUs specified (%d) > Ac...
+[02/02 15:52:35      9s] *** Message Summary: 1 warning(s), 1 error(s)
+[02/02 15:52:35      9s] 
+[02/02 15:52:35      9s] --- Ending "Innovus" (totcpu=0:00:09.9, real=0:00:19.0, mem=1004.5M) ---

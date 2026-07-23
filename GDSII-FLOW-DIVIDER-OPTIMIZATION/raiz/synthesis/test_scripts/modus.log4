@@ -1,0 +1,1183 @@
+
+ 
+Copyright (C) 2002-2023 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 23.11-s014_1, built Mar 14 2024 (linux26_64)
+Options : 
+Date    : Mon, December 15 15:33:24 2025
+Host    : VT0138 (x86_64 Linux 4.18.0-553.47.1.el8_10.x86_64) (24*Intel(R) Core(TM) i9-14900F 36864KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+@modus:root:/ 1> source sample_script.tcl 
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir \
+  -designsource opdiv_correct_netlist_dft.v \
+  -techlib ../../lib/slow_vdd1v0_basiccells.v \
+  -designtop opdiv_correct
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121525153340-830289000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "opdiv_correct_netlist_dft.v"
+Search Order  2:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+Reading Verilog data from opdiv_correct_netlist_dft.v
+
+Verilog Parser complete - 1 modules, 142 gates, 0 user defined primitives.
+
+
+Reading Verilog data from ../../lib/slow_vdd1v0_basiccells.v
+
+Verilog Parser complete - 546 modules, 1878 gates, 2 user defined primitives.
+
+ERROR (TEI-002): The 'cell opdiv_correct' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-400): Build Model FAILED:
+  Cell named 'opdiv_correct' could not be resolved
+  Unexpected Model Build Failure
+  [end TEI_400] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           54,018,128  bytes
+
+                      CPU Time =    0:00:00.18
+                  Elapsed Time =    0:00:00.30                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      1 ERROR (TEI-002): The 'cell opdiv_correct' was not found in the design source file(s) specified.   Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.   
+      1 ERROR (TEI-400): Build Model FAILED:
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'sample_script.tcl' line 22: errors out.
+#@ End verbose source sample_script.tcl
+@modus:root:/ 2> source sample_script.tcl
+#@ Begin verbose source sample_script.tcl
+@file(sample_script.tcl) 22: build_model -workdir mydir \
+  -designsource opdiv_correct_netlist_dft.v \
+  -techlib ../../lib/slow_vdd1v0_basiccells.v \
+  -designtop opdiv
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_model_121525153424-989395000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "opdiv_correct_netlist_dft.v"
+Search Order  2:  "../../lib/slow_vdd1v0_basiccells.v"
+
+
+
+Reading Verilog data from opdiv_correct_netlist_dft.v
+
+Verilog Parser complete - 1 modules, 142 gates, 0 user defined primitives.
+
+
+Reading Verilog data from ../../lib/slow_vdd1v0_basiccells.v
+
+Verilog Parser complete - 546 modules, 1878 gates, 2 user defined primitives.
+
+
+
+INFO (TEI-196): Build Model - Hierarchical Model Build starting: [end TEI_196] 
+
+
+
+Number of blocks in the hierarchical model is: 7,067.
+
+Number of technology library cell instances in the hierarchical model is: 1,223.
+
+
+INFO (TEI-197): Build Model - Hierarchical Model Build completed. [end TEI_197] 
+
+
+
+INFO (TEI-198): Build Model - Flat Model Build starting: [end TEI_198] 
+
+ defaultTIE = X
+ defaultDFN = T
+
+WARNING (TLM-117): TIEX is generated for sourceless net 'scan_out' in 'cell opdiv' based on input option 'defaultTIE' set to 'X'.  [end TLM_117] 
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          7,067  Blocks                       5,679  Blocks
+         22,383  Pins                         5,679  Nodes
+         12,771  Nets
+
+Primary Inputs:                      Primary Outputs:
+         71  Input Only                        67  Output Only
+          0  Input/Output                       0  Input/Output
+         71  Total Inputs                      67  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        426  Tied to 0                          0  Two-State
+        142  Tied to 1                          0  Three-State
+          1  Tied to X                          0  Total Dotted Nets
+        569  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+        142  Rising  Edge Flop w/Set and Reset-Dominant Port
+        142  Total Flops
+
+      1,223  Technology Library Cell Instances
+
+[end TLM_055] 
+Optimization removed logic for 1 of 67 cells in this design.
+
+Optimization removed a total of 0 tied Latch Ports.
+Optimization removed a total of 0 non-controlling inputs.
+Optimization removed a total of 142 dangling logic nodes.
+
+
+
+INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199] 
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =          102,525,520  bytes
+
+                      CPU Time =    0:00:00.19
+                  Elapsed Time =    0:00:00.41                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-196): Build Model - Hierarchical Model Build starting:  
+      1 INFO (TEI-197): Build Model - Hierarchical Model Build completed.  
+      1 INFO (TEI-198): Build Model - Flat Model Build starting:  
+      1 INFO (TEI-199): Build Model - Flat Model Build completed.   
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TLM-055): Design Summary
+
+  WARNING Messages...
+      1 WARNING (TLM-117): TIEX is generated for sourceless net 'scan_out' in 'cell opdiv' based on input option 'defaultTIE' set to 'X'.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 27: build_testmode -workdir mydir \
+  -testmode FULLSCAN \
+  -assignfile opdiv.FULLSCAN.pinassign
+Starting Command: build_testmode 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_testmode_FULLSCAN_121525153446-070382000 [end TDA_015]
+
+MODEDEFPATH set to:  /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /usr/local/cadence/MODUS231/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+
+   TDR NAME      =  dummy.tdr 
+
+   SCAN_TYPE     =  GSD 
+   BOUNDARY      =  NONE 
+   IN            =  PI 
+   OUT           =  PO 
+
+INFO (TTM-391): A default modeinit sequence will be generated.   [end TTM_391] 
+INFO (TTM-387): A default scanop sequence will be generated.   [end TTM_387] 
+INFO (THM-814): Testmode contains 97.46% active logic,  2.54% inactive logic and  0.00% constraint logic.   [end THM_814] 
+INFO (TTM-359): There are 1 scan chains which are only observable.  [end TTM_359] 
+
+There are no PPIs for Test Mode:  FULLSCAN
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+ Latch Summary for Test Mode:  FULLSCAN
+ Latch Type                #Active   #Inactive       Total
+ ---------------------   ---------   ---------   ---------
+ Test Constraint (TC)            0           0           0 
+ Scan Enable     (SE)            0           0           0 
+ Fixed Value     (FV)            0           0           0 
+ Floating                      284           0         284 
+ Finite State    (FSM)           0           0           0 
+
+INFO (TTM-800): build_testmode has created mode FULLSCAN. [end TTM_800] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          2  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+         67      PI  +SC                                  nreset / nreset
+         65      PI  -EC  -SC                             clock / clock
+          0      PI  +SE                                  SE / SE
+         69      PI   SI                                  scan_in / scan_in
+        137      PO   SO                                  scan_out / scan_out
+
+
+               Total Memory =           16,205,392  bytes
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.05
+               Elapsed Time =   0:00:20.20
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (THM-814): Testmode contains 97.46% active logic,  2.54% inactive logic and  0.00% constraint logic.    
+      1 INFO (TTM-359): There are 1 scan chains which are only observable.   
+      1 INFO (TTM-387): A default scanop sequence will be generated.    
+      1 INFO (TTM-391): A default modeinit sequence will be generated.    
+      1 INFO (TTM-800): build_testmode has created mode FULLSCAN.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 31: verify_test_structures -workdir mydir -testmode FULLSCAN
+Starting Command: verify_test_structures 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_verify_test_structures_FULLSCAN_121525153507-316072000 [end TDA_015]
+
+INFO (TSV-900): verify_test_structures processing has started Mon Dec 15 15:35:07 2025    [end TSV_900] 
+------------------- verify_test_structures Process Preview ---------------------
+  apply constraints ...................................... constraints=yes    
+  Print 1 message per source of clock race ............... limitcisource=yes  
+  Print 1 Message per capture of clock race .............. limitcicapture=yes 
+  Check for mutually exclusive gating logic (MEG) ........ megraces=yes       
+  Use raise message severity attributes if they exist .... raisemsgsev=no    
+  Reporting options ...................................... report[option]=yes/no 
+    Process Preview ......................................   preview=yes     
+    Circuit Statistics ...................................   circuit=yes      
+    Message Summary ......................................   summary=yes      
+    Specific Messages ....................................   specific=yes     
+    Tests Status .........................................   status=no       
+    Output File Names and Size ...........................   filestats=yes    
+    Display messages for cloaked objects .................   cloakedobj=no   
+  Re-run verify_test_structures test(s) ................... reruntests=no     
+  Use message suppression attributes if they exist ....... suppressmsg=no    
+  Test selected .......................................... test[option]=yes/no 
+    Analyze test clock control of memory elements ........   testclockusage=yes 
+    Analyze three-state drivers for contention ...........   tsdcontention=yes 
+    Analyze feedback loops and keeper devices ............   feedback=yes 
+    Analyze clock choppers ...............................   clockchopper=yes 
+    Analyze flip-flop and latch scan characteristics .....   latchusage=yes 
+    Analyze explicit fixed value latches .................   explicitfvlatch=yes 
+    Analyze potential clock signal races .................   clocksignalraces=yes 
+    Analyze internal scan chains .........................   internalscanchains=yes 
+
+--------------------Circuit Statistics--------------------
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          7,067  Blocks                       5,679  Blocks
+         22,383  Pins                         5,679  Nodes
+         12,771  Nets
+
+Primary Inputs:                      Primary Outputs:
+         71  Input Only                        67  Output Only
+          0  Input/Output                       0  Input/Output
+         71  Total Inputs                      67  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        426  Tied to 0                          0  Two-State
+        142  Tied to 1                          0  Three-State
+          1  Tied to X                          0  Total Dotted Nets
+        569  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+        142  Rising  Edge Flop w/Set and Reset-Dominant Port
+        142  Total Flops
+
+      1,223  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          2  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+         67      PI  +SC                                  nreset / nreset
+         65      PI  -EC  -SC                             clock / clock
+          0      PI  +SE                                  SE / SE
+         69      PI   SI                                  scan_in / scan_in
+        137      PO   SO                                  scan_out / scan_out
+
+  
+   Analyze test clocks' control of memory elements    
+WARNING (TSV-315): Memory element block \Quatient_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \Quatient_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \a_reg_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \a_reg_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \b_reg_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \b_reg_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \k_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \k_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[10].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[10].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[11].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[11].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[12].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[12].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[13].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[13].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[14].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[14].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[15].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[15].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[16].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[16].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[17].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[17].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[18].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[18].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[19].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[19].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[20].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[20].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[21].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[21].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[22].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[22].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[23].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[23].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[24].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[24].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[25].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[25].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[26].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[26].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[27].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[27].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[28].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[28].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[29].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[29].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[30].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[30].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[31].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[31].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[3].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[3].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[4].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[4].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[5].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[5].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[6].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[6].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[7].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[7].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[8].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[8].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \minuend_reg[9].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \minuend_reg[9].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[1].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[1].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block \state_reg[2].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \state_reg[2].U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block a_signal_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin a_signal_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block b_signal_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin b_signal_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block ena_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin ena_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block in_ready_o_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin in_ready_o_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block out_valid_o_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin out_valid_o_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+WARNING (TSV-315): Memory element block signal_division_intern_reg.U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin signal_division_intern_reg.U$1.i0.dff_primitive.CLK during the scan sequence.   [end TSV_315] 
+
+Analyze test clocks' control of memory elements process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze three-state drivers for contention 
+
+Analyze three-state drivers for contention process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze feedback loops and keeper devices          
+
+Analyze feedback loops and keeper devices process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze clock choppers                             
+
+Analyze clock choppers process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.02
+  
+   Analyze flip-flop and latch scan characteristics   
+WARNING (TSV-400): Observable scan chain ending at pin scan_out is not a controllable scan chain. The last observation flop that was found in the scan chain is unidentified. [end TSV_400] 
+INFO (TSV-379): Observable scan chain ending at 'pin scan_out' is not a controllable scan chain. The length of the scan chain is 0 bit positions.   [end TSV_379] 
+INFO (TSV-567): There are 0 controllable scan chains fed by Scan In (SI) primary inputs.   [end TSV_567] 
+INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.   [end TSV_568] 
+INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).   [end TSV_569] 
+INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).   [end TSV_570] 
+WARNING (TSV-571): A Scan In (SI) pin scan_in does not feed to a Scan Out (SO), a Multiple-Input Signature Register (MISR) input, Pattern Generator, or a controllable latch.   [end TSV_571] 
+INFO (TSV-383): There are 284 floating latches.   [end TSV_383] 
+
+Analyze flip-flop and latch scan characteristics process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze explicit fixed value latches 
+
+Analyze explicit fixed value latches process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze potential clock signal races               
+   Check for mutually exclusive gating logic (MEG)    
+
+Analyze potential clock signal races process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+  
+   Analyze internal scan chains 
+
+Analyze channel inputs for validity process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.01
+
+--------------------File Information----------------------
+          65536 mydir/tbdata/TSVmessageFile.FULLSCAN 
+
+INFO (TSV-908): verify_test_structures processing complete.   [end TSV_908] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,050,208  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:20.06                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:35:27 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TLM-055): Design Summary
+      1 INFO (TSV-379): Observable scan chain ending at 'pin scan_out' is not a controllable scan chain. The length of the scan chain is 0 bit positions.    
+      1 INFO (TSV-383): There are 284 floating latches.    
+      1 INFO (TSV-567): There are 0 controllable scan chains fed by Scan In (SI) primary inputs.    
+      1 INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.    
+      1 INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).    
+      1 INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).    
+      1 INFO (TSV-900): verify_test_structures processing has started Mon Dec 15 15:35:07 2025     
+      1 INFO (TSV-908): verify_test_structures processing complete.    
+
+  WARNING Messages...
+    142 WARNING (TSV-315): Memory element block \Quatient_reg[0].U$1.i0.dff_primitive is not in a scan chain and is corruptible during the scan operation. The memory element may be clocked through pin \Quatient_reg[0].U$1.i0.dff_primitive.CLK during the scan sequence.    
+      1 WARNING (TSV-400): Observable scan chain ending at pin scan_out is not a controllable scan chain. The last observation flop that was found in the scan chain is unidentified.  
+      1 WARNING (TSV-571): A Scan In (SI) pin scan_in does not feed to a Scan Out (SO), a Multiple-Input Signature Register (MISR) input, Pattern Generator, or a controllable latch.    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 32: report_test_structures -workdir mydir -testmode FULLSCAN
+Starting Command: report_test_structures 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_report_test_structures_FULLSCAN_121525153528-412303000 [end TDA_015]
+
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          7,067  Blocks                       5,679  Blocks
+         22,383  Pins                         5,679  Nodes
+         12,771  Nets
+
+Primary Inputs:                      Primary Outputs:
+         71  Input Only                        67  Output Only
+          0  Input/Output                       0  Input/Output
+         71  Total Inputs                      67  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+        426  Tied to 0                          0  Two-State
+        142  Tied to 1                          0  Three-State
+          1  Tied to X                          0  Total Dotted Nets
+        569  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+        142  Rising  Edge Flop w/Set and Reset-Dominant Port
+        142  Total Flops
+
+      1,223  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+
+
+Control/Observe Chain Information for Test Mode:  FULLSCAN
+-----------------------------------------------
+
+     0 Control Chains (0 Control Only)
+     1 Observe Chains (1 Observe Only)
+     0 Chains are Control and Observe
+
+  Observe Chain: 1
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name         137/port:scan_out    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  137/port:scan_out
+    Length: 0
+    Scan Section: Scan_Section_Sequence
+
+
+Report completed.
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            7,486,144  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:35:38 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TLM-055): Design Summary
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 34: build_faultmodel -workdir mydir -fullfault yes
+Starting Command: build_faultmodel 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_build_faultmodel_121525153549-488632000 [end TDA_015]
+
+INFO (TFM-099): Build Fault Model started.  [end TFM_099] 
+INFO (TFM-102): Creating faultModel file mydir/tbdata/faultModel.  [end TFM_102] 
+
+Global Ignored Static Fault Count              1144
+Global Ignored Dynamic Fault Count             2564
+
+
+                            Global Statistics
+
+                    ATCov  ----------------------- Global Faults --------------------------
+                   Global        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00        13192            0            0            0        13192
+Collapsed Static     0.00         7950            0            0            0         7950
+PI Static            0.00          138            0            0            0          138
+PO Static            0.00          132            0            0            0          132
+
+Total Dynamic        0.00        15800            0            0            0        15800
+Collapsed Dynamic    0.00        10984            0            0            0        10984
+PI Dynamic           0.00          138            0            0            0          138
+PO Dynamic           0.00          132            0            0            0          132
+
+Parametric        
+
+IDDq                 0.00        13192            0                                  13192
+
+
+
+INFO (TFM-103): Creating faultStatus file mydir/tbdata/faultStatus.  [end TFM_103] 
+
+                           Testmode Statistics: FULLSCAN
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00        13192            0            0            0        13192        13192            0            0            0        13192
+Collapsed Static     0.00   0.00         7950            0            0            0         7950         7950            0            0            0         7950
+PI Static            0.00   0.00          138            0            0            0          138          138            0            0            0          138
+PO Static            0.00   0.00          132            0            0            0          132          132            0            0            0          132
+
+Total Dynamic        0.00   0.00        15230            0            0            0        15230        15800            0            0            0        15800
+Collapsed Dynamic    0.00   0.00        10698            0            0            0        10698        10984            0            0            0        10984
+PI Dynamic           0.00   0.00          136            0            0            0          136          138            0            0            0          138
+PO Dynamic           0.00   0.00          132            0            0            0          132          132            0            0            0          132
+
+Parametric        
+
+IDDq                 0.00   0.00        13192            0                                  13192        13192            0                                  13192
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active      #Faults      #Active    #Inactive
+Total Static       100.00        13192        13192            0
+Collapsed Static   100.00         7950         7950            0
+PI Static          100.00          138          138            0
+PO Static          100.00          132          132            0
+
+Total Dynamic       96.39        15800        15230          570
+Collapsed Dynamic   97.40        10984        10698          286
+PI Dynamic          98.55          138          136            2
+PO Dynamic         100.00          132          132            0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.  [end TFM_109] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           11,657,008  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.03                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:35:59 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-099): Build Fault Model started.   
+      1 INFO (TFM-102): Creating faultModel file mydir/tbdata/faultModel.   
+      1 INFO (TFM-103): Creating faultStatus file mydir/tbdata/faultStatus.   
+      1 INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.   
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 36: create_scanchain_tests -workdir mydir -testmode FULLSCAN -experiment scan
+Starting Command: create_scanchain_tests 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_create_scanchain_tests_FULLSCAN_scan_121525153610-666945000 [end TDA_015]
+
+
+
+WARNING (TTC-018): verify_test_structures issued Warning messages related to Stored Pattern tests.  Poor test coverage may result.  [end TTC_018] 
+INFO (TTC-107): There are no scan chains in this circuit, therefore no scan chain tests will be generated.  [end TTC_107] 
+
+(I) File(s) generated (bytes and name):
+
+           8192 mydir/tbdata/faultStatus.FULLSCAN.scan
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            6,532,624  bytes
+
+                      CPU Time =    0:00:00.02
+                  Elapsed Time =    0:00:00.01                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:36:10 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TTC-107): There are no scan chains in this circuit, therefore no scan chain tests will be generated.   
+
+  WARNING Messages...
+      1 WARNING (TTC-018): verify_test_structures issued Warning messages related to Stored Pattern tests.  Poor test coverage may result.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 37: create_logic_tests -workdir mydir -testmode FULLSCAN -experiment logic -effort high
+Starting Command: create_logic_tests 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_create_logic_tests_FULLSCAN_logic_121525153611-804467000 [end TDA_015]
+
+
+
+WARNING (TTC-018): verify_test_structures issued Warning messages related to Stored Pattern tests.  Poor test coverage may result.  [end TTC_018] 
+INFO (TTC-107): There are no scan chains in this circuit, therefore no scan chain tests will be generated.  [end TTC_107] 
+****************************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+****************************************************************************************************
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 13192            0            0            0        13192   0.00   0.00
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 13192            0            0            0        13192   0.00   0.00
+****************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Reset/Set Test Generation                                              [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1        694     5.26%    5.26%        12365           00:00.06    [end TDA_220] 
+INFO (TTC-110): Ending Reset/Set Test Generation                                                [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Static Logic Test generation                                           [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):     16       0          0     5.26%    5.26%        12365           02:28.61    [end TDA_220] 
+INFO (TTC-139): The default setting of the 'multiclockcompaction' option, ('multiclockcompaction' set to 'yes') has been turned off because the addition of extra clocks pulses may be causing the test to be invalid.  It has been turned off to reduce the number of invalid tests. The run continues. [end TTC_139] 
+INFO (TDA-220):     32       0          0     5.26%    5.26%        12365           02:28.61    [end TDA_220] 
+INFO (TDA-220):     48       0          0     5.26%    5.26%        12365           02:28.62    [end TDA_220] 
+INFO (TDA-220):     52       4        846    11.67%   11.67%        11513           02:28.62    [end TDA_220] 
+INFO (TDA-220):     68       4          0    11.67%   11.67%        11513           02:28.63    [end TDA_220] 
+INFO (TDA-220):     83       4          0    11.67%   11.67%        11513           02:28.63    [end TDA_220] 
+INFO (TDA-220):     99       4          0    11.67%   11.67%        11513           02:28.63    [end TDA_220] 
+INFO (TDA-220):    115       4          0    11.67%   11.67%        11513           02:28.64    [end TDA_220] 
+INFO (TDA-220):    119       4          0    11.67%   11.67%        11513           02:28.64    [end TDA_220] 
+INFO (TDA-220):    120       4          0    11.67%   11.67%        11513           02:28.64    [end TDA_220] 
+INFO (TDA-220):    136       4          0    11.67%   11.67%        11513           02:28.64    [end TDA_220] 
+INFO (TDA-220):    139       4          0    11.67%   11.67%        11513           02:28.65    [end TDA_220] 
+INFO (TDA-220):    155       4          0    11.67%   11.67%        11513           02:28.65    [end TDA_220] 
+INFO (TDA-220):    171       4          0    11.67%   11.67%        11513           02:28.65    [end TDA_220] 
+INFO (TDA-220):    187       4          0    11.67%   11.67%        11513           02:28.66    [end TDA_220] 
+INFO (TDA-220):    203       4          0    11.67%   11.67%        11513           02:28.66    [end TDA_220] 
+INFO (TDA-220):    219       4          0    11.67%   11.67%        11513           02:28.66    [end TDA_220] 
+INFO (TDA-220):    235       4          0    11.67%   11.67%        11513           02:28.67    [end TDA_220] 
+INFO (TDA-220):    246      14       2207    28.40%   28.40%         9306           02:28.68    [end TDA_220] 
+INFO (TDA-220):    262      14          0    28.40%   28.40%         9306           02:28.68    [end TDA_220] 
+INFO (TDA-220):    278      14          0    28.40%   28.40%         9306           02:28.68    [end TDA_220] 
+INFO (TDA-220):    280      14          0    28.40%   28.40%         9306           02:28.69    [end TDA_220] 
+INFO (TDA-220):    296      23       2494    47.31%   47.31%         6812           02:28.70    [end TDA_220] 
+INFO (TDA-220):    301      25          6    47.35%   47.35%         6806           02:28.71    [end TDA_220] 
+INFO (TDA-220):    317      25          0    47.35%   47.35%         6806           02:28.71    [end TDA_220] 
+INFO (TDA-220):    333      25          0    47.35%   47.35%         6806           02:28.71    [end TDA_220] 
+INFO (TDA-220):    349      25          0    47.35%   47.35%         6806           02:28.71    [end TDA_220] 
+INFO (TDA-220):    365      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    381      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    397      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    413      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    429      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    445      25          0    47.35%   47.35%         6806           02:28.72    [end TDA_220] 
+INFO (TDA-220):    449      25          0    47.35%   47.35%         6806           02:28.73    [end TDA_220] 
+INFO (TDA-220):    462      25          0    47.35%   47.35%         6806           02:28.73    [end TDA_220] 
+INFO (TDA-220):    464      26          1    47.36%   47.36%         6805           02:28.73    [end TDA_220] 
+INFO (TDA-220):    465      27         59    47.81%   47.81%         6746           02:28.73    [end TDA_220] 
+INFO (TDA-220):    471      33         64    48.29%   48.29%         6682           02:28.74    [end TDA_220] 
+INFO (TDA-220):    472      33          0    48.29%   48.29%         6682           02:28.74    [end TDA_220] 
+INFO (TDA-220):    476      35         82    48.92%   48.92%         6600           02:28.75    [end TDA_220] 
+INFO (TDA-220):    478      36          5    48.95%   48.95%         6595           02:28.76    [end TDA_220] 
+INFO (TDA-220):    480      36          0    48.95%   48.95%         6595           02:28.76    [end TDA_220] 
+INFO (TDA-220):    483      36          0    48.95%   48.95%         6595           02:28.76    [end TDA_220] 
+INFO (TDA-220):    484      36          0    48.95%   48.95%         6595           02:28.76    [end TDA_220] 
+INFO (TDA-220):    485      37          4    48.98%   48.98%         6591           02:28.77    [end TDA_220] 
+INFO (TDA-220):    486      38          2    49.00%   49.00%         6589           02:28.78    [end TDA_220] 
+INFO (TDA-220):    487      39          2    49.01%   49.01%         6587           02:28.79    [end TDA_220] 
+INFO (TDA-220):    489      39          0    49.01%   49.01%         6587           02:28.79    [end TDA_220] 
+INFO (TDA-220):    490      40          3    49.04%   49.04%         6584           02:28.80    [end TDA_220] 
+INFO (TDA-220):    491      41        581    53.44%   53.44%         6003           02:28.80    [end TDA_220] 
+INFO (TDA-220):    492      42         18    53.58%   53.58%         5985           02:28.81    [end TDA_220] 
+INFO (TDA-220):    493      43          1    53.59%   53.59%         5984           02:28.82    [end TDA_220] 
+INFO (TDA-220):    494      43          0    53.59%   53.59%         5984           02:28.82    [end TDA_220] 
+INFO (TDA-220):    495      43          0    53.59%   53.59%         5984           02:28.82    [end TDA_220] 
+INFO (TDA-220):    496      43          0    53.59%   53.59%         5984           02:28.82    [end TDA_220] 
+INFO (TDA-220):    497      43          0    53.59%   53.59%         5984           02:29.04    [end TDA_220] 
+INFO (TDA-221):    497      43          0    53.59%   53.59%         5984           02:29.04    [end TDA_221] 
+INFO (TDA-220):    513      43          0    53.59%   53.59%         5984           03:30.72    [end TDA_220] 
+INFO (TDA-220):    529      43          0    53.59%   53.59%         5984           03:30.72    [end TDA_220] 
+INFO (TDA-220):    530      43          0    53.59%   53.59%         5984           03:30.72    [end TDA_220] 
+INFO (TDA-220):    531      43          0    53.59%   53.59%         5984           03:30.72    [end TDA_220] 
+INFO (TDA-220):    544      43          0    53.59%   53.59%         5984           03:30.72    [end TDA_220] 
+INFO (TDA-220):    560      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    576      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    592      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    608      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    624      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    640      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    656      43          0    53.59%   53.59%         5984           03:30.73    [end TDA_220] 
+INFO (TDA-220):    668      43          0    53.59%   53.59%         5984           03:30.74    [end TDA_220] 
+INFO (TDA-220):    670      43          0    53.59%   53.59%         5984           03:30.74    [end TDA_220] 
+INFO (TDA-220):    673      43          0    53.59%   53.59%         5984           03:30.74    [end TDA_220] 
+INFO (TDA-220):    674      43          0    53.59%   53.59%         5984           03:30.74    [end TDA_220] 
+INFO (TDA-220):    675      43          0    53.59%   53.59%         5984           03:30.74    [end TDA_220] 
+INFO (TDA-220):    676      43          0    53.59%   53.59%         5984           03:30.75    [end TDA_220] 
+INFO (TDA-220):    677      43          0    53.59%   53.59%         5984           03:30.75    [end TDA_220] 
+INFO (TDA-220):    678      43          0    53.59%   53.59%         5984           03:30.76    [end TDA_220] 
+INFO (TDA-220):    679      43          0    53.59%   53.59%         5984           03:30.76    [end TDA_220] 
+INFO (TDA-220):    680      43          0    53.59%   53.59%         5984           03:30.76    [end TDA_220] 
+INFO (TDA-220):    681      43          0    53.59%   53.59%         5984           03:30.76    [end TDA_220] 
+INFO (TDA-220):    682      43          0    53.59%   53.59%         5984           03:30.76    [end TDA_220] 
+INFO (TDA-220):    683      43          0    53.59%   53.59%         5984           03:30.77    [end TDA_220] 
+INFO (TDA-220):    684      43          0    53.59%   53.59%         5984           03:30.77    [end TDA_220] 
+INFO (TDA-220):    685      44          3    53.61%   53.61%         5981           03:30.77    [end TDA_220] 
+INFO (TDA-220):    701      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    717      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    733      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    734      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    735      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    736      44          0    53.61%   53.61%         5981           03:35.34    [end TDA_220] 
+INFO (TDA-220):    737      44          0    53.61%   53.61%         5981           03:35.35    [end TDA_220] 
+INFO (TDA-220):    738      44          0    53.61%   53.61%         5981           03:35.35    [end TDA_220] 
+INFO (TDA-220):    739      44          0    53.61%   53.61%         5981           03:35.35    [end TDA_220] 
+INFO (TDA-220):    739      44        119    54.58%   54.58%         5957           03:39.02    [end TDA_220] 
+INFO (TTC-110): Ending Static Logic Test generation                                             [end TTC_110] 
+*************************************************************************************************************
+
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 13192         7191           28           16         5957  54.51  54.58
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 13192         7191           28           16         5957  54.51  54.58
+****************************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Logic                                          45
+----------------------------------------------------------
+ Total                                          45
+
+(I) File(s) generated (bytes and name):
+
+         143360 mydir/tbdata/faultStatus.FULLSCAN.logic
+          65255 mydir/tbdata/TBDbin.FULLSCAN.logic
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           11,991,184  bytes
+
+                      CPU Time =    0:03:36.10
+                  Elapsed Time =    0:03:39.04                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:39:50 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     98 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TDA-221):    497      43          0    53.59%   53.59%         5984           02:29.04     
+      1 INFO (TTC-107): There are no scan chains in this circuit, therefore no scan chain tests will be generated.   
+      4 INFO (TTC-110): Starting Reset/Set Test Generation                                               
+      1 INFO (TTC-139): The default setting of the 'multiclockcompaction' option, ('multiclockcompaction' set to 'yes') has been turned off because the addition of extra clocks pulses may be causing the test to be invalid.  It has been turned off to reduce the number of invalid tests. The run continues.  
+
+  WARNING Messages...
+      1 WARNING (TTC-018): verify_test_structures issued Warning messages related to Stored Pattern tests.  Poor test coverage may result.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(sample_script.tcl) 39: write_vectors -workdir mydir \
+  -testmode FULLSCAN \
+  -inexperiment logic \
+  -language verilog \
+  -scanformat serial \
+  -outputfilename test_results
+Starting Command: write_vectors 
+
+INFO (TDA-015): Log File: mydir/testresults/logs/log_write_vectors_FULLSCAN_logic_121525153951-908641000 [end TDA_015]
+
+INFO (TVE-001): Verilog write vectors started.   [end TVE_001] 
+INFO (TVE-103): There was no specified TEST offset for this clock 'pin clock'.  A default clock offset of 8.000000 ns will be used.   [end TVE_103] 
+INFO (TVE-103): There was no specified TEST offset for this clock 'pin nreset'.  A default clock offset of 8.000000 ns will be used.   [end TVE_103] 
+INFO (TVE-967): Temporary output files are created in /tmp directory. [end TVE_967] 
+INFO (TVE-004): Reading test section 1.1. Test section type equals logic.   [end TVE_004] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.cyclemap.   [end TVE_003] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.1.verilog.   [end TVE_003] 
+INFO (TVE-005): Created 381 total cycles, of which 381 are test cycles, 0 are scan cycles, 0 are dynamic timed cycles and 0 are dynamic cycles that are not timed.   [end TVE_005] 
+INFO (TVE-008): Created 2970 total measures, of which 2970 are PO measures and 0 are SO (Scan Out) measures.  [end TVE_008] 
+INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.mainsim.v.   [end TVE_003] 
+
+INFO (TVE-050):         TEST SEQUENCE COVERAGE ESTIMATE REPORT  
+    Test       | Global    | Global    | Global    | Global    | Global    | Global    | Sequence   | Overlapped | Total      | 
+    Sequence   | Static    | Static    | Static    | Dynamic   | Dynamic   | Dynamic   | Cycle      | Cycle      | Cycle      | 
+               | Total     | Delta     | Adjusted  | Total     | Delta     | Adjusted  | Count      | Count      | Count      | 
+               | Coverage  | Coverage  | Total     | Coverage  | Coverage  | Total     |            |            |            | 
+               |           |           | Coverage  |           |           | Coverage  |            |            |            | 
+     1.1.1.1.1 |  0.00     |  0.00     |  0.00     |  0.00     |  0.00     |  0.00     |          1 |          0 |          1 |
+     1.1.1.2.1 |  5.26     |  5.26     |  5.26     |  0.00     |  0.00     |  0.00     |          3 |          0 |          4 |
+     1.1.1.3.1 |  5.35     |  0.09     |  5.35     |  0.00     |  0.00     |  0.00     |          4 |          0 |          8 |
+     1.1.1.3.2 |  5.48     |  0.13     |  5.48     |  0.00     |  0.00     |  0.00     |          4 |          0 |         12 |
+     1.1.1.3.3 |  5.72     |  0.23     |  5.72     |  0.00     |  0.00     |  0.00     |          4 |          0 |         16 |
+     1.1.1.3.4 |  11.67    |  5.96     |  11.67    |  0.00     |  0.00     |  0.00     |          4 |          0 |         20 |
+     1.1.1.4.1 |  12.28    |  0.61     |  12.28    |  0.00     |  0.00     |  0.00     |          8 |          0 |         28 |
+     1.1.1.4.2 |  12.51    |  0.23     |  12.51    |  0.00     |  0.00     |  0.00     |          8 |          0 |         36 |
+     1.1.1.4.3 |  13.80    |  1.30     |  13.80    |  0.00     |  0.00     |  0.00     |          8 |          0 |         44 |
+     1.1.1.4.4 |  15.61    |  1.80     |  15.61    |  0.00     |  0.00     |  0.00     |          8 |          0 |         52 |
+     1.1.1.4.5 |  19.43    |  3.82     |  19.43    |  0.00     |  0.00     |  0.00     |          8 |          0 |         60 |
+     1.1.1.4.6 |  19.63    |  0.20     |  19.63    |  0.00     |  0.00     |  0.00     |          8 |          0 |         68 |
+     1.1.1.4.7 |  20.19    |  0.56     |  20.19    |  0.00     |  0.00     |  0.00     |          8 |          0 |         76 |
+     1.1.1.4.8 |  28.27    |  8.08     |  28.27    |  0.00     |  0.00     |  0.00     |          8 |          0 |         84 |
+     1.1.1.4.9 |  28.37    |  0.11     |  28.37    |  0.00     |  0.00     |  0.00     |          8 |          0 |         92 |
+    1.1.1.4.10 |  28.40    |  0.03     |  28.40    |  0.00     |  0.00     |  0.00     |          8 |          0 |        100 |
+     1.1.1.5.1 |  28.58    |  0.17     |  28.58    |  0.00     |  0.00     |  0.00     |         10 |          0 |        110 |
+     1.1.1.5.2 |  28.62    |  0.04     |  28.62    |  0.00     |  0.00     |  0.00     |         10 |          0 |        120 |
+     1.1.1.5.3 |  30.89    |  2.27     |  30.89    |  0.00     |  0.00     |  0.00     |         10 |          0 |        130 |
+     1.1.1.5.4 |  44.74    |  13.85    |  44.74    |  0.00     |  0.00     |  0.00     |         10 |          0 |        140 |
+     1.1.1.5.5 |  44.94    |  0.20     |  44.94    |  0.00     |  0.00     |  0.00     |         10 |          0 |        150 |
+     1.1.1.5.6 |  45.46    |  0.52     |  45.46    |  0.00     |  0.00     |  0.00     |         10 |          0 |        160 |
+     1.1.1.5.7 |  47.05    |  1.59     |  47.05    |  0.00     |  0.00     |  0.00     |         10 |          0 |        170 |
+     1.1.1.5.8 |  47.12    |  0.07     |  47.12    |  0.00     |  0.00     |  0.00     |         10 |          0 |        180 |
+     1.1.1.5.9 |  47.31    |  0.19     |  47.31    |  0.00     |  0.00     |  0.00     |         10 |          0 |        190 |
+     1.1.1.6.1 |  47.32    |  0.01     |  47.32    |  0.00     |  0.00     |  0.00     |          7 |          0 |        197 |
+     1.1.1.6.2 |  47.35    |  0.04     |  47.35    |  0.00     |  0.00     |  0.00     |          7 |          0 |        204 |
+     1.1.1.7.1 |  47.36    |  0.01     |  47.36    |  0.00     |  0.00     |  0.00     |          5 |          0 |        209 |
+     1.1.1.8.1 |  47.81    |  0.45     |  47.81    |  0.00     |  0.00     |  0.00     |          6 |          0 |        215 |
+     1.1.1.9.1 |  47.87    |  0.06     |  47.87    |  0.00     |  0.00     |  0.00     |         10 |          0 |        225 |
+     1.1.1.9.2 |  47.95    |  0.08     |  47.95    |  0.00     |  0.00     |  0.00     |         10 |          0 |        235 |
+     1.1.1.9.3 |  48.18    |  0.23     |  48.18    |  0.00     |  0.00     |  0.00     |         10 |          0 |        245 |
+     1.1.1.9.4 |  48.22    |  0.04     |  48.22    |  0.00     |  0.00     |  0.00     |         10 |          0 |        255 |
+     1.1.1.9.5 |  48.26    |  0.04     |  48.26    |  0.00     |  0.00     |  0.00     |         10 |          0 |        265 |
+     1.1.1.9.6 |  48.29    |  0.04     |  48.29    |  0.00     |  0.00     |  0.00     |         10 |          0 |        275 |
+    1.1.1.10.1 |  48.88    |  0.58     |  48.88    |  0.00     |  0.00     |  0.00     |          9 |          0 |        284 |
+    1.1.1.10.2 |  48.92    |  0.04     |  48.92    |  0.00     |  0.00     |  0.00     |          9 |          0 |        293 |
+    1.1.1.11.1 |  48.95    |  0.04     |  48.95    |  0.00     |  0.00     |  0.00     |          7 |          0 |        300 |
+    1.1.1.12.1 |  48.98    |  0.03     |  48.98    |  0.00     |  0.00     |  0.00     |         12 |          0 |        312 |
+    1.1.1.13.1 |  49.00    |  0.02     |  49.00    |  0.00     |  0.00     |  0.00     |         12 |          0 |        324 |
+    1.1.1.14.1 |  49.01    |  0.02     |  49.01    |  0.00     |  0.00     |  0.00     |          8 |          0 |        332 |
+    1.1.1.15.1 |  49.04    |  0.02     |  49.04    |  0.00     |  0.00     |  0.00     |         10 |          0 |        342 |
+    1.1.1.16.1 |  53.44    |  4.40     |  53.44    |  0.00     |  0.00     |  0.00     |          8 |          0 |        350 |
+    1.1.1.17.1 |  53.58    |  0.14     |  53.58    |  0.00     |  0.00     |  0.00     |         10 |          0 |        360 |
+    1.1.1.18.1 |  53.59    |  0.01     |  53.59    |  0.00     |  0.00     |  0.00     |         10 |          0 |        370 |
+    1.1.1.19.1 |  53.61    |  0.02     |  53.61    |  0.00     |  0.00     |  0.00     |         11 |          0 |        381 |
+  [end TVE_050] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            8,280,496  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.03                    [end TDA_001]
+
+     Date Ended:  Monday Dec 15 15:40:01 2025  -03
+
+INFO (TVE-002): Verilog write vectors has completed.   [end TVE_002] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TVE-001): Verilog write vectors started.    
+      1 INFO (TVE-002): Verilog write vectors has completed.    
+      3 INFO (TVE-003): Verilog write vectors output file will be: mydir/testresults/verilog/test_results.cyclemap.    
+      1 INFO (TVE-004): Reading test section 1.1. Test section type equals logic.    
+      1 INFO (TVE-005): Created 381 total cycles, of which 381 are test cycles, 0 are scan cycles, 0 are dynamic timed cycles and 0 are dynamic cycles that are not timed.    
+      1 INFO (TVE-008): Created 2970 total measures, of which 2970 are PO measures and 0 are SO (Scan Out) measures.   
+      1 INFO (TVE-050):         TEST SEQUENCE COVERAGE ESTIMATE REPORT  
+      2 INFO (TVE-103): There was no specified TEST offset for this clock 'pin clock'.  A default clock offset of 8.000000 ns will be used.    
+      1 INFO (TVE-967): Temporary output files are created in /tmp directory.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+#@ End verbose source sample_script.tcl
+0
+@modus:root:/ 3> exit

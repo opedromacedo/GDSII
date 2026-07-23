@@ -1,0 +1,41 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-cpus 64 -stylus -file innovus_script_old.tcl 
+Date:		Sun Feb  1 17:51:19 2026
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[17:51:19.518594] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_757751_VT0138_xmen_PKM2rT.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+**WARN: (PRL-39):	Number of local CPUs specified (64) > Actual number of CPUs in the host (32). The lower value will be used.
+set_multi_cpu_usage -local_cpu 32
+**INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[INFO] Loading PVS 23.11 fill procedures
+Innovus terminated by user interrupt.
+QObject::~QObject: Timers cannot be stopped from another thread
+TclStackFree: incorrect freePtr (0x7fd66d620dd0 != 0x7fd66d6211d0). Call out of sequence?
+Innovus terminated by internal (ABORT) error/signal...
+*** Stack trace:
+
+*** Memory Usage v#1 (Current mem = 990.949M, initial mem = 495.000M) ***
+/usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x19409bab]
+*** Message Summary: 1 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:07.9, real=0:00:08.0, mem=990.9M) ---
+/usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0x9c)[0x1940a027]
+/usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus[0x6c19b96]
+/lib64/libpthread.so.0(+0x1298f)[0x7fd69d8b798f]
+/lib64/libc.so.6(gsignal+0x10f)[0x7fd69cd0552f]
+/lib64/libc.so.6(abort+0x126)[0x7fd69ccd8e64]
+/usr/local/cadence/INNOVUS211/tools.lnx86/innovus/bin/64bit/innovus(Tcl_PanicVA+0x15d)[0x2a1b970d]

@@ -1,0 +1,44 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[19:18:56.518642] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+Version: 21.19-s055_1, built Wed May 29 12:33:07 PDT 2024
+Options: 
+Date:    Mon Dec 15 19:18:56 2025
+Host:    VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*1physical cpu*Intel(R) Core(TM) i9-14900F 36864KB) (65503084KB)
+PID:     1161573
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+
+[19:18:56.068634] periodic Lic check successful
+[19:18:56.068635] Feature usage summary:
+[19:18:56.068635] Genus_Synthesis
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (3 seconds elapsed).
+
+WARNING: This version of the tool is 565 days old.
+@genus:root: 1> gui
+ambiguous command name "gui": gui_clear_pv gui_clear_sv gui_configure_pi_schematic gui_hide gui_highlight_hier_instances_pv gui_highlight_pv gui_highlight_sv gui_legend gui_open_schematic gui_pv_airline_add gui_pv_airline_delete gui_pv_airline_display gui_pv_airline_raw_add gui_pv_connectivity_airlines gui_pv_display_collection gui_pv_draw_net gui_pv_selection gui_pv_steiner gui_raise gui_redo_pv gui_redraw_pv gui_reset gui_select_highlighted_pv gui_selection gui_show gui_snapshot_pv gui_snapshot_sv gui_sv_get_instance gui_sv_load gui_undo_pv gui_update gui_zoom_fit_pv gui_zoom_fit_sv gui_zoom_pv
+@genus:root: 2> gui_show
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_design]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 149s, ST: 4s, FG: 4s, CPU: 1.1%}, MEM {curr: 0.9G, peak: 0.9G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.2, cpu: 32, total: 62.5G, free: 16.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 150s, ST: 4s, FG: 4s, CPU: 1.1%}, MEM {curr: 0.9G, peak: 0.9G, phys curr: 0.4G, phys peak: 0.4G}, SYS {load: 0.2, cpu: 32, total: 62.5G, free: 16.6G}
+Abnormal exit.
+Encountered a problem while exiting.

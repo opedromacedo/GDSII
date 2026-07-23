@@ -1,0 +1,6 @@
+define LIB_MAP ( $LIB_MAP \
+, ../../../slow_vdd1v0_basiccells.v => slow_vdd1v0_basiccells \
+)
+define LIB_MAP ( $LIB_MAP \
+, ../../../slow_vdd1v0_basiccells.v => slow_vdd1v0_basiccells \
+)

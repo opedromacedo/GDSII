@@ -1,0 +1,82 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-stylus 
+Date:		Wed Dec  3 20:24:04 2025
+Host:		VT0138 (x86_64 w/Linux 4.18.0-553.47.1.el8_10.x86_64) (24cores*32cpus*Intel(R) Core(TM) i9-14900F 36864KB)
+OS:		Rocky Linux 8.10 (Green Obsidian)
+
+License:
+		[20:24:04.518498] Configured Lic search path (21.01-s002): 5280@melicense.embedded.ufcg.edu.br:2718@10.75.13.24
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_328091_VT0138_xmen_S5FUXu.
+
+Change the soft stacksize limit to 0.2%RAM (127 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+@innovus 1> set_db init_power_nets VDD
+@innovus 2> set_db init_ground_nets VSS
+@innovus 3> #################################
+read_mmmc counter.view
+#################################
+**ERROR: (TCLCMD-1146):	Mmmc file 'counter.view' not found.
+**ERROR: **ERROR: (IMPSYT-16031):	Failed to execute command 'read_mmmc counter.view'.For more details, refer to error message from console.
+
+#################################
+read_physical -lef {../lef/gsclib045_tech.lef ../lef/gsclib045_macro.lef}
+#################################
+
+Loading LEF file ../lef/gsclib045_tech.lef ...
+
+Loading LEF file ../lef/gsclib045_macro.lef ...
+Set DBUPerIGU to M2 pitch 400.
+**WARN: (IMPLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+Type 'man IMPLF-200' for more detail.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+#################################
+read_netlist opdiv_netlist.v
+#################################
+#% Begin Load netlist data ... (date=12/03 20:26:02, mem=1015.5M)
+*** Begin netlist parsing (mem=1027.9M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'opdiv_netlist.v'
+
+*** Memory Usage v#1 (Current mem = 1030.930M, initial mem = 495.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1030.9M) ***
+#% End Load netlist data ... (date=12/03 20:26:02, total cpu=0:00:00.0, real=0:00:00.0, peak res=1020.6M, current mem=1020.6M)
+Top level cell is opdiv.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell opdiv ...
+*** Netlist is unique.
+** info: there are 576 modules.
+** info: there are 1433 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1079.344M, initial mem = 495.000M) ***
+**WARN: (IMPFP-3961):	The techSite 'CornerSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+**WARN: (IMPFP-3961):	The techSite 'IOSite' has no related standard cells in the LEF/OA library. The calculations for this site type cannot be made unless standard cell models of this type exist in the LEF/OA library. Ignore this warning if the SITE is not used by the library. Alternatively, remove the SITE definition for the LEF/OA library to avoid this message.
+Type 'man IMPFP-3961' for more detail.
+Start create_tracks
+Extraction setup Started 
+**INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+Innovus terminated by user interrupt.
+
+*** Memory Usage v#1 (Current mem = 1329.656M, initial mem = 495.000M) ***
+*** Message Summary: 3 warning(s), 2 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:22.0, real=0:11:46, mem=1329.7M) ---

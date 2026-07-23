@@ -1,0 +1,30 @@
+{
+    "created_on": "2025-Dec-03 22:39:17",
+    "creator": "voltus_rail",
+    "nominal_voltage": "0.899999976",
+    "is_power_net": "true",
+    "is_dynamic_analysis": "false",
+    "results": [
+        {
+            "type": "average",
+            "num_voltages": "2476",
+            "min_node_voltage": "0.899943411",
+            "max_node_voltage": "0.899999976",
+            "num_currents": "2476",
+            "min_tap_current": "-0",
+            "max_tap_current": "3.038557e-07",
+            "min_voltage_source_current": "-3.899103103321977e-05",
+            "max_voltage_source_current": "-3.899103103321977e-05",
+            "min_voltage_source_voltage": "0.89999997615814209",
+            "max_voltage_source_voltage": "0.89999997615814209",
+            "num_peak_currents": "2509",
+            "peak_current_file": ".\/run1\/VDD_25C_avg_1\/voltus_rail.iavg",
+            "min_peak_current": "-3.8985064747976139e-05",
+            "max_peak_current": "2.1424446458695456e-05"
+        }
+    ],
+    "VC_SUM_Peak": "3.8991031e-05",
+    "TC_SUM_Peak": "3.89850647e-05",
+    "VC_SUM_Avg": "3.8991031e-05",
+    "TC_SUM_Avg": "3.89850647e-05"
+}
